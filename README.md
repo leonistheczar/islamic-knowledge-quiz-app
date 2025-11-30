@@ -8,8 +8,8 @@ This document outlines the development layout, branching workflow, and best prac
 
 - **HTML Pages:** Placed in the root (or optionally in a `pages/` folder). Each page links to shared CSS and page-specific JS. Example: `index.html`, `quiz.html`, `results.html`.  
 - **CSS:** Shared styles in `src/css/main.css` (Tailwind + custom). Optional page-specific styles can go in `src/css/pages/quiz.css`.  
-- **JavaScript:** Shared logic in `src/js/app.js`. Page-specific logic in `src/js/quiz.js` and `src/js/results.js`. Quiz data is stored in `src/js/data.js`. Optional helper modules can go in `src/js/utils.js`, and reusable components in `src/js/components/`.  
-- **Static Assets:** Stored in `public/` (images, icons, JSON API: `public/api/questions.json`).  
+- **JavaScript:** Shared logic in `src/js/app.js`. 
+- **Static Assets:** Stored in `public/` (images, icons, JSON API: `public/api/api.json`).  
 
 ---
 

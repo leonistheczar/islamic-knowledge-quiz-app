@@ -1,0 +1,505 @@
+{
+  "quizTitle": "Islamic Knowledge Quiz",
+  "categories": [
+    {
+      "id": "pillars-of-islam",
+      "name": "Pillars of Islam",
+      "description": "Questions about the five pillars of Islam",
+      "questions": [
+        {
+          "id": 1,
+          "question": "How many pillars are there in Islam?",
+          "options": ["3", "5", "7", "10"],
+          "correctAnswer": "5",
+          "explanation": "Islam is built upon five pillars: Shahada, Salah, Zakat, Sawm, and Hajj.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 2,
+          "question": "What is the first pillar of Islam?",
+          "options": ["Salah (Prayer)", "Shahada (Declaration of Faith)", "Zakat (Charity)", "Hajj (Pilgrimage)"],
+          "correctAnswer": "Shahada (Declaration of Faith)",
+          "explanation": "The Shahada is the declaration of faith and the first pillar of Islam.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 3,
+          "question": "How many times a day must Muslims perform Salah (obligatory prayer)?",
+          "options": ["3", "5", "7", "10"],
+          "correctAnswer": "5",
+          "explanation": "Muslims perform five daily prayers: Fajr, Dhuhr, Asr, Maghrib, and Isha.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 4,
+          "question": "What percentage of wealth is typically given as Zakat?",
+          "options": ["1.5%", "2.5%", "5%", "10%"],
+          "correctAnswer": "2.5%",
+          "explanation": "Zakat is typically 2.5% of a Muslim's accumulated wealth, given annually to those in need.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 5,
+          "question": "During which Islamic month is fasting (Sawm) obligatory?",
+          "options": ["Muharram", "Ramadan", "Shawwal", "Dhul Hijjah"],
+          "correctAnswer": "Ramadan",
+          "explanation": "Muslims fast from dawn to sunset during the month of Ramadan, the ninth month of the Islamic calendar.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 6,
+          "question": "What is the minimum requirement for a Muslim to perform Hajj?",
+          "options": ["Must be done every year", "Once in a lifetime if physically and financially able", "Only for men", "Only after age 60"],
+          "correctAnswer": "Once in a lifetime if physically and financially able",
+          "explanation": "Hajj is obligatory once in a lifetime for those who are physically and financially capable.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 7,
+          "question": "Which pillar of Islam is also known as almsgiving?",
+          "options": ["Shahada", "Salah", "Zakat", "Sawm"],
+          "correctAnswer": "Zakat",
+          "explanation": "Zakat is the third pillar of Islam and refers to giving a portion of one's wealth to those in need.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 8,
+          "question": "What does the word 'Shahada' literally mean?",
+          "options": ["Prayer", "Witness or testimony", "Charity", "Pilgrimage"],
+          "correctAnswer": "Witness or testimony",
+          "explanation": "Shahada means 'to witness' or 'to testify', referring to the declaration of faith in Islam.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 9,
+          "question": "What is the name of the first prayer of the day?",
+          "options": ["Fajr", "Dhuhr", "Asr", "Maghrib"],
+          "correctAnswer": "Fajr",
+          "explanation": "Fajr is the dawn prayer, the first of the five daily prayers performed before sunrise.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 10,
+          "question": "Which city must Muslims face when performing Salah?",
+          "options": ["Medina", "Jerusalem", "Mecca", "Cairo"],
+          "correctAnswer": "Mecca",
+          "explanation": "Muslims face the Kaaba in Mecca (the Qibla direction) during their prayers.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 11,
+          "question": "What is the night prayer called?",
+          "options": ["Fajr", "Dhuhr", "Asr", "Isha"],
+          "correctAnswer": "Isha",
+          "explanation": "Isha is the night prayer, the fifth and final obligatory prayer of the day.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 12,
+          "question": "Who is eligible to receive Zakat?",
+          "options": ["Only family members", "The poor and needy", "Government officials", "Only scholars"],
+          "correctAnswer": "The poor and needy",
+          "explanation": "Zakat is primarily given to the poor, needy, and other specified categories mentioned in the Quran.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 13,
+          "question": "What is the pre-dawn meal called during Ramadan?",
+          "options": ["Iftar", "Suhoor", "Eid", "Taraweeh"],
+          "correctAnswer": "Suhoor",
+          "explanation": "Suhoor is the pre-dawn meal eaten before the fast begins each day during Ramadan.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 14,
+          "question": "What is the meal that breaks the fast called?",
+          "options": ["Suhoor", "Iftar", "Eid", "Zakat"],
+          "correctAnswer": "Iftar",
+          "explanation": "Iftar is the meal eaten at sunset to break the daily fast during Ramadan.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 15,
+          "question": "In which Islamic month does Hajj take place?",
+          "options": ["Ramadan", "Shawwal", "Dhul Hijjah", "Muharram"],
+          "correctAnswer": "Dhul Hijjah",
+          "explanation": "Hajj takes place during Dhul Hijjah, the twelfth and final month of the Islamic calendar.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 16,
+          "question": "What is the circling of the Kaaba during Hajj called?",
+          "options": ["Tawaf", "Sa'i", "Wuquf", "Rami"],
+          "correctAnswer": "Tawaf",
+          "explanation": "Tawaf is the ritual of circling the Kaaba seven times counterclockwise during Hajj or Umrah.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 17,
+          "question": "What must be done before performing Salah?",
+          "options": ["Eat food", "Wudu (ablution)", "Read Quran", "Give charity"],
+          "correctAnswer": "Wudu (ablution)",
+          "explanation": "Wudu, the ritual washing, must be performed to achieve purification before prayer.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 18,
+          "question": "What is the Arabic term for the call to prayer?",
+          "options": ["Iqamah", "Adhan", "Takbir", "Tasbih"],
+          "correctAnswer": "Adhan",
+          "explanation": "The Adhan is the Islamic call to prayer, announced from the mosque five times a day.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 19,
+          "question": "What is Zakat al-Fitr?",
+          "options": ["Annual wealth tax", "Charity given before Eid al-Fitr", "Hajj offering", "Friday charity"],
+          "correctAnswer": "Charity given before Eid al-Fitr",
+          "explanation": "Zakat al-Fitr is a charitable donation given before the Eid prayer at the end of Ramadan.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 20,
+          "question": "What is the walking between Safa and Marwa hills during Hajj called?",
+          "options": ["Tawaf", "Sa'i", "Wuquf", "Ihram"],
+          "correctAnswer": "Sa'i",
+          "explanation": "Sa'i is the ritual of walking seven times between the hills of Safa and Marwa during Hajj.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "prophets-in-islam",
+      "name": "Prophets in Islam",
+      "description": "Questions about the Prophets and Messengers in Islamic tradition",
+      "questions": [
+        {
+          "id": 21,
+          "question": "Who is considered the last prophet in Islam?",
+          "options": ["Prophet Isa (Jesus)", "Prophet Musa (Moses)", "Prophet Ibrahim (Abraham)", "Prophet Muhammad (PBUH)"],
+          "correctAnswer": "Prophet Muhammad (PBUH)",
+          "explanation": "Prophet Muhammad (peace be upon him) is the final prophet and messenger in Islam.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 22,
+          "question": "Which prophet is known as 'Khalilullah' (Friend of Allah)?",
+          "options": ["Prophet Ibrahim", "Prophet Musa", "Prophet Nuh", "Prophet Isa"],
+          "correctAnswer": "Prophet Ibrahim",
+          "explanation": "Prophet Ibrahim (Abraham) is given the title Khalilullah, meaning 'Friend of Allah'.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 23,
+          "question": "Which prophet was swallowed by a whale?",
+          "options": ["Prophet Yunus", "Prophet Yusuf", "Prophet Sulaiman", "Prophet Dawud"],
+          "correctAnswer": "Prophet Yunus",
+          "explanation": "Prophet Yunus (Jonah) was swallowed by a large fish/whale and later emerged safely after repenting to Allah.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 24,
+          "question": "Which prophet could speak to animals and control the jinn?",
+          "options": ["Prophet Musa", "Prophet Sulaiman", "Prophet Isa", "Prophet Yusuf"],
+          "correctAnswer": "Prophet Sulaiman",
+          "explanation": "Prophet Sulaiman (Solomon) was given the ability to communicate with animals and command the jinn.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 25,
+          "question": "Which prophet built the Ark to save believers from the great flood?",
+          "options": ["Prophet Nuh", "Prophet Ibrahim", "Prophet Lut", "Prophet Hud"],
+          "correctAnswer": "Prophet Nuh",
+          "explanation": "Prophet Nuh (Noah) built the Ark under Allah's command to save believers from the great flood.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 26,
+          "question": "Which prophet was given the Injil (Gospel)?",
+          "options": ["Prophet Musa", "Prophet Isa", "Prophet Muhammad", "Prophet Dawud"],
+          "correctAnswer": "Prophet Isa",
+          "explanation": "Prophet Isa (Jesus) was given the Injil (Gospel) as divine revelation.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 27,
+          "question": "Which prophet was thrown into a well by his brothers?",
+          "options": ["Prophet Yusuf", "Prophet Musa", "Prophet Harun", "Prophet Ismail"],
+          "correctAnswer": "Prophet Yusuf",
+          "explanation": "Prophet Yusuf (Joseph) was thrown into a well by his jealous brothers but later became a minister in Egypt.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 28,
+          "question": "Which prophet spoke to Allah directly on Mount Sinai?",
+          "options": ["Prophet Ibrahim", "Prophet Musa", "Prophet Isa", "Prophet Muhammad"],
+          "correctAnswer": "Prophet Musa",
+          "explanation": "Prophet Musa (Moses) spoke directly to Allah on Mount Sinai and was given the Torah.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 29,
+          "question": "Who was the father of Prophet Ismail and Prophet Ishaq?",
+          "options": ["Prophet Nuh", "Prophet Ibrahim", "Prophet Yaqub", "Prophet Lut"],
+          "correctAnswer": "Prophet Ibrahim",
+          "explanation": "Prophet Ibrahim (Abraham) was the father of both Ismail and Ishaq (Isaac).",
+          "difficulty": "easy"
+        },
+        {
+          "id": 30,
+          "question": "Which prophet is known for his patience during severe trials?",
+          "options": ["Prophet Ayyub", "Prophet Yunus", "Prophet Zakariya", "Prophet Yahya"],
+          "correctAnswer": "Prophet Ayyub",
+          "explanation": "Prophet Ayyub (Job) is renowned for his patience and steadfastness during severe trials and illness.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 31,
+          "question": "Which prophet was given the Zabur (Psalms)?",
+          "options": ["Prophet Musa", "Prophet Isa", "Prophet Dawud", "Prophet Sulaiman"],
+          "correctAnswer": "Prophet Dawud",
+          "explanation": "Prophet Dawud (David) was given the Zabur (Psalms) as divine scripture.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 32,
+          "question": "Who was the brother of Prophet Musa who helped him in his mission?",
+          "options": ["Prophet Harun", "Prophet Ishaq", "Prophet Ismail", "Prophet Yunus"],
+          "correctAnswer": "Prophet Harun",
+          "explanation": "Prophet Harun (Aaron) was the brother of Musa and assisted him in delivering Allah's message.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 33,
+          "question": "Which prophet's wife is mentioned by name in the Quran?",
+          "options": ["Prophet Ibrahim's wife", "Prophet Muhammad's wife", "Prophet Musa's wife", "Prophet Nuh's wife"],
+          "correctAnswer": "Prophet Muhammad's wife",
+          "explanation": "Maryam (Mary), mother of Prophet Isa, is mentioned by name, and she was from the family of Imran.",
+          "difficulty": "hard"
+        },
+        {
+          "id": 34,
+          "question": "Which prophet was born without a father?",
+          "options": ["Prophet Adam", "Prophet Isa", "Prophet Yahya", "Prophet Muhammad"],
+          "correctAnswer": "Prophet Isa",
+          "explanation": "Prophet Isa (Jesus) was born miraculously to Maryam without a father by the will of Allah.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 35,
+          "question": "Who was the first prophet created by Allah?",
+          "options": ["Prophet Nuh", "Prophet Ibrahim", "Prophet Adam", "Prophet Idris"],
+          "correctAnswer": "Prophet Adam",
+          "explanation": "Prophet Adam was the first human being and the first prophet created by Allah.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 36,
+          "question": "Which prophet is mentioned the most times in the Quran?",
+          "options": ["Prophet Muhammad", "Prophet Ibrahim", "Prophet Musa", "Prophet Isa"],
+          "correctAnswer": "Prophet Musa",
+          "explanation": "Prophet Musa (Moses) is mentioned more than any other prophet in the Quran.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 37,
+          "question": "Which prophet's people were destroyed by a loud blast?",
+          "options": ["Prophet Salih", "Prophet Hud", "Prophet Lut", "Prophet Shuaib"],
+          "correctAnswer": "Prophet Salih",
+          "explanation": "The people of Thamud, who rejected Prophet Salih, were destroyed by a mighty blast.",
+          "difficulty": "hard"
+        },
+        {
+          "id": 38,
+          "question": "Which prophet preached to the people of Madyan?",
+          "options": ["Prophet Hud", "Prophet Salih", "Prophet Shuaib", "Prophet Lut"],
+          "correctAnswer": "Prophet Shuaib",
+          "explanation": "Prophet Shuaib was sent to the people of Madyan, warning them about dishonest business practices.",
+          "difficulty": "hard"
+        },
+        {
+          "id": 39,
+          "question": "Who was the father of Prophet Yusuf?",
+          "options": ["Prophet Ibrahim", "Prophet Ishaq", "Prophet Yaqub", "Prophet Ismail"],
+          "correctAnswer": "Prophet Yaqub",
+          "explanation": "Prophet Yaqub (Jacob), also known as Israel, was the father of Prophet Yusuf.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 40,
+          "question": "Which prophet was saved from the fire by Allah?",
+          "options": ["Prophet Musa", "Prophet Ibrahim", "Prophet Isa", "Prophet Nuh"],
+          "correctAnswer": "Prophet Ibrahim",
+          "explanation": "Prophet Ibrahim was thrown into a fire by his people, but Allah made it cool and safe for him.",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "quran-knowledge",
+      "name": "Quran Knowledge",
+      "description": "Questions about the Holy Quran",
+      "questions": [
+        {
+          "id": 41,
+          "question": "How many chapters (Surahs) are in the Quran?",
+          "options": ["100", "114", "120", "150"],
+          "correctAnswer": "114",
+          "explanation": "The Holy Quran contains 114 chapters (Surahs).",
+          "difficulty": "easy"
+        },
+        {
+          "id": 42,
+          "question": "What is the longest Surah in the Quran?",
+          "options": ["Surah Al-Baqarah", "Surah Al-Fatiha", "Surah Yasin", "Surah Al-Kahf"],
+          "correctAnswer": "Surah Al-Baqarah",
+          "explanation": "Surah Al-Baqarah (The Cow) is the longest chapter in the Quran with 286 verses.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 43,
+          "question": "What is the first Surah revealed to Prophet Muhammad (PBUH)?",
+          "options": ["Surah Al-Fatiha", "Surah Al-Alaq", "Surah Al-Ikhlas", "Surah An-Nas"],
+          "correctAnswer": "Surah Al-Alaq",
+          "explanation": "Surah Al-Alaq (The Clot) was the first revelation, beginning with 'Read in the name of your Lord'.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 44,
+          "question": "Which Surah is known as the 'Heart of the Quran'?",
+          "options": ["Surah Al-Fatiha", "Surah Yasin", "Surah Al-Mulk", "Surah Ar-Rahman"],
+          "correctAnswer": "Surah Yasin",
+          "explanation": "Surah Yasin is often referred to as the 'Heart of the Quran' due to its profound message.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 45,
+          "question": "In which language was the Quran revealed?",
+          "options": ["Hebrew", "Aramaic", "Arabic", "Persian"],
+          "correctAnswer": "Arabic",
+          "explanation": "The Quran was revealed in classical Arabic to Prophet Muhammad (PBUH).",
+          "difficulty": "easy"
+        },
+        {
+          "id": 46,
+          "question": "What is the opening chapter of the Quran called?",
+          "options": ["Al-Baqarah", "Al-Fatiha", "Al-Ikhlas", "An-Nas"],
+          "correctAnswer": "Al-Fatiha",
+          "explanation": "Surah Al-Fatiha (The Opening) is the first chapter of the Quran and is recited in every unit of prayer.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 47,
+          "question": "How many verses (Ayahs) are there in the Quran approximately?",
+          "options": ["5,000", "6,236", "7,000", "8,000"],
+          "correctAnswer": "6,236",
+          "explanation": "The Quran contains approximately 6,236 verses, though the exact count varies slightly by method.",
+          "difficulty": "hard"
+        },
+        {
+          "id": 48,
+          "question": "Which Surah does not begin with Bismillah?",
+          "options": ["Surah Al-Fatiha", "Surah At-Tawbah", "Surah Al-Ikhlas", "Surah An-Nasr"],
+          "correctAnswer": "Surah At-Tawbah",
+          "explanation": "Surah At-Tawbah (Repentance) is the only chapter that does not begin with Bismillah.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 49,
+          "question": "What is the shortest Surah in the Quran?",
+          "options": ["Surah Al-Ikhlas", "Surah Al-Kawthar", "Surah An-Nas", "Surah Al-Asr"],
+          "correctAnswer": "Surah Al-Kawthar",
+          "explanation": "Surah Al-Kawthar (The Abundance) is the shortest chapter with only 3 verses.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 50,
+          "question": "In which cave was the Quran first revealed?",
+          "options": ["Cave of Thawr", "Cave of Hira", "Cave of Uhud", "Cave of Badr"],
+          "correctAnswer": "Cave of Hira",
+          "explanation": "The first revelation came to Prophet Muhammad (PBUH) in the Cave of Hira on Mount Noor.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 51,
+          "question": "How many parts (Juz) is the Quran divided into?",
+          "options": ["20", "25", "30", "40"],
+          "correctAnswer": "30",
+          "explanation": "The Quran is divided into 30 equal parts called Juz, facilitating recitation over a month.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 52,
+          "question": "Which Surah mentions the story of the People of the Cave?",
+          "options": ["Surah Al-Kahf", "Surah Maryam", "Surah Yusuf", "Surah Al-Ankabut"],
+          "correctAnswer": "Surah Al-Kahf",
+          "explanation": "Surah Al-Kahf (The Cave) narrates the story of the young believers who slept in a cave for years.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 53,
+          "question": "Which Surah is named after a woman?",
+          "options": ["Surah Fatima", "Surah Maryam", "Surah Aisha", "Surah Khadijah"],
+          "correctAnswer": "Surah Maryam",
+          "explanation": "Surah Maryam is named after Mary, the mother of Prophet Isa (Jesus).",
+          "difficulty": "easy"
+        },
+        {
+          "id": 54,
+          "question": "Which angel brought the revelation of the Quran to Prophet Muhammad?",
+          "options": ["Angel Mikail", "Angel Israfil", "Angel Jibreel", "Angel Azrael"],
+          "correctAnswer": "Angel Jibreel",
+          "explanation": "Angel Jibreel (Gabriel) was responsible for delivering Allah's revelations to the Prophet.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 55,
+          "question": "Over how many years was the Quran revealed?",
+          "options": ["10 years", "15 years", "23 years", "30 years"],
+          "correctAnswer": "23 years",
+          "explanation": "The Quran was revealed gradually over a period of approximately 23 years.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 56,
+          "question": "Which Surah mentions both the beginning and end of creation?",
+          "options": ["Surah Al-Fatiha", "Surah Yasin", "Surah Ar-Rahman", "Surah Al-Waqiah"],
+          "correctAnswer": "Surah Yasin",
+          "explanation": "Surah Yasin discusses the creation, resurrection, and the Day of Judgment comprehensively.",
+          "difficulty": "hard"
+        },
+        {
+          "id": 57,
+          "question": "What is the night called when the Quran was first revealed?",
+          "options": ["Laylat al-Miraj", "Laylat al-Qadr", "Laylat al-Bara'ah", "Laylat al-Isra"],
+          "correctAnswer": "Laylat al-Qadr",
+          "explanation": "Laylat al-Qadr (The Night of Power) is when the first verses of the Quran were revealed.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 58,
+          "question": "Which Surah tells the detailed story of Prophet Yusuf?",
+          "options": ["Surah Yusuf", "Surah Maryam", "Surah Ibrahim", "Surah Nuh"],
+          "correctAnswer": "Surah Yusuf",
+          "explanation": "Surah Yusuf is the only Surah that contains a complete story from beginning to end.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 59,
+          "question": "Which Surah is recommended to be recited on Fridays?",
+          "options": ["Surah Yasin", "Surah Al-Mulk", "Surah Al-Kahf", "Surah Ar-Rahman"],
+          "correctAnswer": "Surah Al-Kahf",
+          "explanation": "It is recommended to recite Surah Al-Kahf on Fridays, which brings light and blessings.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 60,
+          "question": "Which two Surahs are known as 'Al-Mu'awwidhatayn' (The Two Protectors)?",
+          "options": ["Al-Fatiha and Al-Ikhlas", "Al-Falaq and An-Nas", "Al-Kawthar and Al-Asr", "Al-Fil and Quraish"],
+          "correctAnswer": "Al-Falaq and An-Nas",
+          "explanation": "Surah Al-Falaq and Surah An-Nas are called the protective Surahs, seeking refuge in Allah from evil.",
+          "difficulty": "medium"
+        }
+      ]
+    }
+]}

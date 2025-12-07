@@ -1,4 +1,4 @@
-# KnowDeen – Development Workflow & Repo Guide
+# Islamic-Knowledge-Quiz-App – Development Workflow & Repo Guide
 
 This document outlines the development layout, branching workflow, and best practices for collaborative work on the KnowDeen project.
 

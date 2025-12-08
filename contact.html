@@ -8,29 +8,30 @@
   <link rel="icon" href="./assets/proposed-logo.png">
   <title>Contact Us | KnowDeen</title>
 </head>
-<body class="font-ibm text-base">
+
+<body class="font-ibm text-(--main-text) bg-(--main-background) overflow-hidden cursor-[url('/assets/cursor_default.png'),auto]">
   <!-- Header & Navbar -->
-  <nav id="main-nav" class="bg-slate-100 flex justify-between items-center">
+  <nav id="main-nav" class="flex justify-between items-center border-b-2 border-(--main-primary)">
     <div id="header-container">
       <h1>
         <a href="/index.html">
-          <img class="h-52" src="/public/assets/proposed-logo.png" alt="KnowDeen Logo">
+          <img class="h-52" src="/assets/proposed-logo.png" alt="KnowDeen Logo">
         </a>
       </h1>
     </div>
     <!-- Navbar -->
-    <ul id="nav-links" class="text-xl px-12 flex space-x-6 font-medium">
-      <li class="group tracking-wider nav-link flex flex-col items-start">
+    <ul id="nav-links" class="px-12 flex space-x-6 font-medium">
+      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start ">
         <a href="/index.html" class="pb-1">Home</a>
-        <span class="block h-1 w-0 bg-[#ffce2f] transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wider nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
         <a href="/about.html" class="pb-1">About</a>
-        <span class="block h-1 w-0 bg-[#ffce2f] transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wider nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
         <a href="/contact.html" class="pb-1">Contact</a>
-        <span class="block h-1 w-full bg-[#ffce2f] transition-all duration-300"></span>
+        <span class="block h-1 w-full bg-(--main-primary) transition-all duration-300"></span>
       </li>
     </ul>
   </nav>

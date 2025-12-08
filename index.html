@@ -9,32 +9,49 @@
   <title>KnowDeen | Your Best Islamic Quiz App</title>
 </head>
 
-<body class="font-ibm text-base">
+<body class="font-ibm text-(--main-text) bg-(--main-background) overflow-hidden cursor-[url('/assets/cursor_default.png'),auto]">
   <!-- Header & Navbar -->
-  <nav id="main-nav" class="bg-slate-100 flex justify-between items-center">
+  <nav id="main-nav" class="flex justify-between items-center border-b-2 border-(--main-primary)">
     <div id="header-container">
       <h1>
         <a href="/index.html">
-          <img class="h-52" src="/public/assets/proposed-logo.png" alt="KnowDeen Logo">
+          <img class="h-52" src="/assets/proposed-logo.png" alt="KnowDeen Logo">
         </a>
       </h1>
     </div>
     <!-- Navbar -->
-    <ul id="nav-links" class="text-xl px-12 flex space-x-6 font-medium">
-      <li class="group tracking-wider nav-link flex flex-col items-start">
+    <ul id="nav-links" class="px-12 flex space-x-6 font-medium">
+      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start ">
         <a href="/index.html" class="pb-1">Home</a>
-        <span class="block h-1 w-full bg-[#ffce2f] transition-all duration-300"></span>
+        <span class="block h-1 w-full bg-(--main-primary) transition-all duration-300"></span>
       </li>
-      <li class="group tracking-wider nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
         <a href="/about.html" class="pb-1">About</a>
-        <span class="block h-1 w-0 bg-[#ffce2f] transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wider nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
         <a href="/contact.html" class="pb-1">Contact</a>
-        <span class="block h-1 w-0 bg-[#ffce2f] transition-all duration-300 group-hover:w-full"></span>
+        <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
     </ul>
   </nav>
+  <!-- Main  -->
+  <main id="main" class="h-[calc(100vh-5rem)]">
+    <div class="container max-w-7xl mx-auto py-6 px-12 flex justify-center items-center h-1/2">
+      <div id="main-content" class="flex flex-col justify-center text-center mt-8">
+        <h1 class="text-(--text-main) text-7xl ">Welcome to KnowDeen</h1>
+        <p class="my-4 text-xl">KnowDeen is an interactive Islamic Quiz App designed to make learning engaging, fast,
+          and fun. Explore questions, test your knowledge, and grow your understanding — one quiz at a time.</p>
+        <div id="main-input" class="flex justify-center space-x-2">
+          <input type="text" name="name" id="name" placeholder="Enter your name"
+            class="w-[calc(100vh-5rem)] p-4 rounded-lg bg-(--main-background) font-medium text-xl text-(--text-main) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
+            <button 
+                class="text-xl bg-(--main-background) p-4 font-semibold rounded-md hover:bg-[#faf0e0]" type="button">Let's Start</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="./src/js/app.js"></script>
 </body>
 
 </html>

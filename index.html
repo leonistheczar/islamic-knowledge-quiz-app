@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="stylesheet" href="/src/css/main.css">
   <link rel="icon" href="./assets/proposed-logo.png">
-  <title>KnowDeen | Your Best Islamic Quiz App</title>
+  <title>ImanQuiz | Your Best Islamic Quiz App</title>
 </head>
 
 <body class="font-ibm text-(--main-text) bg-(--main-background) overflow-hidden cursor-[url('/assets/cursor_default.png'),auto]">
@@ -35,18 +36,63 @@
       </li>
     </ul>
   </nav>
+  <!-- User Intro Dialog -->
+  <div id="start-info" class="absolute top-0 left-0 z-50 w-full h-full flex justify-center items-center bg-black/40 p-4">
+    <div class="container h-fit bg-(--main-background) p-8 rounded-4xl">
+      <div id="dialog-box" class="relative p-2">
+        <a id="close-dialog" class="absolute top-0 right-0 z-50 group text-3xl hover:text-red-500 border-2 rounded-full"
+          href="#">
+          <i class="uil uil-times aspect-square"></i>
+        </a>
+        <h2 class= "my-2 text-center scale-110 font-semibold">📢 User Guide - ImanQuiz</h2>
+        <!-- Instructions -->
+        <div id="instructions" class="px-4">
+          <ol id="list" class="list-decimal text-xl space-y-2">
+            <li class="">You will be prompted to enter your name</li>
+            <li>Once your name is submitted (saved), you will asked to choose from the following 3 categories:
+              <ol>
+                <li class="">🕋 Pillars of Islam</li>
+                <li class="">⭐ Prophets in Islam</li>
+                <li class="">📖 Quran Knowledge</li>
+              </ol>
+            </li>
+            <li class="">After selecting your desired category, you will be given 2 minutes to complete your quiz</li>
+            <li class="">Each question carries 1 (point)</li>
+            <li class="">After completion of quiz, you will be represented with your final result</li>
+          </ol>
+        </div>
+        <h2 class="text-center  my-2">📝 Note</h2>
+        <div id="info" class="px-4">
+          <ol class="list-decimal text-xl space-y-2">
+            <li>A user can perform quiz in all categories, one after another</li>
+            <li>Final result will include total of all points from quiz</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Main  -->
   <main id="main" class="h-[calc(100vh-5rem)]">
-    <div class="container max-w-7xl mx-auto py-6 px-12 flex justify-center items-center h-1/2">
-      <div id="main-content" class="flex flex-col justify-center text-center mt-8">
-        <h1 class="text-(--text-main) text-7xl ">Welcome to KnowDeen</h1>
-        <p class="my-4 text-xl">KnowDeen is an interactive Islamic Quiz App designed to make learning engaging, fast,
-          and fun. Explore questions, test your knowledge, and grow your understanding — one quiz at a time.</p>
-        <div id="main-input" class="flex justify-center space-x-2">
-          <input type="text" name="name" id="name" placeholder="Enter your name"
-            class="w-[calc(100vh-5rem)] p-4 rounded-lg bg-(--main-background) font-medium text-xl text-(--text-main) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
-            <button 
-                class="text-xl bg-(--main-background) p-4 font-semibold rounded-md hover:bg-[#faf0e0]" type="button">Let's Start</button>
+    <div id="main-screen">
+      <!-- Home Screen -->
+      <div id="main-screen-container"
+        class="container max-w-7xl mx-auto py-6 px-12 flex justify-center items-center h-1/2">
+        <div id="main-content" class="flex flex-col justify-center text-center mt-8">
+          <h1 class="text-(--text-main) text-7xl ">Welcome to Iman Quiz</h1>
+          <p class="my-4 text-xl">ImanQuiz - is an interactive Islamic quiz app that turns learning into a focused and
+            engaging experience. Navigate structured questions, test your understanding, and build knowledge step by
+            step.</p>
+          <div id="main-input" class="flex justify-center space-x-2">
+            <input type="text" name="name" id="name" placeholder="Enter your name"
+              class="w-[calc(100vh-5rem)] p-4 rounded-lg bg-(--main-background) font-medium text-xl text-(--text-main) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
+            <button id="start-btn"
+              class="text-xl bg-(--main-background) p-4 font-semibold rounded-md hover:bg-[#faf0e0]" type="button">Let's
+              Start</button>
+          </div>
+        </div>
+        <!-- Quiz - Categories Showcase -->
+        <div id="categories-content">
+    
         </div>
       </div>
     </div>

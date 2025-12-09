@@ -17,11 +17,3 @@ export function pageLoadAnimation() {
     .from("#main-input input", { opacity: 0, x: -50 })
     .from("#main-input button", { opacity: 0, x: 50, delay: 0.1 });
 }
-// Optional: fade out before redirect
-export function redirectTo(url) {
-  gsap.to("body", {
-    opacity: 0,
-    duration: 0.5,
-    onComplete: () => (window.location.href = url),
-  });
-}

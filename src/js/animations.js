@@ -9,21 +9,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function pageLoadAnimation() {
   const tl = gsap.timeline({ 
-    defaults: { duration: 0.05, ease: "power2.out" },
+    defaults: { duration: 0.15, ease: "power2.out" },
     onComplete: () => gsap.set("#main-input input, #main-input button", { clearProps: "all" })
   });
 
 tl.from("#header-container, #nav-links li", { opacity: 0, y: -10, stagger: 0.2 })
-  .from("#main-content h1, #main-content p, #main-input input, #main-input button", { 
+  .from("#main-content h1, #main-content p", { 
     opacity: 0, 
     y: 20,
     stagger: 0.15 
-  });
+  })
+  .from("#main-input, #main-input button", { opacity: 0, x: 50 , stagger: 0.2});
 }
 // User Guide Dialog Animation
 
 // GSAP Open Dialog Animation
 export function dialogOpenAnimation() {
+  document.body.classList.add('overflow-hidden');
   const overlay = ui.dialogOverlay;
   const dialog = ui.dialogBox;
   const closeBtn = ui.closeDialogBtn;
@@ -54,6 +56,7 @@ export function dialogOpenAnimation() {
 }
 // GSAP Close Dialog Animation
 export function dialogCloseAnimation() {
+  document.body.classList.remove('overflow-hidden');
   const overlay = ui.dialogOverlay;
   const dialog = ui.dialogBox;
   const closeBtn = ui.closeDialogBtn;
@@ -83,8 +86,16 @@ export function dialogCloseAnimation() {
       },
       "-=0.15"
     );
-    // Reuse page load animation
-    pageLoadAnimation();
+}
+
+// Catgories Animation
+export function categoriesLoad(){
+  const tl = gsap.timeline({ 
+    defaults: { duration: 0.15, ease: "power2.out" },
+    onComplete: () => gsap.set("#categories-content", { clearProps: "all" })
+    });
+    tl.from("#categories-content", 
+              { opacity: 0, y: -80, duration: 0.4, ease: "power1.inOut" })
 }
 
 // Page Exit
@@ -92,7 +103,7 @@ export function pageExitAnimation(callback) {
   gsap.to("#main-content", {
     opacity: 0,
     y: -20,
-    duration: 0.2,
+    duration: 0.4,
     ease: "power1.inOut",
     onComplete: callback,
   });

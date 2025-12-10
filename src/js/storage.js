@@ -21,4 +21,13 @@ const getLocalStorageItem = () => {
     const userTheme = localStorage.getItem('theme');
     return{ userInfo, userTheme };
 }
-export { initLocalStorage, getLocalStorageItem };
+const getUser = () => {
+    return JSON.parse(localStorage.getItem('user'));
+}
+const updateUserName = (username) => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    user.name = username;
+    localStorage.setItem('user', JSON.stringify(user));
+    return user;
+}
+export { initLocalStorage, getLocalStorageItem, getUser, updateUserName };

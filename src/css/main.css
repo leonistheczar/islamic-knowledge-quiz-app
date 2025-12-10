@@ -23,6 +23,7 @@
     --main-text: #180f02;
     --main-background: #f6f3ee;
     --main-primary: #f4a22f;
+    --main-primary-5: #ffe1b7;
     --main-secondary: #10da7f;
     --main-accent: #28cbf0;
   }
@@ -77,9 +78,8 @@
   --dark-secondary: #22ef93;
   --dark-accent: #0fb2d7;
 }
-
 /* Custom Styles: Main Section Background */
-a:hover, button:hover, .nav-link:hover {
+a:hover, button:hover, .nav-link:hover, #category-item:hover {
   cursor: url('/assets/cursor_pointer.png'),pointer;
 }
 #main {

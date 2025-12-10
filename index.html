@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +9,7 @@
   <title>ImanQuiz | Your Best Islamic Quiz App</title>
 </head>
 
-<body class="font-ibm text-(--main-text) bg-(--main-background) overflow-hidden cursor-[url('/assets/cursor_default.png'),auto]">
+<body class="font-ibm text-(--main-text) bg-(--main-background) cursor-[url('/assets/cursor_default.png'),auto]">
   <!-- Header & Navbar -->
   <nav id="main-nav" class="flex justify-between items-center border-b-2 border-(--main-primary)">
     <div id="header-container">
@@ -37,7 +36,7 @@
     </ul>
   </nav>
   <!-- User Intro Dialog -->
-  <div id="start-info" class="absolute top-0 left-0 z-50 w-full h-full flex justify-center items-center bg-black/40 p-4">
+  <div id="start-info" class="absolute top-0 left-0 z-50 w-full h-screen flex justify-center items-center bg-black/40 p-4">
     <div class="container h-fit bg-(--main-background) p-8 rounded-4xl">
       <div id="dialog-box" class="relative p-2">
         <a id="close-dialog" class="absolute top-0 right-0 z-50 group text-3xl hover:text-red-500 border-2 rounded-full"
@@ -83,7 +82,7 @@
             engaging experience. Navigate structured questions, test your understanding, and build knowledge step by
             step.</p>
           <div id="main-input" class="flex justify-center space-x-2">
-            <input type="text" name="name" id="name" placeholder="Enter your name"
+            <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name"
               class="w-[calc(100vh-5rem)] p-4 rounded-lg bg-(--main-background) font-medium text-xl text-(--text-main) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
             <button id="start-btn"
               class="text-xl bg-(--main-background) p-4 font-semibold rounded-md hover:bg-[#faf0e0]" type="button">Let's

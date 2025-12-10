@@ -1,56 +1,96 @@
 //  LocalStorage Import
-import { initLocalStorage, getLocalStorageItem }  from "./storage.js";
+import {
+  initLocalStorage,
+  getLocalStorageItem,
+  getUser,
+  updateUserName,
+} from "./storage.js";
 // Animations Import
-import { pageLoadAnimation, pageExitAnimation, dialogOpenAnimation, dialogCloseAnimation } from "./animations.js";
-import { initAPI }  from "./api.js";
-let apiData = await initAPI();
+import {
+  pageLoadAnimation,
+  pageExitAnimation,
+  dialogOpenAnimation,
+  dialogCloseAnimation,
+  categoriesLoad,
+} from "./animations.js";
+import { initAPI } from "./api.js";
+let apiData;
 // UI Import as variables
 import UI from "./ui.js";
 const ui = UI().UISelectors();
+
+window.history.scrollRestoration = "manual";
 // Init Event Listener
 document.addEventListener("DOMContentLoaded", async () => {
-    // Init localStorage
-    initLocalStorage();
-    // Animation
-    dialogOpenAnimation();
-    // Get API DATA
-    console.log(apiData);
+   window.scrollTo(0, 0); 
+  // Init localStorage
+  initLocalStorage();
+  // Animation
+  dialogOpenAnimation();
+  // Get API DATA
+  try {
+    apiData = await initAPI();
+  } catch (error) {
+    console.error("Error fetching API data:", error);
+  }
+  console.log("API Data:", apiData);
 });
+
 // Dialog Close Event Listener
 ui.closeDialogBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    dialogCloseAnimation();
-})
+  e.preventDefault();
+  dialogCloseAnimation();
+  pageLoadAnimation();
+});
+
 // Start Button Event Listener
 ui.startBtn.addEventListener("click", () => {
-    if(ui.nameInput.value.trim() === "") {
-        alert("Please enter your name to start the quiz.");
-        return;
-    }
-    let user = JSON.parse(localStorage.getItem("user")) || {}; 
-    user.name = ui.nameInput.value.trim();  
-    localStorage.setItem("user", JSON.stringify(user));
-    pageExitAnimation(() => {
-        ui.mainContent.classList.add("hidden");
+  if (ui.nameInput.value.trim() === "") {
+    alert("Please enter your name to start the quiz.");
+    return;
+  }
+  const user = updateUserName(ui.nameInput.value.trim());
 
-        // DOM Update regarding quiz categories
-        const userName = user.name; 
-        let html = `
-            <div id="main-content" class="bg-(--main-background) w-fit px-12 py-6 flex flex-col justify-center text-center mt-8">
-                <h1 class="text-5xl" style="color: var(--text-main)">Welcome, ${userName}</h1>
-                <p class="my-4 text-xl text-left">Select any category from the following 3 categories:</p>
-                <h2 class="text-3xl font-bold my-4">Categories</h2>
-                <ul class="space-y-2 flex flex-col items-start gap-y-4">
-                    <li class="w-full text-left px-4 py-2 text-2xl border-2 rounded-lg border-(--main-primary)"><a class="w-full" href="#">🕋 ${apiData.categories[0].name}</a></li>
-                    <li class="w-full text-left px-4 py-2 text-2xl border-2 rounded-lg border-(--main-primary)"><a class="w-full" href="#">⭐ ${apiData.categories[1].name}</a></li>
-                    <li class="w-full text-left px-4 py-2 text-2xl border-2 rounded-lg border-(--main-primary)"><a class="w-full" href="#">📖 ${apiData.categories[2].name}</a></li>
-                </ul>
-            <button id="quiz-start-btn"
-              class="text-xl bg-(--main-accent) mt-4 p-4 font-semibold rounded-md hover:bg-[#faf0e0]" type="button">Let's
-              Start Quiz</button>
-            </div>
+  pageExitAnimation(() => {
+    ui.mainContent.classList.add("hidden");
+
+    // DOM Update regarding quiz categories
+    categoriesLoad();
+    const userName = user.name;
+    let html = `
+<div id="main-content" class="bg-(--main-primary-5) w-full rounded-xl shadow-lg px-12 py-8 flex flex-col justify-center text-center">
+        <h1 class="text-5xl font-bold mb-6" style="color: var(--text-main)">Welcome, ${userName}!</h1>
+        <p class="mb-6 text-xl text-left" style="color: var(--text-main)">Select a category to begin your journey:</p>
+        <h2 class="text-3xl font-bold mb-6" style="color: var(--text-main)">Categories</h2>
+        <ul class="space-y-4 flex flex-col items-stretch mb-8">
+            <li id="category-item" class="category-item w-full text-left px-6 py-4 text-2xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="0">
+                <a class="flex items-center gap-3 w-full no-underline" href="#" style="color: var(--text-main)">
+                    <span class="text-3xl">🕋</span>
+                    <span>${apiData.categories[0].name}</span>
+                </a>
+            </li>
+            <li id="category-item" class="category-item w-full text-left px-6 py-4 text-2xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="1">
+                <a class="flex items-center gap-3 w-full no-underline" href="#" style="color: var(--text-main)">
+                    <span class="text-3xl">⭐</span>
+                    <span>${apiData.categories[1].name}</span>
+                </a>
+            </li>
+            <li id="category-item" class="category-item w-full text-left px-6 py-4 text-2xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="2">
+                <a class="flex items-center gap-3 w-full no-underline" href="#" style="color: var(--text-main)">
+                    <span class="text-3xl">📖</span>
+                    <span>${apiData.categories[2].name}</span>
+                </a>
+            </li>
+        </ul>
+        
+        <a id="quiz-start-btn"
+            href="quiz.html" 
+            class="text-xl bg-(--main-accent) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95" 
+            type="button">
+            Let's Start Quiz 🚀
+        </a>
+    </div>
         `;
-        ui.categoriesContent.innerHTML = html;
-
-    });
+    ui.categoriesContent.innerHTML = html;
+  });
 });

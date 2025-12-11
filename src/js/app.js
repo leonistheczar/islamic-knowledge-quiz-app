@@ -4,6 +4,7 @@ import {
   getLocalStorageItem,
   getUser,
   updateUserName,
+  updateCategory
 } from "./storage.js";
 // Animations Import
 import {
@@ -45,52 +46,66 @@ ui.closeDialogBtn.addEventListener("click", (e) => {
 
 // Start Button Event Listener
 ui.startBtn.addEventListener("click", () => {
-  if (ui.nameInput.value.trim() === "") {
+  const enteredName = ui.nameInput.value.toUpperCase().trim();
+  const nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/
+  if (enteredName === "" && !nameRegex.test(enteredName)) {
     alert("Please enter your name to start the quiz.");
     return;
   }
-  const user = updateUserName(ui.nameInput.value.trim());
+  updateUserName(enteredName);
 
   pageExitAnimation(() => {
-    ui.mainContent.classList.add("hidden");
-
+    ui.mainScreen.classList.add("hidden");
+    ui.categoriesScreen.classList.remove("hidden");
+    ui.logUserName.textContent = enteredName;
     // DOM Update regarding quiz categories
     categoriesLoad();
-    const userName = user.name;
     let html = `
-<div id="main-content" class="bg-(--main-primary-5) w-full rounded-xl shadow-lg px-12 py-8 flex flex-col justify-center text-center">
-        <h1 class="text-5xl font-bold mb-6" style="color: var(--text-main)">Welcome, ${userName}!</h1>
-        <p class="mb-6 text-xl text-left" style="color: var(--text-main)">Select a category to begin your journey:</p>
-        <h2 class="text-3xl font-bold mb-6" style="color: var(--text-main)">Categories</h2>
-        <ul class="space-y-4 flex flex-col items-stretch mb-8">
-            <li id="category-item" class="category-item w-full text-left px-6 py-4 text-2xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="0">
-                <a class="flex items-center gap-3 w-full no-underline" href="#" style="color: var(--text-main)">
-                    <span class="text-3xl">🕋</span>
-                    <span>${apiData.categories[0].name}</span>
+            <li id="category-1" class="category-item w-full text-left text-2xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="0">
+                <a class="flex items-center justify-between gap-3 w-full px-6 py-4 no-underline" href="#" style="color: var(--text-main)">
+                    <span class="text-2xl">🕋 ${apiData.categories[0].name}</span>
+                    <i class="hidden uil uil-check-circle text-(--main-secondary) text-4xl"></i>
                 </a>
             </li>
-            <li id="category-item" class="category-item w-full text-left px-6 py-4 text-2xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="1">
-                <a class="flex items-center gap-3 w-full no-underline" href="#" style="color: var(--text-main)">
-                    <span class="text-3xl">⭐</span>
-                    <span>${apiData.categories[1].name}</span>
+            <li id="category-2" class="category-item w-full text-left text-2xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="1">
+                <a class="flex items-center justify-between gap-3 w-full px-6 py-4 no-underline" href="#" style="color: var(--text-main)">
+                    <span class="text-2xl">⭐ ${apiData.categories[1].name}</span>
+                    <i class="hidden uil uil-check-circle text-(--main-secondary) text-4xl"></i>
                 </a>
             </li>
-            <li id="category-item" class="category-item w-full text-left px-6 py-4 text-2xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="2">
-                <a class="flex items-center gap-3 w-full no-underline" href="#" style="color: var(--text-main)">
-                    <span class="text-3xl">📖</span>
-                    <span>${apiData.categories[2].name}</span>
+            <li id="category-3" class="category-item w-full text-left text-2xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="2">
+                <a class="flex items-center justify-between gap-3 w-full px-6 py-4 no-underline" href="#" style="color: var(--text-main)">
+                    <span class="text-2xl">📖 ${apiData.categories[2].name}</span>
+                    <i class="hidden uil uil-check-circle text-(--main-secondary) text-4xl"></i>
                 </a>
             </li>
-        </ul>
-        
-        <a id="quiz-start-btn"
-            href="quiz.html" 
-            class="text-xl bg-(--main-accent) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95" 
-            type="button">
-            Let's Start Quiz 🚀
-        </a>
-    </div>
         `;
-    ui.categoriesContent.innerHTML = html;
+    ui.categoriesList.innerHTML = html;
   });
+});
+  // Handle category selection
+  let selectedCategory = null;
+  let previousAnchor = null;
+  
+  ui.categoriesList.addEventListener("click", (e) => {
+  const anchor = e.target.closest('a');
+  console.log(anchor);
+  if(anchor) {
+    // Get the "li"
+    const categoryItem = anchor.parentElement.getAttribute("data-category");
+    console.log(categoryItem);
+    if(categoryItem !== null) {
+      if(previousAnchor && previousAnchor !== anchor) {
+        previousAnchor.lastElementChild.classList.add("hidden");
+      }
+      anchor.lastElementChild.classList.toggle("hidden");
+      previousAnchor = anchor;
+    }
+    selectedCategory = categoryItem;
+  }
+  return false;
+});
+ui.quizStart.addEventListener("click", (e) => {
+  const categoryAPI = apiData.categories[selectedCategory].name;
+  updateCategory(categoryAPI);
 });

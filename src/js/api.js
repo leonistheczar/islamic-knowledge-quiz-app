@@ -15,7 +15,6 @@ const initAPI = async () => {
     let apiData = null;
     try {
         apiData = await fetchAPI();
-        console.log("Data loaded:", apiData);
         return apiData;
     } catch (error) {
         console.error(`Error: ${error}`);

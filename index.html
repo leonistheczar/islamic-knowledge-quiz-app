@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,14 +37,15 @@
     </ul>
   </nav>
   <!-- User Intro Dialog -->
-  <div id="start-info" class="absolute top-0 left-0 z-50 w-full h-screen flex justify-center items-center bg-black/40 p-4">
+  <div id="start-info"
+    class="absolute top-0 left-0 z-50 w-full h-screen flex justify-center items-center bg-black/40 p-4">
     <div class="container h-fit bg-(--main-background) p-8 rounded-4xl">
       <div id="dialog-box" class="relative p-2">
         <a id="close-dialog" class="absolute top-0 right-0 z-50 group text-3xl hover:text-red-500 border-2 rounded-full"
           href="#">
           <i class="uil uil-times aspect-square"></i>
         </a>
-        <h2 class= "my-2 text-center scale-110 font-semibold">📢 User Guide - ImanQuiz</h2>
+        <h2 class="my-2 text-center scale-110 font-semibold">📢 User Guide - ImanQuiz</h2>
         <!-- Instructions -->
         <div id="instructions" class="px-4">
           <ol id="list" class="list-decimal text-xl space-y-2">
@@ -72,7 +74,7 @@
   </div>
   <!-- Main  -->
   <main id="main" class="h-[calc(100vh-5rem)]">
-    <div id="main-screen">
+    <section id="main-screen">
       <!-- Home Screen -->
       <div id="main-screen-container"
         class="container max-w-7xl mx-auto py-6 px-12 flex justify-center items-center h-1/2">
@@ -89,12 +91,28 @@
               Start</button>
           </div>
         </div>
-        <!-- Quiz - Categories Showcase -->
-        <div id="categories-content">
-    
+      </div>
+    </section>
+    <!-- Quiz - Categories Showcase -->
+    <section id="categories-screen" class="hidden">
+      <div id="categories-screen-container"
+        class="container max-w-7xl mx-auto py-6 px-12 flex justify-center items-center h-1/2">
+        <div id="categories-content"
+          class="bg-(--main-primary-5) w-full rounded-xl shadow-lg px-12 py-8 flex flex-col justify-center text-center">
+          <h1 id="categories-tag" class="text-5xl font-bold mb-6" style="color: var(--text-main)">Welcome, <span id="user-name"></span></h1>
+          <p class="mb-6 text-xl text-left" style="color: var(--text-main)">Select a category to begin your journey:</p>
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--text-main)">Categories</h2>
+          <ul id="categories-list" class="space-y-4 flex flex-col items-stretch mb-8">
+            <!-- Categories will be dynamically inserted here -->
+          </ul>
+          <a id="quiz-start-btn" href="quiz.html"
+            class="text-xl bg-(--main-accent) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+            type="button">
+            Let's Start Quiz 🚀
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   </main>
   <script type="module" src="./src/js/app.js"></script>
 </body>

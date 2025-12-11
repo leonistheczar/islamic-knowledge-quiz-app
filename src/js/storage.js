@@ -30,4 +30,11 @@ const updateUserName = (username) => {
     localStorage.setItem('user', JSON.stringify(user));
     return user;
 }
-export { initLocalStorage, getLocalStorageItem, getUser, updateUserName };
+const updateCategory = (category) => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if(!user) return null;
+    user.categories.name = category;
+    localStorage.setItem('user', JSON.stringify(user));
+    return user;
+}
+export { initLocalStorage, getLocalStorageItem, getUser, updateUserName, updateCategory };

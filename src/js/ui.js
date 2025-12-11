@@ -11,8 +11,13 @@ const UI = () => {
             dialogOverlay: document.querySelector("#start-info"),
             dialogBox: document.querySelector("#dialog-box"),
             closeDialogBtn: document.querySelector("#close-dialog"),
-            // Categories Screen
+            // Categories 
+            categoriesScreen: document.querySelector("#categories-screen"),
+            categoriesScreenContainer: document.querySelector("#categories-screen-container"),
             categoriesContent: document.querySelector("#categories-content"),
+            categoriesList: document.querySelector("#categories-list"),
+            quizStart: document.querySelector("#quiz-start-btn"),
+            logUserName: document.querySelector("#user-name"),
         }
     }
     return{

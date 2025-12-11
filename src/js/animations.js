@@ -92,9 +92,9 @@ export function dialogCloseAnimation() {
 export function categoriesLoad(){
   const tl = gsap.timeline({ 
     defaults: { duration: 0.15, ease: "power2.out" },
-    onComplete: () => gsap.set("#categories-content", { clearProps: "all" })
+    onComplete: () => gsap.set("#categories-screen", { clearProps: "all" })
     });
-    tl.from("#categories-content", 
+    tl.from("#categories-screen", 
               { opacity: 0, y: -80, duration: 0.4, ease: "power1.inOut" })
 }
 

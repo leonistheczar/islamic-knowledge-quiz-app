@@ -82,6 +82,19 @@
 a:hover, button:hover, .nav-link:hover, #category-item:hover {
   cursor: url('/assets/cursor_pointer.png'),pointer;
 }
-#main {
+#main, #quiz-screen {
   background: url('/assets/Wave.svg') no-repeat center center / cover;
+}
+
+/* Quiz Timer Custom Animation */
+.scale-pulse{
+  animation: scalePulse .5s ease-in-out infinite;
+}
+@keyframes scalePulse{
+   0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }

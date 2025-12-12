@@ -1,11 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImanQuiz | </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="/src/css/main.css">
+    <link rel="icon" href="./assets/proposed-logo.png">
+    <title> Quiz | ImanQuiz </title>
 </head>
-<body>
-    <h1>Test</h1>
+
+<body class="font-ibm text-(--main-text) bg-(--main-background) cursor-[url('/assets/cursor_default.png'),auto]">
+    <!-- Header & Navbar -->
+    <nav id="main-nav" class="flex justify-between items-center border-b-2 border-(--main-primary)">
+        <div id="header-container">
+            <h1>
+                <a href="/index.html">
+                    <img class="h-52" src="/assets/proposed-logo.png" alt="KnowDeen Logo">
+                </a>
+            </h1>
+        </div>
+        <!-- Navbar -->
+        <ul id="nav-links" class="px-12 flex space-x-6 font-medium">
+            <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start ">
+                <a href="/index.html" class="pb-1">Home</a>
+                <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
+            </li>
+            <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
+                <a href="/about.html" class="pb-1">About</a>
+                <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
+            </li>
+            <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
+                <a href="/contact.html" class="pb-1">Contact</a>
+                <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main  -->
+    <main id="quiz-screen" class="h-[calc(100vh-5rem)] relative">
+        <div id="quiz-container" class="container max-w-9xl flex flex-col justify-center items-center mx-auto mt-4 p-8">
+            <section id="quiz-intro"
+                class=" bg-(--main-accent) text-(--main-background)flex flex-col justify-center items-center text-center p-12 rounded-xl space-y-6">
+                <h1 class="text-6xl">Quiz Revamp</h1>
+                <p class="text-2xl">Before you start, reviewing your quiz preferences</p>
+                <ul id="quiz-notes" class="flex flex-col text-xl text-left list-decimal gap-y-4">
+                    <li>You have choosen <span class="font-semibold" id="category"></span> for the quiz</li>
+                    <li>You have only 2 minutes (120 seconds) to complete your quiz</li>
+                    <li>You will be given total 20 MCQs for the quiz</li>
+                </ul>
+                <h3>Best of Luck!!</h3>
+                <button id="quiz-btn"
+                    class="text-xl bg-(--main-secondary) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                    type="button">
+                    Let's Start Quiz 🚀
+                </button>
+            </section>
+            <section id="quiz-card" class="hidden self-stretch mt-12">
+                <div id="quiz-timer" class="absolute top-0 right-4 bg-(--main-primary-5) font-semibold px-4 py-2 text-4xl my-2 rounded-xl transition-all">02:00</div>
+                 <div id="quiz" class="bg-(--main-primary-5) rounded-xl px-12 py-3">
+                    <h2 class="text-center py-4"><span id="quiz-category" class=""></span></h2>
+                    <div id="quiz-content">
+                        <h3 class="mb-2"><span id="quiz-question" class=""></span></h3>
+                        <ul id="quiz-choices">
+                            <!-- Choices will be dynamically inserted here -->
+                        </ul>
+                        <button id="next-choice" class="text-xl bg-(--main-secondary) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95" type="button">Next <i class="uil uil-arrow-right"></i></button>
+                    </div>
+                 </div>
+            </section>
+        </div>
+
+    </main>
+    <script type="module" src="./src/js/app.js"></script>
 </body>
+
 </html>

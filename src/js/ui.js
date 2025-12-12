@@ -18,6 +18,19 @@ const UI = () => {
             categoriesList: document.querySelector("#categories-list"),
             quizStart: document.querySelector("#quiz-start-btn"),
             logUserName: document.querySelector("#user-name"),
+            // Quiz Screen
+            quizIntro: document.querySelector("#quiz-intro"),
+            quizCard: document.querySelector("#quiz-card"),
+            quizBtn: document.querySelector("#quiz-btn"),
+            quizTimer: document.querySelector("#quiz-timer"),
+            quiz: document.querySelector("#quiz"),
+            quizCategory: document.querySelector("#quiz-category"),
+            quizNoticeCategory: document.querySelector("#category"),
+            quizContent: document.querySelector("#quiz-content"),
+            quizQuestion: document.querySelector("#quiz-question"),
+            quizChoiceList: document.querySelector("#quiz-choices"),
+            quizChoiceNext: document.querySelector("#next-choice"),
+
         }
     }
     return{

@@ -9,15 +9,19 @@ const initLocalStorage = () => {
     if (!localStorage.getItem('user')) {
         localStorage.setItem('user', JSON.stringify({
             name: '',
-            categories: {},
+            categories: {
+                selectedCategory: null,
+                selectedCategoryID: null,
+            },
             currentScore: 0,
             totalScore: 0,
-            highestScore: 0
+            highestScore: 0,
         }));
     }
 }
-const getLocalStorageItem = () => {
-    const userInfo = JSON.parse(localStorage.getItem('user'));
+const getLocalStorageItem = (key) => {
+    if(key === "user") return getUser();
+    const userInfo = getUser();
     const userTheme = localStorage.getItem('theme');
     return{ userInfo, userTheme };
 }
@@ -25,15 +29,25 @@ const getUser = () => {
     return JSON.parse(localStorage.getItem('user'));
 }
 const updateUserName = (username) => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = getUser() || {
+            name: '',
+            categories: {
+                selectedCategory: null,
+                selectedCategoryID: null,
+            },
+            currentScore: 0,
+            totalScore: 0,
+            highestScore: 0,
+        };
     user.name = username;
     localStorage.setItem('user', JSON.stringify(user));
     return user;
 }
-const updateCategory = (category) => {
-    const user = JSON.parse(localStorage.getItem('user'));
+const updateCategory = (category, categoryID) => {
+    const user = getUser();
     if(!user) return null;
-    user.categories.name = category;
+    user.categories.selectedCategory = category;
+    user.categories.selectedCategoryID = categoryID;
     localStorage.setItem('user', JSON.stringify(user));
     return user;
 }

@@ -8,6 +8,7 @@ export default defineConfig({
         minify: 'esbuild'
     },
     server: {
+        port: 5170,
         open: true,
         host: true,
     }

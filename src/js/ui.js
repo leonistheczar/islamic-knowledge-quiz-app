@@ -29,8 +29,24 @@ const UI = () => {
             quizContent: document.querySelector("#quiz-content"),
             quizQuestion: document.querySelector("#quiz-question"),
             quizChoiceList: document.querySelector("#quiz-choices"),
-            quizChoiceNext: document.querySelector("#next-choice"),
-
+            quizQuestionBtn: document.querySelector("#quiz-question-btn"),
+            // Quiz Results Section
+            quizResults: document.querySelector("#quiz-results"),
+            quizResultScore: document.querySelector("#quiz-result-score"),
+            quizHighestScore: document.querySelector("#quiz-highest-score"),
+            quizResultPercentage: document.querySelector("#quiz-result-percentage"),
+            quizResultMessage: document.querySelector("#quiz-result-message"),
+            quizResultEmoji: document.querySelector("#quiz-result-emoji"),
+            quizResultCategory: document.querySelector("#quiz-result-category"),
+            // Quiz Answers/Breakdown Section
+            quizAnswersSection: document.querySelector("#quiz-answers"),
+            answerCategory: document.querySelector("#answer-category"),
+            quizAnswerBreakdown: document.querySelector("#quiz-answer-breakdown"),
+            // Action Buttons
+            quizResultBtn: document.querySelector("#quiz-result-btn"),
+            retakeQuizBtn: document.querySelector("#retake-quiz-btn"),
+            backToCategoriesBtn: document.querySelector("#back-to-categories-btn"),
+            homeBtn: document.querySelector("#home-btn")
         }
     }
     return{

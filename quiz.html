@@ -37,40 +37,114 @@
         </ul>
     </nav>
     <!-- Main  -->
-    <main id="quiz-screen" class="h-[calc(100vh-5rem)] relative">
-        <div id="quiz-container" class="container max-w-9xl flex flex-col justify-center items-center mx-auto mt-4 p-8">
-            <section id="quiz-intro"
-                class=" bg-(--main-accent) text-(--main-background)flex flex-col justify-center items-center text-center p-12 rounded-xl space-y-6">
-                <h1 class="text-6xl">Quiz Revamp</h1>
-                <p class="text-2xl">Before you start, reviewing your quiz preferences</p>
-                <ul id="quiz-notes" class="flex flex-col text-xl text-left list-decimal gap-y-4">
-                    <li>You have choosen <span class="font-semibold" id="category"></span> for the quiz</li>
-                    <li>You have only 2 minutes (120 seconds) to complete your quiz</li>
-                    <li>You will be given total 20 MCQs for the quiz</li>
-                </ul>
-                <h3>Best of Luck!!</h3>
-                <button id="quiz-btn"
-                    class="text-xl bg-(--main-secondary) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
-                    type="button">
-                    Let's Start Quiz 🚀
-                </button>
-            </section>
-            <section id="quiz-card" class="hidden self-stretch mt-12">
-                <div id="quiz-timer" class="absolute top-0 right-4 bg-(--main-primary-5) font-semibold px-4 py-2 text-4xl my-2 rounded-xl transition-all">02:00</div>
-                 <div id="quiz" class="bg-(--main-primary-5) rounded-xl px-12 py-3">
-                    <h2 class="text-center py-4"><span id="quiz-category" class=""></span></h2>
-                    <div id="quiz-content">
-                        <h3 class="mb-2"><span id="quiz-question" class=""></span></h3>
-                        <ul id="quiz-choices">
-                            <!-- Choices will be dynamically inserted here -->
-                        </ul>
-                        <button id="next-choice" class="text-xl bg-(--main-secondary) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95" type="button">Next <i class="uil uil-arrow-right"></i></button>
+<main id="quiz-screen" class="h-fit relative bg-[#fcedd5]">
+    <div id="quiz-container" class="container max-w-9xl flex flex-col justify-center items-center mx-auto p-8">
+        <!-- Quiz Intro Section -->
+        <section id="quiz-intro"
+            class="w-full bg-(--main-accent)/60 text-(--main-text) flex flex-col justify-center items-center text-center p-12 rounded-xl space-y-6">
+            <h1 class="text-6xl">Quiz Revamp</h1>
+            <p class="text-xl">Before you start, review your quiz preferences</p>
+            <ul id="quiz-notes" class="flex flex-col text-xl text-left list-decimal gap-y-4">
+                <li>You have chosen <span class="font-semibold" id="category"></span> for the quiz</li>
+                <li>You have only 2 minutes (120 seconds) to complete your quiz</li>
+                <li>Each question carries 1 point(s)</li>
+                <li>You will be given total 20 MCQs for the quiz</li>
+            </ul>
+            <h3>Best of Luck!!</h3>
+            <button id="quiz-btn"
+                class="text-xl bg-(--main-secondary) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                type="button">
+                Let's Start Quiz 🚀
+            </button>
+        </section>
+        
+        <!-- Quiz Card Section (Questions) -->
+        <section id="quiz-card" class="hidden self-stretch mt-12">
+            <div id="quiz-timer" class="absolute top-0 right-4 bg-(--main-accent) font-semibold px-4 py-2 text-4xl my-2 rounded-xl transition-all">02:00</div>
+            <div id="quiz" class="bg-(--main-primary-5) rounded-xl px-12 py-3">
+                <h2 class="text-center py-4"><span id="quiz-category" class=""></span></h2>
+                <div id="quiz-content" class="flex flex-col">
+                    <h3 class="mb-2"><span id="quiz-question" class=""></span></h3>
+                    <ul id="quiz-choices">
+                        <!-- Choices will be dynamically inserted here -->
+                    </ul>
+                    <div class="flex justify-end gap-x-2">
+                        <button id="quiz-question-btn" class="self-end text-xl bg-(--main-secondary) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95" type="button">Next <i class="uil uil-arrow-right"></i></button>
                     </div>
-                 </div>
-            </section>
-        </div>
-
-    </main>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quiz Results Section -->
+        <section id="quiz-results" class="hidden w-full mt-12">
+            <div class="bg-(--main-secondary)/20 rounded-xl p-8">
+                <!-- Results Header -->
+                <div class="results-header text-center mb-8">
+                    <h1 class="text-5xl font-bold mb-4">Quiz Completed! 🎉</h1>
+                    <div class="result-emoji text-7xl mb-4" id="quiz-result-emoji">🎉</div>
+                    <p class="text-2xl font-semibold mb-2">
+                        Category: <span id="quiz-result-category" class="text-(--main-accent)"></span>
+                    </p>
+                    <div class="score-display my-6 p-6 bg-(--main-background) rounded-lg inline-block">
+                        <div class="flex items-center gap-6">
+                            <div class="text-center">
+                                <p class="text-sm text-gray-500 mb-1">Your Score</p>
+                                <span class="text-6xl font-bold text-(--main-secondary)" id="quiz-result-score">0/0</span>
+                            </div>
+                            <div class="h-16 w-px bg-gray-300"></div>
+                            <div class="text-center">
+                                <p class="text-sm text-gray-500 mb-1">Percentage</p>
+                                <span class="text-5xl font-bold text-(--main-accent)" id="quiz-result-percentage">0%</span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm text-gray-500 mb-1">Highest Score: </p>
+                                <span class="text-6xl font-bold text-[#ffbe5d]" id="quiz-highest-score">0/0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-2xl mt-4 font-medium" id="quiz-result-message"></p>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="flex gap-4 justify-center mb-8">
+                    <button type="button" id="quiz-result-btn" 
+                        class="group text-xl bg-(--main-secondary) text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95">
+                        View Detailed Results <i class="uil uil-arrow-down group-hover:translate-y-1 inline-block transition-transform"></i>
+                    </button>
+                    <button type="button" id="retake-quiz-btn" 
+                        class="text-xl bg-(--main-accent) text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95">
+                        Retake Quiz <i class="uil uil-redo"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quiz Answers/Breakdown Section -->
+        <section id="quiz-answers" class="hidden w-full mt-8">
+            <div class="bg-(--main-primary-5)/70 w-full flex flex-col justify-center rounded-xl p-8 shadow-lg">
+                <div class="text-center mb-8">
+                    <h1 class="text-5xl font-bold mb-4">Detailed Results</h1>
+                    <p class="text-lg text-gray-600">
+                        Review your answers for <span id="answer-category" class="font-semibold text-(--main-accent)"></span> category
+                    </p>
+                </div>
+                
+                <!-- Answer Breakdown Container -->
+                <div id="quiz-answer-breakdown" class="space-y-4">
+                    <!-- Individual question results will be dynamically inserted here -->
+                </div>
+                
+                <!-- Bottom Actions -->
+                <div class="flex gap-4 justify-center mt-8 pt-6 border-t-2">
+                    <button type="button" id="home-btn" 
+                        class="text-xl bg-(--main-accent) font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95">
+                        <i class="uil uil-home"></i> Home
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
     <script type="module" src="./src/js/app.js"></script>
 </body>
 

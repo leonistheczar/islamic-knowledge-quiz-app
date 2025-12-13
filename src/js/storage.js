@@ -14,7 +14,7 @@ const initLocalStorage = () => {
                 selectedCategoryID: null,
             },
             currentScore: 0,
-            totalScore: 0,
+            totalScore: 20,
             highestScore: 0,
         }));
     }
@@ -51,4 +51,11 @@ const updateCategory = (category, categoryID) => {
     localStorage.setItem('user', JSON.stringify(user));
     return user;
 }
-export { initLocalStorage, getLocalStorageItem, getUser, updateUserName, updateCategory };
+const updateQuizScores = (currentScore) => {
+    const user = getUser();
+    if(!user) return null;
+    user.currentScore = currentScore;
+    if(currentScore >= user.highestScore) user.highestScore = currentScore;
+    localStorage.setItem('user', JSON.stringify(user));
+}
+export { initLocalStorage, getLocalStorageItem, getUser, updateUserName, updateCategory, updateQuizScores };

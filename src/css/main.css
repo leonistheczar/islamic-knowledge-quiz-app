@@ -82,7 +82,7 @@
 a:hover, button:hover, .nav-link:hover, #category-item:hover {
   cursor: url('/assets/cursor_pointer.png'),pointer;
 }
-#main, #quiz-screen {
+#main {
   background: url('/assets/Wave.svg') no-repeat center center / cover;
 }
 

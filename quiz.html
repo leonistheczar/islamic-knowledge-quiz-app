@@ -37,7 +37,8 @@
         </ul>
     </nav>
     <!-- Main  -->
-<main id="quiz-screen" class="h-fit relative bg-[#fcedd5]">
+    <main id="quiz-screen" class="h-fit relative bg-[#fcedd5]">
+    <div id="quiz-progress" class="opacity-0 w-full h-2 rounded-r-xl text-(--main-background) py-2 bg-(--main-accent) flex items-center justify-center"><span class="font-bold text-lg"></span></div>
     <div id="quiz-container" class="container max-w-9xl flex flex-col justify-center items-center mx-auto p-8">
         <!-- Quiz Intro Section -->
         <section id="quiz-intro"
@@ -60,7 +61,7 @@
         
         <!-- Quiz Card Section (Questions) -->
         <section id="quiz-card" class="hidden self-stretch mt-12">
-            <div id="quiz-timer" class="absolute top-0 right-4 bg-(--main-accent) font-semibold px-4 py-2 text-4xl my-2 rounded-xl transition-all">02:00</div>
+            <div id="quiz-timer" class="absolute top-4 right-4 flex w-fit bg-(--main-accent) font-semibold px-4 py-2 text-4xl my-2 rounded-xl transition-all">02:00</div>
             <div id="quiz" class="bg-(--main-primary-5) rounded-xl px-12 py-3">
                 <h2 class="text-center py-4"><span id="quiz-category" class=""></span></h2>
                 <div id="quiz-content" class="flex flex-col">
@@ -81,10 +82,12 @@
                 <!-- Results Header -->
                 <div class="results-header text-center mb-8">
                     <h1 class="text-5xl font-bold mb-4">Quiz Completed! 🎉</h1>
+                    <p id="progress-completed" class="mb-2 text-xl font-semibold text-(--main-background) bg-(--main-secondary) inline-block mx-auto px-6 py-2 rounded-xl"></p>
                     <div class="result-emoji text-7xl mb-4" id="quiz-result-emoji">🎉</div>
                     <p class="text-2xl font-semibold mb-2">
                         Category: <span id="quiz-result-category" class="text-(--main-accent)"></span>
                     </p>
+
                     <div class="score-display my-6 p-6 bg-(--main-background) rounded-lg inline-block">
                         <div class="flex items-center gap-6">
                             <div class="text-center">

@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/src/css/main.css">
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="icon" href="./assets/proposed-logo.png">
   <title>About Us | Your Best Islamic Quiz App</title>
 </head>
 
-<body class="font-ibm text-(--main-text) bg-(--main-background) overflow-hidden cursor-[url('/assets/cursor_default.png'),auto]">
+<body class="overflow-y-scroll font-ibm text-(--main-text) bg-(--main-background) cursor-[url('/assets/cursor_default.png'),auto]">
   <!-- Header & Navbar -->
   <nav id="main-nav" class="flex justify-between items-center border-b-2 border-(--main-primary)">
     <div id="header-container">
@@ -35,5 +35,58 @@
       </li>
     </ul>
   </nav>
+    <!-- About Us Page -->
+     <main id="about">
+       <div id="aboutPage" class="page active bg-(--main-primary-5)/40">
+           <div class="max-w-4xl mx-auto px-6 py-16">
+               <div class="text-center mb-12">
+                   <h2 class="text-6xl font-bold text-main mb-4">About ImanQuiz</h2>
+                   <p class="text-lg opacity-80">Strengthening faith through knowledge</p>
+               </div>
+               <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                   <p class="text-lg leading-relaxed mb-6">
+                       <span class="font-bold italic">ImanQuiz</span> is an interactive web application designed to help Muslims deepen their understanding of Islam through engaging quizzes and educational content. Our mission is to make Islamic learning accessible, enjoyable, and meaningful for everyone.
+                   </p>
+                   <p class="text-lg leading-relaxed">
+                       Whether you're looking to test your knowledge of the Quran, Prophets, or Pillars of Islam, ImanQuiz provides a platform for continuous learning and spiritual growth.
+                   </p>
+               </div>
+   
+               <div class="grid md:grid-cols-3 gap-6 mb-8">
+                   <div class="bg-white rounded-xl p-6 text-center shadow-md">
+                       <div class="w-16 h-16 bg-primary-5 rounded-full flex items-center justify-center mx-auto mb-4">
+                           <span class="text-3xl">📖</span>
+                       </div>
+                       <h3 class="text-xl font-semibold mb-2 text-main">Learn</h3>
+                       <p class="opacity-70">Expand your Islamic knowledge through interactive quizzes</p>
+                   </div>
+   
+                   <div class="bg-white rounded-xl p-6 text-center shadow-md">
+                       <div class="w-16 h-16 bg-primary-5 rounded-full flex items-center justify-center mx-auto mb-4">
+                           <span class="text-3xl">💚</span>
+                       </div>
+                       <h3 class="text-xl font-semibold mb-2 text-main">Grow</h3>
+                       <p class="opacity-70">Strengthen your Iman with daily practice</p>
+                   </div>
+   
+                   <div class="bg-white rounded-xl p-6 text-center shadow-md">
+                       <div class="w-16 h-16 bg-primary-5 rounded-full flex items-center justify-center mx-auto mb-4">
+                           <span class="text-3xl">👥</span>
+                       </div>
+                       <h3 class="text-xl font-semibold mb-2 text-main">Connect</h3>
+                       <p class="opacity-70">Join a community of learners worldwide</p>
+                   </div>
+               </div>
+   
+               <div class="bg-white rounded-2xl shadow-lg p-8">
+                   <h3 class="text-2xl font-bold text-main mb-4">Our Vision</h3>
+                   <p class="text-lg leading-relaxed opacity-80">
+                       To create a global platform where Muslims can enhance their Islamic knowledge in an engaging and modern way, fostering a deeper connection with their faith and building a stronger Muslim community.
+                   </p>
+               </div>
+           </div>
+       </div>
+     </main>
+    <script type="module" src="./src/js/app.js"></script>
 </body>
 </html>

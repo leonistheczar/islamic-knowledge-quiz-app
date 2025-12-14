@@ -98,3 +98,36 @@ a:hover, button:hover, .nav-link:hover, #category-item:hover {
     transform: scale(1.2);
   }
 }
+.category-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    var(--main-primary),
+    var(--main-accent)
+  );
+
+  /* WebKit browsers */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  /* Firefox */
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.category-item:hover::before,
+.category-item.active::before {
+  opacity: 1;
+}

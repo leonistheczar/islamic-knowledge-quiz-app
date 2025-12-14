@@ -30,6 +30,8 @@ const UI = () => {
             quizQuestion: document.querySelector("#quiz-question"),
             quizChoiceList: document.querySelector("#quiz-choices"),
             quizQuestionBtn: document.querySelector("#quiz-question-btn"),
+            quizProgress: document.querySelector("#quiz-progress"),
+            progressCompleted: document.querySelector("#progress-completed"),
             // Quiz Results Section
             quizResults: document.querySelector("#quiz-results"),
             quizResultScore: document.querySelector("#quiz-result-score"),

@@ -1,7 +1,6 @@
-//  LocalStorage Import
+// LocalStorage Import
 import {
   initLocalStorage,
-  getLocalStorageItem,
   getUser,
   updateUserName,
   updateCategory,
@@ -41,7 +40,9 @@ if (window.location.pathname.endsWith("quiz.html")) {
 } 
 // Init Event Listener
 document.addEventListener("DOMContentLoaded", async () => {
-  if (window.location.href.includes("index.html")) {
+  if (window.location.href.includes("index.html") || 
+      window.location.href.includes("about.html") ||
+      window.location.href.includes("contact.html")) {
     window.scrollTo(0, 0);
     // Animation
     dialogOpenAnimation();
@@ -56,7 +57,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // index.html event listeners
-if (window.location.href.includes("index.html")) {
+if (window.location.pathname === '/' || 
+    window.location.pathname === '/index.html' || 
+    window.location.pathname.endsWith('/index.html')) {
   // Dialog Close Event Listener
   ui.closeDialogBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -65,67 +68,155 @@ if (window.location.href.includes("index.html")) {
   });
 
   // Start Button Event Listener
-  ui.startBtn.addEventListener("click", () => {
-    const enteredName = ui.nameInput.value.toUpperCase().trim();
-    const nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
-    if (enteredName === "" || !nameRegex.test(enteredName)) {
-      alert("Please enter your name to start the quiz.");
-      return;
-    }
-    updateUserName(enteredName);
+ui.startBtn.addEventListener("click", () => {
+  const enteredName = ui.nameInput.value.toUpperCase().trim();
+  const nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+  if (enteredName === "" || !nameRegex.test(enteredName)) {
+    alert("Please enter your name to start the quiz.");
+    return;
+  }
+  updateUserName(enteredName);
 
+  pageExitAnimation(() => {
+    ui.mainScreen.classList.add("hidden");
+    ui.categoriesScreen.classList.remove("hidden");
+    ui.logUserName.textContent = enteredName;
+    
+    let html = `
+      <li id="category-1" data-category="0"
+          class="category-item group relative w-full rounded-xl overflow-hidden
+                 bg-white border-2 transition-all duration-300 cursor-pointer
+                 hover:translate-x-1 hover:shadow-lg"
+          style="border-color: var(--main-primary-5)">
+        
+        <div class="absolute top-0 left-0 w-1 h-full transition-transform duration-300 
+                    scale-y-0 group-hover:scale-y-100"
+             style="background-color: var(--main-primary)"></div>
+        
+        <a href="#"
+           class="relative z-10 flex items-center justify-between 
+                  w-full px-6 py-5 no-underline"
+           style="color: var(--main-text)">
+          
+          <div class="flex items-center gap-4">
+            <span class="text-2xl transition-transform duration-300 group-hover:scale-110">🕋</span>
+            <span class="text-xl font-semibold">${apiData.categories[0].name}</span>
+          </div>
+          
+          <i class="uil uil-check-circle text-3xl opacity-0 scale-0 
+                    transition-all duration-300"
+             style="color: var(--main-secondary)"></i>
+        </a>
+      </li>
 
-    pageExitAnimation(() => {
-      ui.mainScreen.classList.add("hidden");
-      ui.categoriesScreen.classList.remove("hidden");
-      ui.logUserName.textContent = enteredName;
-      // DOM Update regarding quiz categories
-      categoriesLoad();
-      let html = `
-            <li id="category-1" class="category-item w-full text-left text-xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="0">
-                <a class="flex items-center justify-between gap-3 w-full px-6 py-4 no-underline" href="#" style="color: var(--text-main)">
-                    <span class="">🕋 ${apiData.categories[0].name}</span>
-                    <i class="hidden uil uil-check-circle text-(--main-secondary) text-4xl"></i>
-                </a>
-            </li>
-            <li id="category-2" class="category-item w-full text-left text-xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="1">
-                <a class="flex items-center justify-between gap-3 w-full px-6 py-4 no-underline" href="#" style="color: var(--text-main)">
-                    <span class="">⭐ ${apiData.categories[1].name}</span>
-                    <i class="hidden uil uil-check-circle text-(--main-secondary) text-4xl"></i>
-                </a>
-            </li>
-            <li id="category-3" class="category-item w-full text-left text-xl border-2 rounded-lg transition-all duration-200 hover:shadow-md hover:scale-[1.02] cursor-pointer" style="border-color: var(--main-text)" data-category="2">
-                <a class="flex items-center justify-between gap-3 w-full px-6 py-4 no-underline" href="#" style="color: var(--text-main)">
-                    <span class="">📖 ${apiData.categories[2].name}</span>
-                    <i class="hidden uil uil-check-circle text-(--main-secondary) text-4xl"></i>
-                </a>
-            </li>
-        `;
-      ui.categoriesList.innerHTML = html;
-    });
+      <li id="category-2" data-category="1"
+          class="category-item group relative w-full rounded-xl overflow-hidden
+                 bg-white border-2 transition-all duration-300 cursor-pointer
+                 hover:translate-x-1 hover:shadow-lg"
+          style="border-color: var(--main-primary-5)">
+        
+        <div class="absolute top-0 left-0 w-1 h-full transition-transform duration-300 
+                    scale-y-0 group-hover:scale-y-100"
+             style="background-color: var(--main-primary)"></div>
+        
+        <a href="#"
+           class="relative z-10 flex items-center justify-between 
+                  w-full px-6 py-5 no-underline"
+           style="color: var(--main-text)">
+          
+          <div class="flex items-center gap-4">
+            <span class="text-2xl transition-transform duration-300 group-hover:scale-110">⭐</span>
+            <span class="text-xl font-semibold">${apiData.categories[1].name}</span>
+          </div>
+          
+          <i class="uil uil-check-circle text-3xl opacity-0 scale-0 
+                    transition-all duration-300"
+             style="color: var(--main-secondary)"></i>
+        </a>
+      </li>
+
+      <li id="category-3" data-category="2"
+          class="category-item group relative w-full rounded-xl overflow-hidden
+                 bg-white border-2 transition-all duration-300 cursor-pointer
+                 hover:translate-x-1 hover:shadow-lg"
+          style="border-color: var(--main-primary-5)">
+        
+        <div class="absolute top-0 left-0 w-1 h-full transition-transform duration-300 
+                    scale-y-0 group-hover:scale-y-100"
+             style="background-color: var(--main-primary)"></div>
+        
+        <a href="#"
+           class="relative z-10 flex items-center justify-between 
+                  w-full px-6 py-5 no-underline"
+           style="color: var(--main-text)">
+          
+          <div class="flex items-center gap-4">
+            <span class="text-2xl transition-transform duration-300 group-hover:scale-110">📖</span>
+            <span class="text-xl font-semibold">${apiData.categories[2].name}</span>
+          </div>
+          
+          <i class="uil uil-check-circle text-3xl opacity-0 scale-0 
+                    transition-all duration-300"
+             style="color: var(--main-secondary)"></i>
+        </a>
+      </li>
+    `;
+    
+    ui.categoriesList.innerHTML = html;
   });
-  // Handle category selection
-  let selectedCategory = null;
-  let categoryID = null;
-  let previousAnchor = null;
+});
 
-  ui.categoriesList.addEventListener("click", (e) => {
-    const anchor = e.target.closest("a");
-    if (anchor) {
-      // Get the "li"
-      const categoryItem = anchor.parentElement.getAttribute("data-category");
-      categoryID = categoryItem;
-      if (categoryItem !== null) {
-        if (previousAnchor && previousAnchor !== anchor) {
-          previousAnchor.lastElementChild.classList.add("hidden");
+// Handle category selection
+let selectedCategory = null;
+let categoryID = null;
+let previousItem = null;
+
+ui.categoriesList.addEventListener("click", (e) => {
+  e.preventDefault();
+  
+  const anchor = e.target.closest("a");
+  if (anchor) {
+    const categoryItem = anchor.closest(".category-item");
+    categoryID = categoryItem.getAttribute("data-category");
+    
+    if (categoryID !== null) {
+      // Remove selection from all items
+      document.querySelectorAll(".category-item").forEach(item => {
+        const icon = item.querySelector(".uil-check-circle");
+        const leftBorder = item.querySelector("div[class*='absolute']");
+        
+        icon.classList.remove("opacity-100", "scale-100");
+        icon.classList.add("opacity-0", "scale-0");
+        
+        item.style.borderColor = "var(--main-primary-5)";
+        item.style.background = "white";
+        
+        if (leftBorder) {
+          leftBorder.style.backgroundColor = "var(--main-primary)";
         }
-        anchor.lastElementChild.classList.toggle("hidden");
-        previousAnchor = anchor;
+      });
+      
+      // Add selection to clicked item
+      const icon = categoryItem.querySelector(".uil-check-circle");
+      const leftBorder = categoryItem.querySelector("div[class*='absolute']");
+      
+      icon.classList.remove("opacity-0", "scale-0");
+      icon.classList.add("opacity-100", "scale-100");
+      
+      categoryItem.style.borderColor = "var(--main-primary)";
+      categoryItem.style.background = "linear-gradient(135deg, var(--main-primary-5) 0%, white 100%)";
+      categoryItem.style.boxShadow = "0 4px 12px rgba(244, 162, 47, 0.2)";
+      
+      if (leftBorder) {
+        leftBorder.style.backgroundColor = "var(--main-secondary)";
+        leftBorder.classList.add("scale-y-100");
       }
-      selectedCategory = categoryItem;
+      
+      selectedCategory = categoryID;
+      previousItem = categoryItem;
     }
-    return false;
-  });
+  }
+});
   ui.quizStart.addEventListener("click", (e) => {
     const categoryAPI = apiData.categories[categoryID].name;
     updateCategory(categoryAPI, categoryID);
@@ -144,6 +235,8 @@ if (window.location.href.includes("quiz.html")) {
   let category = ui.quizNoticeCategory;
   category.textContent = `"${selectedCategory}"`;
 
+  let progressWidth = 0;
+  let currentProgress = 0;
   let currentQuestionIndex = 0;
   let quizQuestions = [];
   let quizAnswers = [];     // Quiz Answers 
@@ -176,7 +269,7 @@ if (window.location.href.includes("quiz.html")) {
         alert("Time's up! Your quiz will be submitted automatically.");
         submitQuiz();
       }
-    }, 10);
+    }, 1000);
   }
   function displayQuestion(index) {
     const questionIndex = quizQuestions[index];    
@@ -242,16 +335,6 @@ if (window.location.href.includes("quiz.html")) {
     }
   }
   
-  // Show answers of quiz for debugging
-  function showAnswers() {
-    quizAnswers.forEach((answer, i) => {
-      const isCorrect = userAnswers[i] === answer;
-      const status = isCorrect ? '✓ CORRECT' : '✗ WRONG';
-    });
-    
-    console.log(`\nFinal Score: ${quizScore}/${quizQuestions.length}`);
-  }
-  
   function displayResults() {
     const user = getUser();
     const quizCard = ui.quizCard;
@@ -285,6 +368,9 @@ if (window.location.href.includes("quiz.html")) {
     }
     if (ui.quizHighestScore) {
       ui.quizHighestScore.textContent = `${highestScore}/${quizQuestions.length}`;
+    }
+    if(ui.progressCompleted){
+      ui.progressCompleted.textContent = `Quiz Progress: ${currentProgress}% completed`;
     }
     if (ui.quizResultPercentage) {
       ui.quizResultPercentage.textContent = `${percentage}%`;
@@ -369,6 +455,15 @@ if (window.location.href.includes("quiz.html")) {
     // Show results screen
     displayResults();
   }
+  function quizProgress() {
+    ui.quizProgress.classList.remove("opacity-0");
+    progressWidth = parseInt(ui.quizProgress.textContent) || 0;
+    progressWidth += 5;
+    // Update text and width
+    currentProgress = progressWidth;
+    ui.quizProgress.textContent = progressWidth + "%";
+    ui.quizProgress.style.width = progressWidth + "%";
+}
   function initiateQuiz(user, selectedCategory, index) {
     const quizIntro = ui.quizIntro;
     const quizCard = ui.quizCard;
@@ -409,8 +504,10 @@ if (window.location.href.includes("quiz.html")) {
       // Move to next question
       currentQuestionIndex++;
       displayQuestion(currentQuestionIndex);
+      quizProgress();
     }
     else if (ui.quizQuestionBtn.id === "submit-quiz") {
+      quizProgress();
       submitQuiz();
     }
   });

@@ -1,126 +1,148 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/src/css/main.css">
-      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="icon" href="./assets/proposed-logo.png">
   <title>Contact Us | ImanQuiz</title>
 </head>
+
 <body class="overflow-y-scroll font-ibm text-(--main-text) bg-(--main-background) cursor-[url('/assets/cursor_default.png'),auto]">
+
   <!-- Header & Navbar -->
-  <nav id="main-nav" class="flex justify-between items-center border-b-2 border-(--main-primary)">
+  <nav id="main-nav" class="flex justify-between items-center border-b-2 border-(--main-primary) px-6 md:px-12 py-4">
     <div id="header-container">
       <h1>
         <a href="/index.html">
-          <img class="h-52" src="/assets/proposed-logo.png" alt="KnowDeen Logo">
+          <img class="h-52" src="/assets/proposed-logo.png" alt="ImanQuiz Logo">
         </a>
       </h1>
     </div>
-    <!-- Navbar -->
-    <ul id="nav-links" class="px-12 flex space-x-6 font-medium">
-      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start ">
+
+    <!-- Navbar Links -->
+    <ul id="nav-links" class="flex space-x-6 font-medium">
+      <li class="group text-xl nav-link flex flex-col items-start tracking-wide">
         <a href="/index.html" class="pb-1">Home</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
+      <li class="group text-xl nav-link flex flex-col items-start tracking-wide">
         <a href="/about.html" class="pb-1">About</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
+      <li class="group text-xl nav-link flex flex-col items-start tracking-wide">
         <a href="/contact.html" class="pb-1">Contact</a>
         <span class="block h-1 w-full bg-(--main-primary) transition-all duration-300"></span>
       </li>
     </ul>
   </nav>
-      <!-- Contact Us Page -->
-       <main id="contact">
-           <div id="contactPage" class="page bg-(--main-primary-5)/40">
-               <div class="max-w-4xl mx-auto px-6 py-16">
-                   <div class="text-center mb-12">
-                       <h1 class="text-6xl font-bold text-main mb-4">Get In Touch</h1>
-                       <p class="text-lg opacity-80">We'd love to hear from you</p>
-                   </div>
-       
-                   <div class="grid md:grid-cols-2 gap-8">
-                       <!-- Contact Form -->
-                       <div class="bg-white rounded-2xl shadow-lg p-8">
-                           <h3 class="text-2xl font-semibold text-main mb-6">Send us a message</h3>
-                           <form class="space-y-4">
-                               <div>
-                                   <label class="block text-sm font-medium mb-2 text-main">Name</label>
-                                   <input type="text" required class="w-full px-4 py-3 rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all" placeholder="Your name">
-                               </div>
-                               <div>
-                                   <label class="block text-sm font-medium mb-2 text-main">Email</label>
-                                   <input type="email" required class="w-full px-4 py-3 rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all" placeholder="your@email.com">
-                               </div>
-                               <div>
-                                   <label class="block text-sm font-medium mb-2 text-main">Message</label>
-                                   <textarea required rows="4" class="w-full px-4 py-3 rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all" placeholder="Your message..."></textarea>
-                               </div>
-                               <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
-                                   Send Message
-                               </button>
-                           </form>
-                       </div>
-       
-                       <!-- Contact Information -->
-                       <div class="space-y-6">
-                           <div class="bg-white rounded-2xl shadow-lg p-8">
-                               <h3 class="text-2xl font-semibold text-main mb-6">Contact Information</h3>
-                               <div class="space-y-4">
-                                   <div class="flex items-start gap-4">
-                                       <div class="w-10 h-10 bg-primary-5 rounded-lg flex items-center justify-center flex-shrink-0">
-                                           <span class="text-xl">📧</span>
-                                       </div>
-                                       <div>
-                                           <p class="font-semibold text-main">Email</p>
-                                           <p class="opacity-70">info@imanquiz.com</p>
-                                       </div>
-                                   </div>
-                                   <div class="flex items-start gap-4">
-                                       <div class="w-10 h-10 bg-primary-5 rounded-lg flex items-center justify-center flex-shrink-0">
-                                           <span class="text-xl">📱</span>
-                                       </div>
-                                       <div>
-                                           <p class="font-semibold text-main">Phone</p>
-                                           <p class="opacity-70">+1 (555) 123-4567</p>
-                                       </div>
-                                   </div>
-                                   <div class="flex items-start gap-4">
-                                       <div class="w-10 h-10 bg-primary-5 rounded-lg flex items-center justify-center flex-shrink-0">
-                                           <span class="text-xl">📍</span>
-                                       </div>
-                                       <div>
-                                           <p class="font-semibold text-main">Location</p>
-                                           <p class="opacity-70">Global - Serving Muslims Worldwide</p>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-       
-                           <div class="bg-white rounded-2xl flex justify-between items-center text-center shadow-lg p-8">
-                               <h3 class="text-xl font-semibold text-main">Follow Us</h3>
-                               <div class="flex gap-x-6 ">
-                                   <a href="#" class="scale-150 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
-                                       <span class="text-xl"><i class="uil uil-facebook-f"></i></span>
-                                   </a>
-                                   <a href="#" class="scale-150 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
-                                       <span class="text-xl"><i class="uil uil-twitter"></i></span>
-                                   </a>
-                                   <a href="#" class="scale-150 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
-                                       <span class="text-xl"><i class="uil uil-linkedin"></i></span>
-                                   </a>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </main>
-        <script type="module" src="./src/js/app.js"></script>
+
+  <!-- Contact Us Page -->
+  <main id="contact">
+    <div id="contactPage" class="page bg-(--main-primary-5)/40">
+      <div class="max-w-4xl mx-auto px-6 py-16">
+
+        <!-- Page Header -->
+        <div class="text-center mb-12">
+          <h1 class="text-6xl font-bold text-main mb-4">Get In Touch</h1>
+          <p class="text-lg opacity-80">We'd love to hear from you</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <!-- Contact Form -->
+          <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h3 class="text-2xl font-semibold text-main mb-6">Send us a message</h3>
+            <form class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium mb-2 text-main">Name</label>
+                <input type="text" required
+                  class="w-full px-4 py-3 rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all"
+                  placeholder="Your name">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2 text-main">Email</label>
+                <input type="email" required
+                  class="w-full px-4 py-3 rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all"
+                  placeholder="your@email.com">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2 text-main">Message</label>
+                <textarea required rows="4"
+                  class="w-full px-4 py-3 rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all"
+                  placeholder="Your message..."></textarea>
+              </div>
+              <button type="submit"
+                class="w-full bg-(--main-primary-5) text-(--main-text) py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="space-y-6">
+            <!-- Team GitHub Links -->
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+              <h3 class="text-2xl font-semibold text-main mb-6">Contact Information</h3>
+              <div class="space-y-4">
+                <a target="_blank" href="https://github.com/leonistheczar" class="flex text-lg items-start gap-4 group">
+                  <div class="text-4xl bg-primary-5 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="uil uil-github"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-main">Muhammad Ali</p>
+                    <span class="opacity-70 group-hover:underline">Github</span>
+                  </div>
+                </a>
+                <a target="_blank" href="https://github.com/aysh34" class="flex text-lg items-start gap-4 group">
+                  <div class="text-4xl bg-primary-5 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="uil uil-github"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-main">Ayesha Saleem</p>
+                    <span class="opacity-70 group-hover:underline">Github</span>
+                  </div>
+                </a>
+                <a target="_blank" href="https://github.com/subhangill" class="flex text-lg items-start gap-4 group">
+                  <div class="text-4xl bg-primary-5 rounded-lg flex items-center justify-center shrink-0">
+                    <i class="uil uil-github"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-main">Muhammad Subhan Safdar</p>
+                    <span class="opacity-70 group-hover:underline">Github</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="bg-white rounded-2xl flex justify-between items-center shadow-lg p-8">
+              <h3 class="text-xl font-semibold text-main">Follow Us</h3>
+              <div class="flex gap-x-6">
+                <a href="#"
+                  class="scale-150 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
+                  <i class="uil uil-facebook-f text-xl"></i>
+                </a>
+                <a href="#"
+                  class="scale-150 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
+                  <i class="uil uil-twitter text-xl"></i>
+                </a>
+                <a href="#"
+                  class="scale-150 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
+                  <i class="uil uil-linkedin text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="./src/js/app.js"></script>
 </body>
 
 </html>

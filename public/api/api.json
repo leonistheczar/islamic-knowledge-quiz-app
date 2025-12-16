@@ -9,7 +9,12 @@
         {
           "id": 1,
           "question": "How many pillars are there in Islam?",
-          "options": ["3", "5", "7", "10"],
+          "options": [
+            "3",
+            "5",
+            "7",
+            "10"
+          ],
           "correctAnswer": "5",
           "explanation": "Islam is built upon five pillars: Shahada, Salah, Zakat, Sawm, and Hajj.",
           "difficulty": "easy"
@@ -17,7 +22,12 @@
         {
           "id": 2,
           "question": "What is the first pillar of Islam?",
-          "options": ["Salah (Prayer)", "Shahada (Declaration of Faith)", "Zakat (Charity)", "Hajj (Pilgrimage)"],
+          "options": [
+            "Salah (Prayer)",
+            "Shahada (Declaration of Faith)",
+            "Zakat (Charity)",
+            "Hajj (Pilgrimage)"
+          ],
           "correctAnswer": "Shahada (Declaration of Faith)",
           "explanation": "The Shahada is the declaration of faith and the first pillar of Islam.",
           "difficulty": "easy"
@@ -25,7 +35,12 @@
         {
           "id": 3,
           "question": "How many times a day must Muslims perform Salah (obligatory prayer)?",
-          "options": ["3", "5", "7", "10"],
+          "options": [
+            "3",
+            "5",
+            "7",
+            "10"
+          ],
           "correctAnswer": "5",
           "explanation": "Muslims perform five daily prayers: Fajr, Dhuhr, Asr, Maghrib, and Isha.",
           "difficulty": "easy"
@@ -33,7 +48,12 @@
         {
           "id": 4,
           "question": "What percentage of wealth is typically given as Zakat?",
-          "options": ["1.5%", "2.5%", "5%", "10%"],
+          "options": [
+            "1.5%",
+            "2.5%",
+            "5%",
+            "10%"
+          ],
           "correctAnswer": "2.5%",
           "explanation": "Zakat is typically 2.5% of a Muslim's accumulated wealth, given annually to those in need.",
           "difficulty": "medium"
@@ -41,7 +61,12 @@
         {
           "id": 5,
           "question": "During which Islamic month is fasting (Sawm) obligatory?",
-          "options": ["Muharram", "Ramadan", "Shawwal", "Dhul Hijjah"],
+          "options": [
+            "Muharram",
+            "Ramadan",
+            "Shawwal",
+            "Dhul Hijjah"
+          ],
           "correctAnswer": "Ramadan",
           "explanation": "Muslims fast from dawn to sunset during the month of Ramadan, the ninth month of the Islamic calendar.",
           "difficulty": "easy"
@@ -49,7 +74,12 @@
         {
           "id": 6,
           "question": "What is the minimum requirement for a Muslim to perform Hajj?",
-          "options": ["Must be done every year", "Once in a lifetime if physically and financially able", "Only for men", "Only after age 60"],
+          "options": [
+            "Must be done every year",
+            "Once in a lifetime if physically and financially able",
+            "Only for men",
+            "Only after age 60"
+          ],
           "correctAnswer": "Once in a lifetime if physically and financially able",
           "explanation": "Hajj is obligatory once in a lifetime for those who are physically and financially capable.",
           "difficulty": "medium"
@@ -57,7 +87,12 @@
         {
           "id": 7,
           "question": "Which pillar of Islam is also known as almsgiving?",
-          "options": ["Shahada", "Salah", "Zakat", "Sawm"],
+          "options": [
+            "Shahada",
+            "Salah",
+            "Zakat",
+            "Sawm"
+          ],
           "correctAnswer": "Zakat",
           "explanation": "Zakat is the third pillar of Islam and refers to giving a portion of one's wealth to those in need.",
           "difficulty": "easy"
@@ -65,7 +100,12 @@
         {
           "id": 8,
           "question": "What does the word 'Shahada' literally mean?",
-          "options": ["Prayer", "Witness or testimony", "Charity", "Pilgrimage"],
+          "options": [
+            "Prayer",
+            "Witness or testimony",
+            "Charity",
+            "Pilgrimage"
+          ],
           "correctAnswer": "Witness or testimony",
           "explanation": "Shahada means 'to witness' or 'to testify', referring to the declaration of faith in Islam.",
           "difficulty": "medium"
@@ -73,7 +113,12 @@
         {
           "id": 9,
           "question": "What is the name of the first prayer of the day?",
-          "options": ["Fajr", "Dhuhr", "Asr", "Maghrib"],
+          "options": [
+            "Fajr",
+            "Dhuhr",
+            "Asr",
+            "Maghrib"
+          ],
           "correctAnswer": "Fajr",
           "explanation": "Fajr is the dawn prayer, the first of the five daily prayers performed before sunrise.",
           "difficulty": "easy"
@@ -81,7 +126,12 @@
         {
           "id": 10,
           "question": "Which city must Muslims face when performing Salah?",
-          "options": ["Medina", "Jerusalem", "Mecca", "Cairo"],
+          "options": [
+            "Medina",
+            "Jerusalem",
+            "Mecca",
+            "Cairo"
+          ],
           "correctAnswer": "Mecca",
           "explanation": "Muslims face the Kaaba in Mecca (the Qibla direction) during their prayers.",
           "difficulty": "easy"
@@ -89,7 +139,12 @@
         {
           "id": 11,
           "question": "What is the night prayer called?",
-          "options": ["Fajr", "Dhuhr", "Asr", "Isha"],
+          "options": [
+            "Fajr",
+            "Dhuhr",
+            "Asr",
+            "Isha"
+          ],
           "correctAnswer": "Isha",
           "explanation": "Isha is the night prayer, the fifth and final obligatory prayer of the day.",
           "difficulty": "easy"
@@ -97,7 +152,12 @@
         {
           "id": 12,
           "question": "Who is eligible to receive Zakat?",
-          "options": ["Only family members", "The poor and needy", "Government officials", "Only scholars"],
+          "options": [
+            "Only family members",
+            "The poor and needy",
+            "Government officials",
+            "Only scholars"
+          ],
           "correctAnswer": "The poor and needy",
           "explanation": "Zakat is primarily given to the poor, needy, and other specified categories mentioned in the Quran.",
           "difficulty": "medium"
@@ -105,7 +165,12 @@
         {
           "id": 13,
           "question": "What is the pre-dawn meal called during Ramadan?",
-          "options": ["Iftar", "Suhoor", "Eid", "Taraweeh"],
+          "options": [
+            "Iftar",
+            "Suhoor",
+            "Eid",
+            "Taraweeh"
+          ],
           "correctAnswer": "Suhoor",
           "explanation": "Suhoor is the pre-dawn meal eaten before the fast begins each day during Ramadan.",
           "difficulty": "medium"
@@ -113,7 +178,12 @@
         {
           "id": 14,
           "question": "What is the meal that breaks the fast called?",
-          "options": ["Suhoor", "Iftar", "Eid", "Zakat"],
+          "options": [
+            "Suhoor",
+            "Iftar",
+            "Eid",
+            "Zakat"
+          ],
           "correctAnswer": "Iftar",
           "explanation": "Iftar is the meal eaten at sunset to break the daily fast during Ramadan.",
           "difficulty": "easy"
@@ -121,7 +191,12 @@
         {
           "id": 15,
           "question": "In which Islamic month does Hajj take place?",
-          "options": ["Ramadan", "Shawwal", "Dhul Hijjah", "Muharram"],
+          "options": [
+            "Ramadan",
+            "Shawwal",
+            "Dhul Hijjah",
+            "Muharram"
+          ],
           "correctAnswer": "Dhul Hijjah",
           "explanation": "Hajj takes place during Dhul Hijjah, the twelfth and final month of the Islamic calendar.",
           "difficulty": "medium"
@@ -129,7 +204,12 @@
         {
           "id": 16,
           "question": "What is the circling of the Kaaba during Hajj called?",
-          "options": ["Tawaf", "Sa'i", "Wuquf", "Rami"],
+          "options": [
+            "Tawaf",
+            "Sa'i",
+            "Wuquf",
+            "Rami"
+          ],
           "correctAnswer": "Tawaf",
           "explanation": "Tawaf is the ritual of circling the Kaaba seven times counterclockwise during Hajj or Umrah.",
           "difficulty": "medium"
@@ -137,7 +217,12 @@
         {
           "id": 17,
           "question": "What must be done before performing Salah?",
-          "options": ["Eat food", "Wudu (ablution)", "Read Quran", "Give charity"],
+          "options": [
+            "Eat food",
+            "Wudu (ablution)",
+            "Read Quran",
+            "Give charity"
+          ],
           "correctAnswer": "Wudu (ablution)",
           "explanation": "Wudu, the ritual washing, must be performed to achieve purification before prayer.",
           "difficulty": "easy"
@@ -145,7 +230,12 @@
         {
           "id": 18,
           "question": "What is the Arabic term for the call to prayer?",
-          "options": ["Iqamah", "Adhan", "Takbir", "Tasbih"],
+          "options": [
+            "Iqamah",
+            "Adhan",
+            "Takbir",
+            "Tasbih"
+          ],
           "correctAnswer": "Adhan",
           "explanation": "The Adhan is the Islamic call to prayer, announced from the mosque five times a day.",
           "difficulty": "medium"
@@ -153,7 +243,12 @@
         {
           "id": 19,
           "question": "What is Zakat al-Fitr?",
-          "options": ["Annual wealth tax", "Charity given before Eid al-Fitr", "Hajj offering", "Friday charity"],
+          "options": [
+            "Annual wealth tax",
+            "Charity given before Eid al-Fitr",
+            "Hajj offering",
+            "Friday charity"
+          ],
           "correctAnswer": "Charity given before Eid al-Fitr",
           "explanation": "Zakat al-Fitr is a charitable donation given before the Eid prayer at the end of Ramadan.",
           "difficulty": "medium"
@@ -161,7 +256,12 @@
         {
           "id": 20,
           "question": "What is the walking between Safa and Marwa hills during Hajj called?",
-          "options": ["Tawaf", "Sa'i", "Wuquf", "Ihram"],
+          "options": [
+            "Tawaf",
+            "Sa'i",
+            "Wuquf",
+            "Ihram"
+          ],
           "correctAnswer": "Sa'i",
           "explanation": "Sa'i is the ritual of walking seven times between the hills of Safa and Marwa during Hajj.",
           "difficulty": "hard"
@@ -176,7 +276,12 @@
         {
           "id": 21,
           "question": "Who is considered the last prophet in Islam?",
-          "options": ["Prophet Isa (Jesus)", "Prophet Musa (Moses)", "Prophet Ibrahim (Abraham)", "Prophet Muhammad (PBUH)"],
+          "options": [
+            "Prophet Isa (Jesus)",
+            "Prophet Musa (Moses)",
+            "Prophet Ibrahim (Abraham)",
+            "Prophet Muhammad (PBUH)"
+          ],
           "correctAnswer": "Prophet Muhammad (PBUH)",
           "explanation": "Prophet Muhammad (peace be upon him) is the final prophet and messenger in Islam.",
           "difficulty": "easy"
@@ -184,7 +289,12 @@
         {
           "id": 22,
           "question": "Which prophet is known as 'Khalilullah' (Friend of Allah)?",
-          "options": ["Prophet Ibrahim", "Prophet Musa", "Prophet Nuh", "Prophet Isa"],
+          "options": [
+            "Prophet Ibrahim",
+            "Prophet Musa",
+            "Prophet Nuh",
+            "Prophet Isa"
+          ],
           "correctAnswer": "Prophet Ibrahim",
           "explanation": "Prophet Ibrahim (Abraham) is given the title Khalilullah, meaning 'Friend of Allah'.",
           "difficulty": "medium"
@@ -192,7 +302,12 @@
         {
           "id": 23,
           "question": "Which prophet was swallowed by a whale?",
-          "options": ["Prophet Yunus", "Prophet Yusuf", "Prophet Sulaiman", "Prophet Dawud"],
+          "options": [
+            "Prophet Yunus",
+            "Prophet Yusuf",
+            "Prophet Sulaiman",
+            "Prophet Dawud"
+          ],
           "correctAnswer": "Prophet Yunus",
           "explanation": "Prophet Yunus (Jonah) was swallowed by a large fish/whale and later emerged safely after repenting to Allah.",
           "difficulty": "easy"
@@ -200,7 +315,12 @@
         {
           "id": 24,
           "question": "Which prophet could speak to animals and control the jinn?",
-          "options": ["Prophet Musa", "Prophet Sulaiman", "Prophet Isa", "Prophet Yusuf"],
+          "options": [
+            "Prophet Musa",
+            "Prophet Sulaiman",
+            "Prophet Isa",
+            "Prophet Yusuf"
+          ],
           "correctAnswer": "Prophet Sulaiman",
           "explanation": "Prophet Sulaiman (Solomon) was given the ability to communicate with animals and command the jinn.",
           "difficulty": "medium"
@@ -208,7 +328,12 @@
         {
           "id": 25,
           "question": "Which prophet built the Ark to save believers from the great flood?",
-          "options": ["Prophet Nuh", "Prophet Ibrahim", "Prophet Lut", "Prophet Hud"],
+          "options": [
+            "Prophet Nuh",
+            "Prophet Ibrahim",
+            "Prophet Lut",
+            "Prophet Hud"
+          ],
           "correctAnswer": "Prophet Nuh",
           "explanation": "Prophet Nuh (Noah) built the Ark under Allah's command to save believers from the great flood.",
           "difficulty": "easy"
@@ -216,7 +341,12 @@
         {
           "id": 26,
           "question": "Which prophet was given the Injil (Gospel)?",
-          "options": ["Prophet Musa", "Prophet Isa", "Prophet Muhammad", "Prophet Dawud"],
+          "options": [
+            "Prophet Musa",
+            "Prophet Isa",
+            "Prophet Muhammad",
+            "Prophet Dawud"
+          ],
           "correctAnswer": "Prophet Isa",
           "explanation": "Prophet Isa (Jesus) was given the Injil (Gospel) as divine revelation.",
           "difficulty": "medium"
@@ -224,7 +354,12 @@
         {
           "id": 27,
           "question": "Which prophet was thrown into a well by his brothers?",
-          "options": ["Prophet Yusuf", "Prophet Musa", "Prophet Harun", "Prophet Ismail"],
+          "options": [
+            "Prophet Yusuf",
+            "Prophet Musa",
+            "Prophet Harun",
+            "Prophet Ismail"
+          ],
           "correctAnswer": "Prophet Yusuf",
           "explanation": "Prophet Yusuf (Joseph) was thrown into a well by his jealous brothers but later became a minister in Egypt.",
           "difficulty": "easy"
@@ -232,7 +367,12 @@
         {
           "id": 28,
           "question": "Which prophet spoke to Allah directly on Mount Sinai?",
-          "options": ["Prophet Ibrahim", "Prophet Musa", "Prophet Isa", "Prophet Muhammad"],
+          "options": [
+            "Prophet Ibrahim",
+            "Prophet Musa",
+            "Prophet Isa",
+            "Prophet Muhammad"
+          ],
           "correctAnswer": "Prophet Musa",
           "explanation": "Prophet Musa (Moses) spoke directly to Allah on Mount Sinai and was given the Torah.",
           "difficulty": "medium"
@@ -240,7 +380,12 @@
         {
           "id": 29,
           "question": "Who was the father of Prophet Ismail and Prophet Ishaq?",
-          "options": ["Prophet Nuh", "Prophet Ibrahim", "Prophet Yaqub", "Prophet Lut"],
+          "options": [
+            "Prophet Nuh",
+            "Prophet Ibrahim",
+            "Prophet Yaqub",
+            "Prophet Lut"
+          ],
           "correctAnswer": "Prophet Ibrahim",
           "explanation": "Prophet Ibrahim (Abraham) was the father of both Ismail and Ishaq (Isaac).",
           "difficulty": "easy"
@@ -248,7 +393,12 @@
         {
           "id": 30,
           "question": "Which prophet is known for his patience during severe trials?",
-          "options": ["Prophet Ayyub", "Prophet Yunus", "Prophet Zakariya", "Prophet Yahya"],
+          "options": [
+            "Prophet Ayyub",
+            "Prophet Yunus",
+            "Prophet Zakariya",
+            "Prophet Yahya"
+          ],
           "correctAnswer": "Prophet Ayyub",
           "explanation": "Prophet Ayyub (Job) is renowned for his patience and steadfastness during severe trials and illness.",
           "difficulty": "medium"
@@ -256,7 +406,12 @@
         {
           "id": 31,
           "question": "Which prophet was given the Zabur (Psalms)?",
-          "options": ["Prophet Musa", "Prophet Isa", "Prophet Dawud", "Prophet Sulaiman"],
+          "options": [
+            "Prophet Musa",
+            "Prophet Isa",
+            "Prophet Dawud",
+            "Prophet Sulaiman"
+          ],
           "correctAnswer": "Prophet Dawud",
           "explanation": "Prophet Dawud (David) was given the Zabur (Psalms) as divine scripture.",
           "difficulty": "medium"
@@ -264,7 +419,12 @@
         {
           "id": 32,
           "question": "Who was the brother of Prophet Musa who helped him in his mission?",
-          "options": ["Prophet Harun", "Prophet Ishaq", "Prophet Ismail", "Prophet Yunus"],
+          "options": [
+            "Prophet Harun",
+            "Prophet Ishaq",
+            "Prophet Ismail",
+            "Prophet Yunus"
+          ],
           "correctAnswer": "Prophet Harun",
           "explanation": "Prophet Harun (Aaron) was the brother of Musa and assisted him in delivering Allah's message.",
           "difficulty": "easy"
@@ -272,7 +432,12 @@
         {
           "id": 33,
           "question": "Which prophet's wife is mentioned by name in the Quran?",
-          "options": ["Prophet Ibrahim's wife", "Prophet Muhammad's wife", "Prophet Musa's wife", "Prophet Nuh's wife"],
+          "options": [
+            "Prophet Ibrahim's wife",
+            "Prophet Muhammad's wife",
+            "Prophet Musa's wife",
+            "Prophet Nuh's wife"
+          ],
           "correctAnswer": "Prophet Muhammad's wife",
           "explanation": "Maryam (Mary), mother of Prophet Isa, is mentioned by name, and she was from the family of Imran.",
           "difficulty": "hard"
@@ -280,7 +445,12 @@
         {
           "id": 34,
           "question": "Which prophet was born without a father?",
-          "options": ["Prophet Adam", "Prophet Isa", "Prophet Yahya", "Prophet Muhammad"],
+          "options": [
+            "Prophet Adam",
+            "Prophet Isa",
+            "Prophet Yahya",
+            "Prophet Muhammad"
+          ],
           "correctAnswer": "Prophet Isa",
           "explanation": "Prophet Isa (Jesus) was born miraculously to Maryam without a father by the will of Allah.",
           "difficulty": "easy"
@@ -288,7 +458,12 @@
         {
           "id": 35,
           "question": "Who was the first prophet created by Allah?",
-          "options": ["Prophet Nuh", "Prophet Ibrahim", "Prophet Adam", "Prophet Idris"],
+          "options": [
+            "Prophet Nuh",
+            "Prophet Ibrahim",
+            "Prophet Adam",
+            "Prophet Idris"
+          ],
           "correctAnswer": "Prophet Adam",
           "explanation": "Prophet Adam was the first human being and the first prophet created by Allah.",
           "difficulty": "easy"
@@ -296,7 +471,12 @@
         {
           "id": 36,
           "question": "Which prophet is mentioned the most times in the Quran?",
-          "options": ["Prophet Muhammad", "Prophet Ibrahim", "Prophet Musa", "Prophet Isa"],
+          "options": [
+            "Prophet Muhammad",
+            "Prophet Ibrahim",
+            "Prophet Musa",
+            "Prophet Isa"
+          ],
           "correctAnswer": "Prophet Musa",
           "explanation": "Prophet Musa (Moses) is mentioned more than any other prophet in the Quran.",
           "difficulty": "medium"
@@ -304,7 +484,12 @@
         {
           "id": 37,
           "question": "Which prophet's people were destroyed by a loud blast?",
-          "options": ["Prophet Salih", "Prophet Hud", "Prophet Lut", "Prophet Shuaib"],
+          "options": [
+            "Prophet Salih",
+            "Prophet Hud",
+            "Prophet Lut",
+            "Prophet Shuaib"
+          ],
           "correctAnswer": "Prophet Salih",
           "explanation": "The people of Thamud, who rejected Prophet Salih, were destroyed by a mighty blast.",
           "difficulty": "hard"
@@ -312,7 +497,12 @@
         {
           "id": 38,
           "question": "Which prophet preached to the people of Madyan?",
-          "options": ["Prophet Hud", "Prophet Salih", "Prophet Shuaib", "Prophet Lut"],
+          "options": [
+            "Prophet Hud",
+            "Prophet Salih",
+            "Prophet Shuaib",
+            "Prophet Lut"
+          ],
           "correctAnswer": "Prophet Shuaib",
           "explanation": "Prophet Shuaib was sent to the people of Madyan, warning them about dishonest business practices.",
           "difficulty": "hard"
@@ -320,7 +510,12 @@
         {
           "id": 39,
           "question": "Who was the father of Prophet Yusuf?",
-          "options": ["Prophet Ibrahim", "Prophet Ishaq", "Prophet Yaqub", "Prophet Ismail"],
+          "options": [
+            "Prophet Ibrahim",
+            "Prophet Ishaq",
+            "Prophet Yaqub",
+            "Prophet Ismail"
+          ],
           "correctAnswer": "Prophet Yaqub",
           "explanation": "Prophet Yaqub (Jacob), also known as Israel, was the father of Prophet Yusuf.",
           "difficulty": "medium"
@@ -328,7 +523,12 @@
         {
           "id": 40,
           "question": "Which prophet was saved from the fire by Allah?",
-          "options": ["Prophet Musa", "Prophet Ibrahim", "Prophet Isa", "Prophet Nuh"],
+          "options": [
+            "Prophet Musa",
+            "Prophet Ibrahim",
+            "Prophet Isa",
+            "Prophet Nuh"
+          ],
           "correctAnswer": "Prophet Ibrahim",
           "explanation": "Prophet Ibrahim was thrown into a fire by his people, but Allah made it cool and safe for him.",
           "difficulty": "medium"
@@ -343,7 +543,12 @@
         {
           "id": 41,
           "question": "How many chapters (Surahs) are in the Quran?",
-          "options": ["100", "114", "120", "150"],
+          "options": [
+            "100",
+            "114",
+            "120",
+            "150"
+          ],
           "correctAnswer": "114",
           "explanation": "The Holy Quran contains 114 chapters (Surahs).",
           "difficulty": "easy"
@@ -351,7 +556,12 @@
         {
           "id": 42,
           "question": "What is the longest Surah in the Quran?",
-          "options": ["Surah Al-Baqarah", "Surah Al-Fatiha", "Surah Yasin", "Surah Al-Kahf"],
+          "options": [
+            "Surah Al-Baqarah",
+            "Surah Al-Fatiha",
+            "Surah Yasin",
+            "Surah Al-Kahf"
+          ],
           "correctAnswer": "Surah Al-Baqarah",
           "explanation": "Surah Al-Baqarah (The Cow) is the longest chapter in the Quran with 286 verses.",
           "difficulty": "medium"
@@ -359,7 +569,12 @@
         {
           "id": 43,
           "question": "What is the first Surah revealed to Prophet Muhammad (PBUH)?",
-          "options": ["Surah Al-Fatiha", "Surah Al-Alaq", "Surah Al-Ikhlas", "Surah An-Nas"],
+          "options": [
+            "Surah Al-Fatiha",
+            "Surah Al-Alaq",
+            "Surah Al-Ikhlas",
+            "Surah An-Nas"
+          ],
           "correctAnswer": "Surah Al-Alaq",
           "explanation": "Surah Al-Alaq (The Clot) was the first revelation, beginning with 'Read in the name of your Lord'.",
           "difficulty": "medium"
@@ -367,7 +582,12 @@
         {
           "id": 44,
           "question": "Which Surah is known as the 'Heart of the Quran'?",
-          "options": ["Surah Al-Fatiha", "Surah Yasin", "Surah Al-Mulk", "Surah Ar-Rahman"],
+          "options": [
+            "Surah Al-Fatiha",
+            "Surah Yasin",
+            "Surah Al-Mulk",
+            "Surah Ar-Rahman"
+          ],
           "correctAnswer": "Surah Yasin",
           "explanation": "Surah Yasin is often referred to as the 'Heart of the Quran' due to its profound message.",
           "difficulty": "medium"
@@ -375,7 +595,12 @@
         {
           "id": 45,
           "question": "In which language was the Quran revealed?",
-          "options": ["Hebrew", "Aramaic", "Arabic", "Persian"],
+          "options": [
+            "Hebrew",
+            "Aramaic",
+            "Arabic",
+            "Persian"
+          ],
           "correctAnswer": "Arabic",
           "explanation": "The Quran was revealed in classical Arabic to Prophet Muhammad (PBUH).",
           "difficulty": "easy"
@@ -383,7 +608,12 @@
         {
           "id": 46,
           "question": "What is the opening chapter of the Quran called?",
-          "options": ["Al-Baqarah", "Al-Fatiha", "Al-Ikhlas", "An-Nas"],
+          "options": [
+            "Al-Baqarah",
+            "Al-Fatiha",
+            "Al-Ikhlas",
+            "An-Nas"
+          ],
           "correctAnswer": "Al-Fatiha",
           "explanation": "Surah Al-Fatiha (The Opening) is the first chapter of the Quran and is recited in every unit of prayer.",
           "difficulty": "easy"
@@ -391,7 +621,12 @@
         {
           "id": 47,
           "question": "How many verses (Ayahs) are there in the Quran approximately?",
-          "options": ["5,000", "6,236", "7,000", "8,000"],
+          "options": [
+            "5,000",
+            "6,236",
+            "7,000",
+            "8,000"
+          ],
           "correctAnswer": "6,236",
           "explanation": "The Quran contains approximately 6,236 verses, though the exact count varies slightly by method.",
           "difficulty": "hard"
@@ -399,7 +634,12 @@
         {
           "id": 48,
           "question": "Which Surah does not begin with Bismillah?",
-          "options": ["Surah Al-Fatiha", "Surah At-Tawbah", "Surah Al-Ikhlas", "Surah An-Nasr"],
+          "options": [
+            "Surah Al-Fatiha",
+            "Surah At-Tawbah",
+            "Surah Al-Ikhlas",
+            "Surah An-Nasr"
+          ],
           "correctAnswer": "Surah At-Tawbah",
           "explanation": "Surah At-Tawbah (Repentance) is the only chapter that does not begin with Bismillah.",
           "difficulty": "medium"
@@ -407,7 +647,12 @@
         {
           "id": 49,
           "question": "What is the shortest Surah in the Quran?",
-          "options": ["Surah Al-Ikhlas", "Surah Al-Kawthar", "Surah An-Nas", "Surah Al-Asr"],
+          "options": [
+            "Surah Al-Ikhlas",
+            "Surah Al-Kawthar",
+            "Surah An-Nas",
+            "Surah Al-Asr"
+          ],
           "correctAnswer": "Surah Al-Kawthar",
           "explanation": "Surah Al-Kawthar (The Abundance) is the shortest chapter with only 3 verses.",
           "difficulty": "medium"
@@ -415,7 +660,12 @@
         {
           "id": 50,
           "question": "In which cave was the Quran first revealed?",
-          "options": ["Cave of Thawr", "Cave of Hira", "Cave of Uhud", "Cave of Badr"],
+          "options": [
+            "Cave of Thawr",
+            "Cave of Hira",
+            "Cave of Uhud",
+            "Cave of Badr"
+          ],
           "correctAnswer": "Cave of Hira",
           "explanation": "The first revelation came to Prophet Muhammad (PBUH) in the Cave of Hira on Mount Noor.",
           "difficulty": "easy"
@@ -423,7 +673,12 @@
         {
           "id": 51,
           "question": "How many parts (Juz) is the Quran divided into?",
-          "options": ["20", "25", "30", "40"],
+          "options": [
+            "20",
+            "25",
+            "30",
+            "40"
+          ],
           "correctAnswer": "30",
           "explanation": "The Quran is divided into 30 equal parts called Juz, facilitating recitation over a month.",
           "difficulty": "medium"
@@ -431,7 +686,12 @@
         {
           "id": 52,
           "question": "Which Surah mentions the story of the People of the Cave?",
-          "options": ["Surah Al-Kahf", "Surah Maryam", "Surah Yusuf", "Surah Al-Ankabut"],
+          "options": [
+            "Surah Al-Kahf",
+            "Surah Maryam",
+            "Surah Yusuf",
+            "Surah Al-Ankabut"
+          ],
           "correctAnswer": "Surah Al-Kahf",
           "explanation": "Surah Al-Kahf (The Cave) narrates the story of the young believers who slept in a cave for years.",
           "difficulty": "medium"
@@ -439,7 +699,12 @@
         {
           "id": 53,
           "question": "Which Surah is named after a woman?",
-          "options": ["Surah Fatima", "Surah Maryam", "Surah Aisha", "Surah Khadijah"],
+          "options": [
+            "Surah Fatima",
+            "Surah Maryam",
+            "Surah Aisha",
+            "Surah Khadijah"
+          ],
           "correctAnswer": "Surah Maryam",
           "explanation": "Surah Maryam is named after Mary, the mother of Prophet Isa (Jesus).",
           "difficulty": "easy"
@@ -447,7 +712,12 @@
         {
           "id": 54,
           "question": "Which angel brought the revelation of the Quran to Prophet Muhammad?",
-          "options": ["Angel Mikail", "Angel Israfil", "Angel Jibreel", "Angel Azrael"],
+          "options": [
+            "Angel Mikail",
+            "Angel Israfil",
+            "Angel Jibreel",
+            "Angel Azrael"
+          ],
           "correctAnswer": "Angel Jibreel",
           "explanation": "Angel Jibreel (Gabriel) was responsible for delivering Allah's revelations to the Prophet.",
           "difficulty": "easy"
@@ -455,7 +725,12 @@
         {
           "id": 55,
           "question": "Over how many years was the Quran revealed?",
-          "options": ["10 years", "15 years", "23 years", "30 years"],
+          "options": [
+            "10 years",
+            "15 years",
+            "23 years",
+            "30 years"
+          ],
           "correctAnswer": "23 years",
           "explanation": "The Quran was revealed gradually over a period of approximately 23 years.",
           "difficulty": "medium"
@@ -463,7 +738,12 @@
         {
           "id": 56,
           "question": "Which Surah mentions both the beginning and end of creation?",
-          "options": ["Surah Al-Fatiha", "Surah Yasin", "Surah Ar-Rahman", "Surah Al-Waqiah"],
+          "options": [
+            "Surah Al-Fatiha",
+            "Surah Yasin",
+            "Surah Ar-Rahman",
+            "Surah Al-Waqiah"
+          ],
           "correctAnswer": "Surah Yasin",
           "explanation": "Surah Yasin discusses the creation, resurrection, and the Day of Judgment comprehensively.",
           "difficulty": "hard"
@@ -471,7 +751,12 @@
         {
           "id": 57,
           "question": "What is the night called when the Quran was first revealed?",
-          "options": ["Laylat al-Miraj", "Laylat al-Qadr", "Laylat al-Bara'ah", "Laylat al-Isra"],
+          "options": [
+            "Laylat al-Miraj",
+            "Laylat al-Qadr",
+            "Laylat al-Bara'ah",
+            "Laylat al-Isra"
+          ],
           "correctAnswer": "Laylat al-Qadr",
           "explanation": "Laylat al-Qadr (The Night of Power) is when the first verses of the Quran were revealed.",
           "difficulty": "medium"
@@ -479,7 +764,12 @@
         {
           "id": 58,
           "question": "Which Surah tells the detailed story of Prophet Yusuf?",
-          "options": ["Surah Yusuf", "Surah Maryam", "Surah Ibrahim", "Surah Nuh"],
+          "options": [
+            "Surah Yusuf",
+            "Surah Maryam",
+            "Surah Ibrahim",
+            "Surah Nuh"
+          ],
           "correctAnswer": "Surah Yusuf",
           "explanation": "Surah Yusuf is the only Surah that contains a complete story from beginning to end.",
           "difficulty": "easy"
@@ -487,7 +777,12 @@
         {
           "id": 59,
           "question": "Which Surah is recommended to be recited on Fridays?",
-          "options": ["Surah Yasin", "Surah Al-Mulk", "Surah Al-Kahf", "Surah Ar-Rahman"],
+          "options": [
+            "Surah Yasin",
+            "Surah Al-Mulk",
+            "Surah Al-Kahf",
+            "Surah Ar-Rahman"
+          ],
           "correctAnswer": "Surah Al-Kahf",
           "explanation": "It is recommended to recite Surah Al-Kahf on Fridays, which brings light and blessings.",
           "difficulty": "medium"
@@ -495,11 +790,818 @@
         {
           "id": 60,
           "question": "Which two Surahs are known as 'Al-Mu'awwidhatayn' (The Two Protectors)?",
-          "options": ["Al-Fatiha and Al-Ikhlas", "Al-Falaq and An-Nas", "Al-Kawthar and Al-Asr", "Al-Fil and Quraish"],
+          "options": [
+            "Al-Fatiha and Al-Ikhlas",
+            "Al-Falaq and An-Nas",
+            "Al-Kawthar and Al-Asr",
+            "Al-Fil and Quraish"
+          ],
           "correctAnswer": "Al-Falaq and An-Nas",
           "explanation": "Surah Al-Falaq and Surah An-Nas are called the protective Surahs, seeking refuge in Allah from evil.",
           "difficulty": "medium"
         }
       ]
+    },
+    {
+      "id": "islamic-beliefs-aqidah",
+      "name": "Islamic Beliefs (Aqidah)",
+      "description": "Questions related to the core beliefs of Islam (Aqidah)",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What does the term 'Aqidah' refer to in Islam?",
+          "options": [
+            "Islamic law",
+            "Islamic history",
+            "Core beliefs of Islam",
+            "Acts of worship"
+          ],
+          "correctAnswer": "Core beliefs of Islam",
+          "explanation": "Aqidah refers to the fundamental beliefs that a Muslim must believe in with certainty.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 2,
+          "question": "How many articles of faith are there in Islam?",
+          "options": [
+            "3",
+            "5",
+            "6",
+            "7"
+          ],
+          "correctAnswer": "6",
+          "explanation": "Islam has six articles of faith: belief in Allah, Angels, Books, Prophets, the Last Day, and Qadr.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 3,
+          "question": "Which belief emphasizes the oneness of Allah?",
+          "options": [
+            "Risalah",
+            "Akhirah",
+            "Tawheed",
+            "Shariah"
+          ],
+          "correctAnswer": "Tawheed",
+          "explanation": "Tawheed is the belief in the absolute oneness and uniqueness of Allah.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 4,
+          "question": "What is meant by belief in Angels?",
+          "options": [
+            "They are symbolic forces",
+            "They are humans with special powers",
+            "They are created by Allah from light",
+            "They are jinn"
+          ],
+          "correctAnswer": "They are created by Allah from light",
+          "explanation": "Angels are real creations of Allah made from light who obey Him without question.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 5,
+          "question": "Who is responsible for delivering revelation to the prophets?",
+          "options": [
+            "Israfeel",
+            "Mikail",
+            "Jibreel (AS)",
+            "Malik"
+          ],
+          "correctAnswer": "Jibreel (AS)",
+          "explanation": "Angel Jibreel (AS) conveyed Allah’s revelations to His prophets.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 6,
+          "question": "Which of the following is the final revealed book of Islam?",
+          "options": [
+            "Torah",
+            "Zabur",
+            "Injeel",
+            "Qur'an"
+          ],
+          "correctAnswer": "Qur'an",
+          "explanation": "The Qur'an is the final and complete revelation from Allah to Prophet Muhammad (PBUH).",
+          "difficulty": "easy"
+        },
+        {
+          "id": 7,
+          "question": "Who is the last prophet in Islam?",
+          "options": [
+            "Isa (AS)",
+            "Musa (AS)",
+            "Ibrahim (AS)",
+            "Muhammad (PBUH)"
+          ],
+          "correctAnswer": "Muhammad (PBUH)",
+          "explanation": "Prophet Muhammad (PBUH) is the final messenger of Allah.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 8,
+          "question": "Belief in the Day of Judgment is known as:",
+          "options": [
+            "Tawheed",
+            "Risalah",
+            "Akhirah",
+            "Qadr"
+          ],
+          "correctAnswer": "Akhirah",
+          "explanation": "Akhirah refers to life after death and accountability on the Day of Judgment.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 9,
+          "question": "What does 'Qadr' mean in Islamic belief?",
+          "options": [
+            "Life after death",
+            "Divine decree and destiny",
+            "Angelic duties",
+            "Prophethood"
+          ],
+          "correctAnswer": "Divine decree and destiny",
+          "explanation": "Qadr means believing that Allah has knowledge and control over all that happens.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 10,
+          "question": "Which of the following is NOT one of the six articles of faith?",
+          "options": [
+            "Belief in Angels",
+            "Belief in Prophets",
+            "Belief in Jinn",
+            "Belief in the Last Day"
+          ],
+          "correctAnswer": "Belief in Jinn",
+          "explanation": "Belief in Jinn exists in Islam but is not one of the six core articles of faith.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 11,
+          "question": "What is shirk?",
+          "options": [
+            "Believing in multiple prophets",
+            "Associating partners with Allah",
+            "Denying angels",
+            "Rejecting destiny"
+          ],
+          "correctAnswer": "Associating partners with Allah",
+          "explanation": "Shirk is the greatest sin in Islam and means associating partners with Allah.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 12,
+          "question": "Which category of Tawheed focuses on Allah’s names and attributes?",
+          "options": [
+            "Tawheed ar-Rububiyyah",
+            "Tawheed al-Uluhiyyah",
+            "Tawheed al-Asma wa Sifat",
+            "Tawheed al-Risalah"
+          ],
+          "correctAnswer": "Tawheed al-Asma wa Sifat",
+          "explanation": "This category affirms Allah’s names and attributes as described in the Qur'an and Sunnah.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 13,
+          "question": "Belief in Allah’s control over creation and sustenance is called:",
+          "options": [
+            "Tawheed al-Uluhiyyah",
+            "Tawheed ar-Rububiyyah",
+            "Tawheed al-Asma wa Sifat",
+            "Akhirah"
+          ],
+          "correctAnswer": "Tawheed ar-Rububiyyah",
+          "explanation": "This form of Tawheed affirms Allah as the sole Lord and Sustainer.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 14,
+          "question": "Which angel is responsible for blowing the trumpet on the Day of Judgment?",
+          "options": [
+            "Jibreel (AS)",
+            "Mikail (AS)",
+            "Israfeel (AS)",
+            "Malik (AS)"
+          ],
+          "correctAnswer": "Israfeel (AS)",
+          "explanation": "Angel Israfeel (AS) will blow the trumpet to signal the Day of Judgment.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 15,
+          "question": "Belief in the revealed books includes believing that:",
+          "options": [
+            "All books are unchanged",
+            "Only the Qur'an was revealed",
+            "Previous books were altered over time",
+            "Books were written by prophets"
+          ],
+          "correctAnswer": "Previous books were altered over time",
+          "explanation": "Muslims believe earlier scriptures were revealed by Allah but altered by humans.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 16,
+          "question": "What happens to deeds on the Day of Judgment?",
+          "options": [
+            "They are ignored",
+            "They are forgotten",
+            "They are weighed on a scale",
+            "They are destroyed"
+          ],
+          "correctAnswer": "They are weighed on a scale",
+          "explanation": "Deeds will be weighed (Mizan) to determine a person’s final outcome.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 17,
+          "question": "Which belief teaches that both good and bad occur by Allah’s will?",
+          "options": [
+            "Akhirah",
+            "Risalah",
+            "Qadr",
+            "Tawheed"
+          ],
+          "correctAnswer": "Qadr",
+          "explanation": "Qadr includes belief that everything happens by Allah’s knowledge and will.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 18,
+          "question": "What is the Islamic belief about seeing Allah in the Hereafter?",
+          "options": [
+            "It is impossible",
+            "Only prophets will see Him",
+            "Believers will see Allah",
+            "Only angels will see Him"
+          ],
+          "correctAnswer": "Believers will see Allah",
+          "explanation": "Islam teaches that the righteous believers will see Allah in the Hereafter.",
+          "difficulty": "hard"
+        },
+        {
+          "id": 19,
+          "question": "Denying any of the six articles of faith affects a person's:",
+          "options": [
+            "Good deeds",
+            "Faith (Iman)",
+            "Knowledge",
+            "Worship"
+          ],
+          "correctAnswer": "Faith (Iman)",
+          "explanation": "Rejecting any article of faith nullifies a person’s Iman.",
+          "difficulty": "hard"
+        },
+        {
+          "id": 20,
+          "question": "What is the relationship between Iman and Aqidah?",
+          "options": [
+            "They are unrelated",
+            "Aqidah is part of Iman",
+            "Iman is part of Aqidah",
+            "They contradict each other"
+          ],
+          "correctAnswer": "Aqidah is part of Iman",
+          "explanation": "Aqidah forms the belief foundation upon which Iman is built.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "id": "islamic-history",
+      "name": "Islamic History",
+      "description": "Questions related to major events, places, and personalities in Islamic history",
+      "questions": [
+        {
+          "id": 1,
+          "question": "In which city was Prophet Muhammad (PBUH) born?",
+          "options": [
+            "Madinah",
+            "Taif",
+            "Makkah",
+            "Jerusalem"
+          ],
+          "correctAnswer": "Makkah",
+          "explanation": "Prophet Muhammad (PBUH) was born in Makkah in the year 570 CE.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 2,
+          "question": "What was the name of the year in which Prophet Muhammad (PBUH) was born?",
+          "options": [
+            "Year of Migration",
+            "Year of Victory",
+            "Year of the Elephant",
+            "Year of Revelation"
+          ],
+          "correctAnswer": "Year of the Elephant",
+          "explanation": "The Prophet (PBUH) was born in the Year of the Elephant, when Abraha attempted to attack the Ka‘bah.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 3,
+          "question": "What was the first revelation received by Prophet Muhammad (PBUH)?",
+          "options": [
+            "Surah Al-Fatihah",
+            "Surah Al-Ikhlas",
+            "Surah Al-Alaq (first verses)",
+            "Surah Al-Muddathir"
+          ],
+          "correctAnswer": "Surah Al-Alaq (first verses)",
+          "explanation": "The first revelation was 'Iqra' from Surah Al-Alaq in the Cave of Hira.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 4,
+          "question": "Which angel brought the first revelation to Prophet Muhammad (PBUH)?",
+          "options": [
+            "Israfeel (AS)",
+            "Mikail (AS)",
+            "Jibreel (AS)",
+            "Malik (AS)"
+          ],
+          "correctAnswer": "Jibreel (AS)",
+          "explanation": "Angel Jibreel (AS) conveyed Allah’s revelations to Prophet Muhammad (PBUH).",
+          "difficulty": "easy"
+        },
+        {
+          "id": 5,
+          "question": "What is the migration from Makkah to Madinah called?",
+          "options": [
+            "Jihad",
+            "Hijrah",
+            "Fath",
+            "Dawah"
+          ],
+          "correctAnswer": "Hijrah",
+          "explanation": "Hijrah refers to the migration of the Prophet (PBUH) and Muslims from Makkah to Madinah in 622 CE.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 6,
+          "question": "Which event marks the beginning of the Islamic calendar?",
+          "options": [
+            "Birth of the Prophet",
+            "First revelation",
+            "Hijrah",
+            "Conquest of Makkah"
+          ],
+          "correctAnswer": "Hijrah",
+          "explanation": "The Islamic (Hijri) calendar begins from the Hijrah in 622 CE.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 7,
+          "question": "Who was the first person to accept Islam?",
+          "options": [
+            "Abu Bakr (RA)",
+            "Ali ibn Abi Talib (RA)",
+            "Khadijah (RA)",
+            "Umar ibn Al-Khattab (RA)"
+          ],
+          "correctAnswer": "Khadijah (RA)",
+          "explanation": "Khadijah (RA), the wife of the Prophet (PBUH), was the first to accept Islam.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 8,
+          "question": "Who was the first male to accept Islam?",
+          "options": [
+            "Abu Bakr (RA)",
+            "Ali ibn Abi Talib (RA)",
+            "Zayd ibn Harithah (RA)",
+            "Uthman ibn Affan (RA)"
+          ],
+          "correctAnswer": "Abu Bakr (RA)",
+          "explanation": "Abu Bakr (RA) was the first adult male to accept Islam.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 9,
+          "question": "Which battle was the first major battle in Islamic history?",
+          "options": [
+            "Battle of Uhud",
+            "Battle of Khandaq",
+            "Battle of Badr",
+            "Battle of Hunayn"
+          ],
+          "correctAnswer": "Battle of Badr",
+          "explanation": "The Battle of Badr was fought in 624 CE and was the first major battle of Islam.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 10,
+          "question": "Which battle is known as the Battle of the Trench?",
+          "options": [
+            "Badr",
+            "Uhud",
+            "Khandaq",
+            "Tabuk"
+          ],
+          "correctAnswer": "Khandaq",
+          "explanation": "The Battle of Khandaq involved digging a trench around Madinah for defense.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 11,
+          "question": "Who suggested the strategy of digging a trench in the Battle of Khandaq?",
+          "options": [
+            "Ali (RA)",
+            "Umar (RA)",
+            "Salman Al-Farsi (RA)",
+            "Abu Bakr (RA)"
+          ],
+          "correctAnswer": "Salman Al-Farsi (RA)",
+          "explanation": "Salman Al-Farsi (RA) suggested digging a trench as a defensive strategy.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 12,
+          "question": "What is the peaceful treaty between Muslims and Quraysh called?",
+          "options": [
+            "Treaty of Taif",
+            "Treaty of Hudaybiyyah",
+            "Treaty of Najran",
+            "Treaty of Tabuk"
+          ],
+          "correctAnswer": "Treaty of Hudaybiyyah",
+          "explanation": "The Treaty of Hudaybiyyah was a peace agreement between Muslims and Quraysh.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 13,
+          "question": "Which event involved the peaceful conquest of Makkah?",
+          "options": [
+            "Hijrah",
+            "Battle of Badr",
+            "Fath Makkah",
+            "Farewell Hajj"
+          ],
+          "correctAnswer": "Fath Makkah",
+          "explanation": "Fath Makkah refers to the conquest of Makkah in 630 CE without major bloodshed.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 14,
+          "question": "Who was the first caliph of Islam?",
+          "options": [
+            "Umar ibn Al-Khattab (RA)",
+            "Ali ibn Abi Talib (RA)",
+            "Abu Bakr As-Siddiq (RA)",
+            "Uthman ibn Affan (RA)"
+          ],
+          "correctAnswer": "Abu Bakr As-Siddiq (RA)",
+          "explanation": "Abu Bakr (RA) became the first caliph after the death of the Prophet (PBUH).",
+          "difficulty": "easy"
+        },
+        {
+          "id": 15,
+          "question": "Which caliph compiled the Qur'an into a single book?",
+          "options": [
+            "Abu Bakr (RA)",
+            "Umar (RA)",
+            "Uthman (RA)",
+            "Ali (RA)"
+          ],
+          "correctAnswer": "Uthman (RA)",
+          "explanation": "Caliph Uthman (RA) standardized and compiled the Qur'an into one official copy.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 16,
+          "question": "Which caliph is known as 'Al-Farooq'?",
+          "options": [
+            "Abu Bakr (RA)",
+            "Umar ibn Al-Khattab (RA)",
+            "Uthman ibn Affan (RA)",
+            "Ali ibn Abi Talib (RA)"
+          ],
+          "correctAnswer": "Umar ibn Al-Khattab (RA)",
+          "explanation": "Umar (RA) was called Al-Farooq because he distinguished clearly between right and wrong.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 17,
+          "question": "Which companion is known as 'Dhun-Nurayn'?",
+          "options": [
+            "Ali (RA)",
+            "Umar (RA)",
+            "Uthman (RA)",
+            "Abu Bakr (RA)"
+          ],
+          "correctAnswer": "Uthman (RA)",
+          "explanation": "Uthman (RA) was called Dhun-Nurayn because he married two daughters of the Prophet (PBUH).",
+          "difficulty": "medium"
+        },
+        {
+          "id": 18,
+          "question": "Where is Masjid al-Aqsa located?",
+          "options": [
+            "Makkah",
+            "Madinah",
+            "Jerusalem",
+            "Damascus"
+          ],
+          "correctAnswer": "Jerusalem",
+          "explanation": "Masjid al-Aqsa is located in Jerusalem and is the third holiest site in Islam.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 19,
+          "question": "Which event involved the Prophet’s (PBUH) night journey?",
+          "options": [
+            "Hijrah",
+            "Isra and Mi'raj",
+            "Farewell Sermon",
+            "Treaty of Hudaybiyyah"
+          ],
+          "correctAnswer": "Isra and Mi'raj",
+          "explanation": "Isra and Mi'raj refers to the miraculous night journey and ascension of the Prophet (PBUH).",
+          "difficulty": "easy"
+        },
+        {
+          "id": 20,
+          "question": "What was the final public sermon of Prophet Muhammad (PBUH) called?",
+          "options": [
+            "Victory Sermon",
+            "Farewell Sermon",
+            "Friday Sermon",
+            "Hajj Sermon"
+          ],
+          "correctAnswer": "Farewell Sermon",
+          "explanation": "The Farewell Sermon was delivered during the Prophet’s (PBUH) last Hajj.",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "islamic-ethics-manners-ikhlaaq",
+      "name": "Islamic Ethics & Manners",
+      "description": "Questions related to Islamic morals, character, and good manners (Ikhlaaq)",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What does the term 'Ikhlaaq' mean in Islam?",
+          "options": [
+            "Worship",
+            "Law",
+            "Character and manners",
+            "History"
+          ],
+          "correctAnswer": "Character and manners",
+          "explanation": "Ikhlaaq refers to moral character, behavior, and manners in Islam.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 2,
+          "question": "What was the primary purpose of Prophet Muhammad’s (PBUH) mission regarding character?",
+          "options": [
+            "To establish a kingdom",
+            "To perfect good character",
+            "To introduce trade",
+            "To teach warfare"
+          ],
+          "correctAnswer": "To perfect good character",
+          "explanation": "The Prophet (PBUH) said he was sent to perfect noble character.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 3,
+          "question": "Which quality is most emphasized in Islamic ethics?",
+          "options": [
+            "Wealth",
+            "Patience",
+            "Pride",
+            "Power"
+          ],
+          "correctAnswer": "Patience",
+          "explanation": "Patience (Sabr) is highly emphasized in Islam during hardship and ease.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 4,
+          "question": "What does Islam teach about honesty?",
+          "options": [
+            "It is optional",
+            "It is encouraged but not required",
+            "It leads to righteousness",
+            "It is only for scholars"
+          ],
+          "correctAnswer": "It leads to righteousness",
+          "explanation": "Honesty leads to righteousness and ultimately to Paradise.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 5,
+          "question": "Which behavior is strongly discouraged in Islam?",
+          "options": [
+            "Truthfulness",
+            "Humility",
+            "Backbiting",
+            "Kindness"
+          ],
+          "correctAnswer": "Backbiting",
+          "explanation": "Backbiting is considered a major sin in Islam.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 6,
+          "question": "How should Muslims treat their parents according to Islam?",
+          "options": [
+            "With equality",
+            "With kindness and respect",
+            "With formality only",
+            "With obedience only in youth"
+          ],
+          "correctAnswer": "With kindness and respect",
+          "explanation": "Islam commands kindness, respect, and obedience to parents.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 7,
+          "question": "What is the Islamic ruling on arrogance?",
+          "options": [
+            "It is encouraged",
+            "It is allowed in leaders",
+            "It is disliked",
+            "It is forbidden"
+          ],
+          "correctAnswer": "It is forbidden",
+          "explanation": "Arrogance is condemned in Islam and considered a sin.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 8,
+          "question": "Which action reflects humility?",
+          "options": [
+            "Boasting about wealth",
+            "Looking down on others",
+            "Helping others without pride",
+            "Seeking praise"
+          ],
+          "correctAnswer": "Helping others without pride",
+          "explanation": "Humility involves serving others sincerely without arrogance.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 9,
+          "question": "What does Islam say about keeping promises?",
+          "options": [
+            "Optional",
+            "Only required in contracts",
+            "A sign of faith",
+            "Only for elders"
+          ],
+          "correctAnswer": "A sign of faith",
+          "explanation": "Keeping promises is a sign of strong faith and good character.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 10,
+          "question": "How should a Muslim respond to anger?",
+          "options": [
+            "By taking revenge",
+            "By ignoring it completely",
+            "By controlling and suppressing it",
+            "By expressing it openly"
+          ],
+          "correctAnswer": "By controlling and suppressing it",
+          "explanation": "Controlling anger is praised in Islam and linked to strength.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 11,
+          "question": "Which of the following is considered the best among people in Islam?",
+          "options": [
+            "The richest",
+            "The most powerful",
+            "The one with best character",
+            "The most famous"
+          ],
+          "correctAnswer": "The one with best character",
+          "explanation": "The Prophet (PBUH) said the best among people are those with the best manners.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 12,
+          "question": "What is the Islamic approach toward forgiveness?",
+          "options": [
+            "Always seek revenge",
+            "Forgiveness is a weakness",
+            "Forgiveness is encouraged",
+            "Only forgive family"
+          ],
+          "correctAnswer": "Forgiveness is encouraged",
+          "explanation": "Islam encourages forgiveness and mercy over revenge.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 13,
+          "question": "What does Islam teach about greeting others?",
+          "options": [
+            "Avoid greetings",
+            "Greet only friends",
+            "Spread peace through greetings",
+            "Greet only elders"
+          ],
+          "correctAnswer": "Spread peace through greetings",
+          "explanation": "Saying 'Assalamu Alaikum' spreads peace and brotherhood.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 14,
+          "question": "Which habit strengthens brotherhood in Islam?",
+          "options": [
+            "Gossip",
+            "Envy",
+            "Helping one another",
+            "Competition"
+          ],
+          "correctAnswer": "Helping one another",
+          "explanation": "Helping others strengthens unity and brotherhood among Muslims.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 15,
+          "question": "What is the Islamic view on envy (Hasad)?",
+          "options": [
+            "It is praised",
+            "It is harmless",
+            "It is discouraged",
+            "It is required"
+          ],
+          "correctAnswer": "It is discouraged",
+          "explanation": "Hasad harms relationships and is condemned in Islam.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 16,
+          "question": "How should Muslims speak according to Islamic ethics?",
+          "options": [
+            "Speak loudly",
+            "Speak whatever they want",
+            "Speak good or remain silent",
+            "Speak only to elders"
+          ],
+          "correctAnswer": "Speak good or remain silent",
+          "explanation": "Islam teaches to speak kindly or remain silent to avoid harm.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 17,
+          "question": "What does Islam say about kindness to animals?",
+          "options": [
+            "Not important",
+            "Only to pets",
+            "It is rewarded",
+            "Only during travel"
+          ],
+          "correctAnswer": "It is rewarded",
+          "explanation": "Kindness to animals is rewarded in Islam and cruelty is punished.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 18,
+          "question": "Which behavior reflects good neighborly conduct?",
+          "options": [
+            "Ignoring neighbors",
+            "Causing inconvenience",
+            "Helping neighbors",
+            "Competing with neighbors"
+          ],
+          "correctAnswer": "Helping neighbors",
+          "explanation": "Islam places great emphasis on the rights of neighbors.",
+          "difficulty": "easy"
+        },
+        {
+          "id": 19,
+          "question": "What is the Islamic teaching regarding modesty (Haya)?",
+          "options": [
+            "It is outdated",
+            "It is optional",
+            "It is part of faith",
+            "It applies only to women"
+          ],
+          "correctAnswer": "It is part of faith",
+          "explanation": "Modesty (Haya) is described as a branch of faith in Islam.",
+          "difficulty": "medium"
+        },
+        {
+          "id": 20,
+          "question": "Which action best represents Islamic manners?",
+          "options": [
+            "Arguing frequently",
+            "Showing mercy and compassion",
+            "Seeking praise",
+            "Displaying pride"
+          ],
+          "correctAnswer": "Showing mercy and compassion",
+          "explanation": "Mercy and compassion are core aspects of Islamic character.",
+          "difficulty": "easy"
+        }
+      ]
     }
-]}
+  ]
+}

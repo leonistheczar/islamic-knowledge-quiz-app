@@ -73,17 +73,24 @@
 
 .dark {
   --dark-text: #fdf4e7;
-  --dark-background: #0f0c08;
+  --dark-background: #221607;
   --dark-primary: #d07e0b;
+  --dark-primary-5: #faae45;
   --dark-secondary: #22ef93;
-  --dark-accent: #0fb2d7;
+  --dark-accent: #143f49;
 }
 /* Custom Styles: Main Section Background */
 a:hover, button:hover, .nav-link:hover, #category-item:hover {
   cursor: url('/assets/cursor_pointer.png'),pointer;
 }
+.dark a:hover, #toggler:hover, button:hover, .nav-link:hover, #category-item:hover {
+  cursor: url('/assets/cursor_pointer_dark.png'),pointer;
+}
 #main {
   background: url('/assets/Wave.svg') no-repeat center center / cover;
+}
+.dark #main {
+  background: url('/assets/Wave_dark.svg') no-repeat center center / cover;
 }
 
 /* Quiz Timer Custom Animation */

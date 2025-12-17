@@ -5,6 +5,8 @@ const UI = () => {
             html: document.querySelector("#root"),
             toggler: document.querySelector("#toggle"),
             introDialog: document.querySelector('#intro-guide-dialog'),
+            headerImgLight: document.querySelector("#header-img-light"),
+            headerImgDark: document.querySelector("#header-img-dark"),
             // Main Screen (Intro)
             mainScreen: document.querySelector("#main-screen"),
             mainScreenContainer: document.querySelector("#main-screen-container"),

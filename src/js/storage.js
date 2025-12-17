@@ -69,15 +69,12 @@ const getTheme = () => {
         const theme = localStorage.getItem('theme');
         return theme ? theme : null;
     } catch (error) {
-        console.error('Error parsing user data:', error);
+        console.error('Error getting theme:', error);
         return null;
     }
 }
 const updateTheme = (newTheme) => {
-    let theme = getTheme();
-    if(!theme) return null;
-    theme = newTheme;
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('theme', newTheme);
 }
 const resetStorage = () => {
         // Detect system preference

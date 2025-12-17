@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" id="root" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,35 +9,39 @@
   <link rel="icon" href="./assets/proposed-logo.png">
   <title>ImanQuiz | Your Best Islamic Quiz App</title>
 </head>
-<body class="font-ibm text-(--main-text) bg-(--main-background) cursor-[url('/assets/cursor_default.png'),auto] dark:cursor-[url('/assets/cursor_default_dark.png'),auto] dark:text-(--dark-text) dark:bg-(--dark-background)">
+
+<body
+  class="font-ibm text-(--main-text) bg-(--main-background) dark:bg-(--main-background) dark:text-(--main-text) cursor-[url('/assets/cursor_default_dark.png'),auto]">
   <!-- Header & Navbar -->
-  <nav id="main-nav" class="flex justify-between items-center border-b-2 border-(--main-primary) dark:border-(--main-primary-5)">
+  <nav id="main-nav"
+    class="flex justify-between items-center border-b-2 border-(--main-primary) dark:border(--main-primary)">
     <!-- Theme Toggler -->
-     <div id="toggler" class="absolute top-2 right-0 scale-[.85] cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
-       <label class="inline-flex items-center relative">
-         <input class="peer hidden" id="toggle" type="checkbox" />
-         <div
-           class="relative w-[110px] h-[50px] bg-white peer-checked:bg-zinc-500 rounded-full after:absolute after:content-[''] after:w-[40px] after:h-[40px] after:bg-gradient-to-r from-orange-500 to-yellow-400 peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[5px] after:left-[5px] active:after:w-[50px] peer-checked:after:left-[105px] peer-checked:after:translate-x-[-100%] shadow-sm duration-300 after:duration-300 after:shadow-md">
-         </div>
-         <svg height="0" width="100" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-           class="fill-white peer-checked:opacity-60 absolute w-6 h-6 left-[13px]">
-           <path
-             d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5ZM13,0h-2V5h2V0Zm0,19h-2v5h2v-5ZM5,11H0v2H5v-2Zm19,0h-5v2h5v-2Zm-2.81-6.78l-1.41-1.41-3.54,3.54,1.41,1.41,3.54-3.54ZM7.76,17.66l-1.41-1.41-3.54,3.54,1.41,1.41,3.54-3.54Zm0-11.31l-3.54-3.54-1.41,1.41,3.54,3.54,1.41-1.41Zm13.44,13.44l-3.54-3.54-1.41,1.41,3.54,3.54,1.41-1.41Z">
-           </path>
-         </svg>
-         <svg height="512" width="512" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
-           xmlns="http://www.w3.org/2000/svg"
-           class="fill-black opacity-60 peer-checked:opacity-70 peer-checked:fill-white absolute w-6 h-6 right-[13px]">
-           <path
-             d="M12.009,24A12.067,12.067,0,0,1,.075,10.725,12.121,12.121,0,0,1,10.1.152a13,13,0,0,1,5.03.206,2.5,2.5,0,0,1,1.8,1.8,2.47,2.47,0,0,1-.7,2.425c-4.559,4.168-4.165,10.645.807,14.412h0a2.5,2.5,0,0,1-.7,4.319A13.875,13.875,0,0,1,12.009,24Zm.074-22a10.776,10.776,0,0,0-1.675.127,10.1,10.1,0,0,0-8.344,8.8A9.928,9.928,0,0,0,4.581,18.7a10.473,10.473,0,0,0,11.093,2.734.5.5,0,0,0,.138-.856h0C9.883,16.1,9.417,8.087,14.865,3.124a.459.459,0,0,0,.127-.465.491.491,0,0,0-.356-.362A10.68,10.68,0,0,0,12.083,2ZM20.5,12a1,1,0,0,1-.97-.757l-.358-1.43L17.74,9.428a1,1,0,0,1,.035-1.94l1.4-.325.351-1.406a1,1,0,0,1,1.94,0l.355,1.418,1.418.355a1,1,0,0,1,0,1.94l-1.418.355-.355,1.418A1,1,0,0,1,20.5,12ZM16,14a1,1,0,0,0,2,0A1,1,0,0,0,16,14Zm6,4a1,1,0,0,0,2,0A1,1,0,0,0,22,18Z">
-           </path>
-         </svg>
-       </label>
-     </div>
+    <div id="toggler" class="absolute top-2 right-0 scale-[.85] cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
+      <label class="inline-flex items-center relative">
+        <input class="peer hidden" id="toggle" type="checkbox" />
+        <div
+          class="relative w-[110px] h-[50px] bg-white peer-checked:bg-zinc-500 rounded-full after:absolute after:content-[''] after:w-[40px] after:h-[40px] after:bg-gradient-to-r from-orange-500 to-yellow-400 peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[5px] after:left-[5px] active:after:w-[50px] peer-checked:after:left-[105px] peer-checked:after:translate-x-[-100%] shadow-sm duration-300 after:duration-300 after:shadow-md">
+        </div>
+        <svg height="0" width="100" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg" class="fill-white peer-checked:opacity-60 absolute w-6 h-6 left-[13px]">
+          <path
+            d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5ZM13,0h-2V5h2V0Zm0,19h-2v5h2v-5ZM5,11H0v2H5v-2Zm19,0h-5v2h5v-2Zm-2.81-6.78l-1.41-1.41-3.54,3.54,1.41,1.41,3.54-3.54ZM7.76,17.66l-1.41-1.41-3.54,3.54,1.41,1.41,3.54-3.54Zm0-11.31l-3.54-3.54-1.41,1.41,3.54,3.54,1.41-1.41Zm13.44,13.44l-3.54-3.54-1.41,1.41,3.54,3.54,1.41-1.41Z">
+          </path>
+        </svg>
+        <svg height="512" width="512" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          class="fill-black opacity-60 peer-checked:opacity-70 peer-checked:fill-white absolute w-6 h-6 right-[13px]">
+          <path
+            d="M12.009,24A12.067,12.067,0,0,1,.075,10.725,12.121,12.121,0,0,1,10.1.152a13,13,0,0,1,5.03.206,2.5,2.5,0,0,1,1.8,1.8,2.47,2.47,0,0,1-.7,2.425c-4.559,4.168-4.165,10.645.807,14.412h0a2.5,2.5,0,0,1-.7,4.319A13.875,13.875,0,0,1,12.009,24Zm.074-22a10.776,10.776,0,0,0-1.675.127,10.1,10.1,0,0,0-8.344,8.8A9.928,9.928,0,0,0,4.581,18.7a10.473,10.473,0,0,0,11.093,2.734.5.5,0,0,0,.138-.856h0C9.883,16.1,9.417,8.087,14.865,3.124a.459.459,0,0,0,.127-.465.491.491,0,0,0-.356-.362A10.68,10.68,0,0,0,12.083,2ZM20.5,12a1,1,0,0,1-.97-.757l-.358-1.43L17.74,9.428a1,1,0,0,1,.035-1.94l1.4-.325.351-1.406a1,1,0,0,1,1.94,0l.355,1.418,1.418.355a1,1,0,0,1,0,1.94l-1.418.355-.355,1.418A1,1,0,0,1,20.5,12ZM16,14a1,1,0,0,0,2,0A1,1,0,0,0,16,14Zm6,4a1,1,0,0,0,2,0A1,1,0,0,0,22,18Z">
+          </path>
+        </svg>
+      </label>
+    </div>
     <div id="header-container">
       <h1>
         <a href="/index.html">
-          <img class="h-52" src="/assets/proposed-logo.png" alt="KnowDeen Logo">
+          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-52" alt="KnowDeen Logo">
+          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-52" alt="KnowDeen Logo">
         </a>
       </h1>
     </div>
@@ -60,7 +65,7 @@
   <div id="intro-guide-dialog" class="hidden">
     <div id="start-info"
       class="absolute top-0 left-0 z-50 w-full h-screen flex justify-center items-center bg-black/40 p-4">
-      <div class="container h-fit bg-(--main-background) dark:bg-(--dark-background) p-8 rounded-4xl">
+      <div class="container h-fit bg-(--main-background) p-8 rounded-4xl">
         <div id="dialog-box" class="relative p-2">
           <a id="close-dialog"
             class="absolute top-0 right-0 z-50 group text-3xl hover:text-red-500 border-2 rounded-full" href="#">
@@ -96,25 +101,24 @@
   </div>
   <!-- Main  -->
   <main id="main" class="h-[calc(100vh-5rem)]">
-    <section id="main-screen" class="p-12 mt-10">
+    <section id="main-screen" class="p-12">
       <!-- Home Screen -->
       <div id="main-screen-container"
         class="container max-w-7xl mx-auto mt-4 py-6 px-12 flex justify-center items-center h-full">
-        <div id="main-content" class="flex flex-col justify-center text-center">
-          <h1 class="text-(--text-main) text-7xl ">Welcome to ImanQuiz</h1>
+        <div id="main-content" class="flex flex-col justify-center text-center mt-6">
+          <h1 class="text-(--main-text) text-7xl ">Welcome to ImanQuiz</h1>
           <p class="my-4 text-xl">ImanQuiz - is an interactive Islamic quiz app that turns learning into a focused and
             engaging experience. Navigate structured questions, test your understanding, and build knowledge step by
             step.</p>
           <div id="main-input" class="flex justify-center space-x-2">
             <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name"
-              class="w-[calc(100vh-5rem)] p-4 rounded-lg bg-(--main-background) font-medium text-xl text-(--text-main) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
-            <button id="start-btn"
-              class="text-xl bg-(--main-background) text-(--main-text) dark:bg-(--main-primary-5) p-4 font-semibold rounded-md hover:bg-[#faf0e0] hover:dark:text-(--main-text)" type="button">Let's
-              Start</button>
-            <button id="categories-btn"
-              class="text-xl bg-(--main-primary-5) dark:bg-(--dark-primary) dark:text-(--dark-text)  p-4 font-semibold rounded-md hover:bg-[#faf0e0] hover:dark:text-(--main-text)" type="button">Let's
-              Go to Categories</button>
-
+              class="w-[calc(100vh-5rem)] p-4 rounded-lg bg-(--main-background) font-medium text-xl text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
+            <button id="start-btn" class="transition-all text-xl bg-(--main-background) hover:bg-(--hover-light) dark:bg-(--main-background) p-4 font-semibold rounded-md" type="button">
+              Let's Start
+            </button> 
+            <button id="categories-btn" class="transition-all text-xl bg-(--main-accent) hover:text-(--main-background) dark:bg-(--main-accent) dark:hover:bg-[#3994a8] p-4 font-semibold rounded-md" type="button">
+              Let's Go to Categories
+            </button>
           </div>
         </div>
       </div>
@@ -124,21 +128,20 @@
       <div id="categories-screen-container"
         class="container max-w-7xl mx-auto py-6 px-12 flex justify-center items-center h-1/2">
         <div id="categories-content"
-          class="bg-(--main-primary-5) dark:bg-(--dark-background) w-full rounded-xl shadow-lg px-12 py-8 flex flex-col justify-center text-center">
-          <h1 id="categories-tag" class="text-5xl font-bold mb-6" style="color: var(--text-main)">Welcome, <span
-              id="user-name"></span></h1>
+          class="dark:bg-(--main-primary-5) bg-(--main-primary-5) dark:text-[#180f02] w-full rounded-xl shadow-lg px-12 py-8 flex flex-col justify-center text-center">
+          <h1 id="categories-tag" class="text-5xl font-bold mb-6">Welcome, <span id="user-name"></span></h1>
           <div id="reset-user"
-            class="bg-(--main-accent) text-white mx-auto rounded-xl font-semibold px-4 py-2 transition-all hover:shadow-lg hover:scale-105 active:scale-95">
-            <button type="button">Reset User</button>
+            class="bg-(--main-accent) text-[#fff] mx-auto rounded-xl font-semibold px-4 py-2 transition-all hover:shadow-lg hover:scale-105 active:scale-95">
+            <button type="button" class="">Reset User</button>
           </div>
-          <p class="mb-6 text-xl text-left" style="color: var(--text-main)">Select a category to begin your journey:</p>
-          <h2 class="text-3xl font-bold mb-6" style="color: var(--text-main)">Categories</h2>
+          <p class="mb-6 text-xl text-left">Select a category to begin your journey:</p>
+          <h2 class="text-3xl font-bold mb-6">Categories</h2>
           <ul id="categories-list"
-            class="grid grid-cols-3 grid-rows-2 justify-center gap-x-4 gap-y-2 mb-4 items-center">
+            class="grid grid-cols-3 grid-rows-2 justify-center dark:text-[#180f02] gap-x-4 gap-y-2 mb-4 items-center">
             <!-- Categories will be dynamically inserted here -->
           </ul>
           <a id="quiz-start-btn" href="quiz.html"
-            class="text-xl bg-(--main-accent) font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+            class="text-xl bg-(--main-accent) dark:hover:bg-(--main-accent) text-[#fff] font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
             type="button">
             Let's Start Quiz 🚀
           </a>

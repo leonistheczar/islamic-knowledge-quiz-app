@@ -31,10 +31,14 @@ initLocalStorage();
 document.addEventListener("DOMContentLoaded", async () => {
   const theme = getTheme();
   if (theme === "dark") {
+    ui.headerImgDark.classList.remove("hidden")
+    ui.headerImgLight.classList.add("hidden")
     ui.toggler.checked = true;
     ui.html.classList.add("dark")
   }
   else if(theme === "light"){
+    ui.headerImgLight.classList.remove("hidden")
+    ui.headerImgDark.classList.add("hidden")
     ui.toggler.checked = false;
     ui.html.classList.remove("dark")
   }
@@ -74,10 +78,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 // Theme toggler
 ui.toggler.addEventListener("change", (e) => {
   if(e.target.checked){
+    ui.headerImgDark.classList.remove("hidden")
+    ui.headerImgLight.classList.add("hidden")
     updateTheme("dark");
     ui.html.classList.add("dark")
   }
   else{
+    ui.headerImgLight.classList.remove("hidden")
+    ui.headerImgDark.classList.add("hidden")
     ui.html.classList.remove("dark")
     updateTheme("light");
   }
@@ -121,7 +129,7 @@ if (
         .map(
           (category, index) => `
   <li id="category-${index}" data-category="${index}"
-      class="category-item group relative w-full rounded-xl overflow-hidden
+      class="category-item dark:text-[#180f02] group relative w-full rounded-xl overflow-hidden
              bg-white border-2 transition-all duration-300 cursor-pointer
              hover:translate-x-1 hover:shadow-lg"
       style="border-color: var(--main-primary-5)">
@@ -132,8 +140,7 @@ if (
     
     <a href="#"
        class="relative z-10 flex items-center justify-between 
-              w-full px-6 py-5 no-underline"
-       style="color: var(--main-text)">
+              w-full px-6 py-5 no-underline">
       
       <div class="flex items-center gap-4">
         <span class="text-xl font-semibold">
@@ -172,7 +179,7 @@ ui.categoriesBtn.addEventListener("click", () => {
           .map(
             (category, index) => `
     <li id="category-${index}" data-category="${index}"
-        class="category-item group relative w-full rounded-xl overflow-hidden
+        class="category-item dark:text-[#180f02] group relative w-full rounded-xl overflow-hidden
                bg-white border-2 transition-all duration-300 cursor-pointer
                hover:translate-x-1 hover:shadow-lg"
         style="border-color: var(--main-primary-5)">
@@ -339,8 +346,7 @@ if (window.location.href.includes("quiz.html")) {
           : "";
 
         return `
-        <li class="quiz-choice-item ${selectedClass} dark:bg-[#d1b27d] dark:text-(--main-text) p-4 mb-3 border-2 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-md hover:scale-[1.02]" 
-            style="border-color: var(--main-text)" 
+        <li class="quiz-choice-item ${selectedClass} border-[#252525] p-4 mb-3 border-2 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-md hover:scale-[1.02]"  
             data-choice="${i}"
             ${selectedStyle}>
           <span class="text-lg">${choice}</span>
@@ -376,11 +382,11 @@ if (window.location.href.includes("quiz.html")) {
     if (index === quizQuestions.length - 1) {
       quizBtn.id = "submit-quiz";
       quizBtn.classList.remove("bg-(--main-secondary)");
-      quizBtn.classList.add("bg-(--main-accent)");
+      quizBtn.classList.add("bg-(--main-accent-10)");
       quizBtn.innerHTML = `Submit Quiz <i class="uil uil-check-circle"></i>`;
     } else {
       quizBtn.id = "next-choice";
-      quizBtn.classList.remove("bg-(--main-accent)");
+      quizBtn.classList.remove("bg-(--main-accent-10)");
       quizBtn.classList.add("bg-(--main-secondary)");
       quizBtn.innerHTML = 'Next <i class="uil uil-arrow-right"></i>';
     }
@@ -436,7 +442,7 @@ if (window.location.href.includes("quiz.html")) {
       ui.quizResultCategory.textContent = selectedCategory;
     }
     if (ui.answerCategory) {
-      ui.answerCategory.textContent = selectedCategory;
+      ui.answerCategory.textContent = `"${selectedCategory}"`;
     }
 
     // Scroll to results
@@ -461,7 +467,7 @@ if (window.location.href.includes("quiz.html")) {
         const bgColor = isCorrect ? "bg-green-50" : "bg-red-50";
 
         return `
-        <div class="mb-6 p-6 border-2 rounded-lg ${borderColor} ${bgColor} transition-all hover:shadow-md">
+        <div class="mb-6 p-6 border-2 rounded-lg ${borderColor} ${bgColor} text-[#000] transition-all hover:shadow-md">
           <div class="flex items-start justify-between mb-4">
             <h4 class="font-bold text-xl flex-1">Question ${index + 1}</h4>
             <span class="${statusClass} text-3xl font-bold">${statusIcon}</span>

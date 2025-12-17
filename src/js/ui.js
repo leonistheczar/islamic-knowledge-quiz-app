@@ -1,12 +1,19 @@
 const UI = () => {
     const UISelectors = () => {
         return {
+            // HTML
+            html: document.querySelector("#root"),
+            toggler: document.querySelector("#toggle"),
+            introDialog: document.querySelector('#intro-guide-dialog'),
+            headerImgLight: document.querySelector("#header-img-light"),
+            headerImgDark: document.querySelector("#header-img-dark"),
             // Main Screen (Intro)
             mainScreen: document.querySelector("#main-screen"),
             mainScreenContainer: document.querySelector("#main-screen-container"),
             mainContent: document.querySelector("#main-content"),
             nameInput: document.querySelector('#name'),
             startBtn: document.querySelector('#start-btn'),
+            categoriesBtn: document.querySelector("#categories-btn"),
             // User Dialog
             dialogOverlay: document.querySelector("#start-info"),
             dialogBox: document.querySelector("#dialog-box"),
@@ -18,6 +25,7 @@ const UI = () => {
             categoriesList: document.querySelector("#categories-list"),
             quizStart: document.querySelector("#quiz-start-btn"),
             logUserName: document.querySelector("#user-name"),
+            resetUser: document.querySelector("#reset-user"),
             // Quiz Screen
             quizIntro: document.querySelector("#quiz-intro"),
             quizCard: document.querySelector("#quiz-card"),

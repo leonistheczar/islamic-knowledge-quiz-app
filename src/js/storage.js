@@ -26,7 +26,13 @@ const getLocalStorageItem = (key) => {
     return{ userInfo, userTheme };
 }
 const getUser = () => {
-    return JSON.parse(localStorage.getItem('user'));
+    try {
+        const user = localStorage.getItem('user');
+        return user ? JSON.parse(user) : null;
+    } catch (error) {
+        console.error('Error parsing user data:', error);
+        return null;
+    }
 }
 const updateUserName = (username) => {
     const user = getUser() || {
@@ -58,4 +64,33 @@ const updateQuizScores = (currentScore) => {
     if(currentScore >= user.highestScore) user.highestScore = currentScore;
     localStorage.setItem('user', JSON.stringify(user));
 }
-export { initLocalStorage, getLocalStorageItem, getUser, updateUserName, updateCategory, updateQuizScores };
+const getTheme = () => {
+    try {
+        const theme = localStorage.getItem('theme');
+        return theme ? theme : null;
+    } catch (error) {
+        console.error('Error getting theme:', error);
+        return null;
+    }
+}
+const updateTheme = (newTheme) => {
+    localStorage.setItem('theme', newTheme);
+}
+const resetStorage = () => {
+        // Detect system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = prefersDark ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+        // Reset User
+        localStorage.setItem('user', JSON.stringify({
+            name: '',
+            categories: {
+                selectedCategory: null,
+                selectedCategoryID: null,
+            },
+            currentScore: 0,
+            totalScore: 20,
+            highestScore: 0,
+        }));
+    }
+export { initLocalStorage, getLocalStorageItem, getUser, updateUserName, updateCategory, updateQuizScores, getTheme, updateTheme, resetStorage };

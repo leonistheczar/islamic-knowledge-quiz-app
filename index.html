@@ -65,8 +65,8 @@
   <div id="intro-guide-dialog" class="hidden">
     <div id="start-info"
       class="fixed top-0 left-0 z-50 w-full sm:h-screen flex justify-center items-center bg-black/40 p-4">
-      <div class="container max-w-4xl sm:h-fit max-h-[calc(100vh-2rem)] bg-(--main-background) p-4 sm:p-8 rounded-2xl sm:rounded-4xl overflow-y-auto">
-        <div id="dialog-box" class="text-base lg:text-xl relative p-2">
+      <div class="container max-w-4xl sm:h-fit max-h-[calc(100vh-2rem)] bg-(--main-background) p-4 sm:p-8 rounded-2xl sm:rounded-4xl overflow-y-auto sm:overflow-hidden">
+        <div id="dialog-box" class="text-base sm:text-xl relative p-2">
           <a id="close-dialog"
             class="absolute top-0 right-0 z-50 group text-base sm:text-3xl hover:text-red-500 border-[1px] rounded-2xl" href="#">
             <i class="uil uil-times aspect-square"></i>
@@ -75,7 +75,7 @@
           <div class="flex flex-col gap-y-4">
             <!-- Instructions -->
             <div id="instructions" class="px-2 sm:px-4">
-              <ol id="list" class="list-decimal text-base space-y-2">
+              <ol id="list" class="list-decimal text-base sm:text-xl space-y-2">
                 <li class="">You will be prompted to enter your name</li>
                 <li>Once your name is submitted (saved), you will asked to choose from the following 3 categories:
                   <ol class="list-disc ml-6 mt-2">
@@ -91,7 +91,7 @@
             </div>
             <h2 class="text-center text-lg sm:text-2xl my-2">📝 Note</h2>
             <div id="info" class="px-2 sm:px-4">
-              <ol class="list-decimal text-base space-y-2">
+              <ol class="list-decimal text-base sm:text-xl space-y-2">
                 <li>A user can perform quiz in all categories, one after another</li>
                 <li>Final result will include total of all points from quiz</li>
               </ol>
@@ -103,23 +103,23 @@
   </div>
   <!-- Main  -->
   <main id="main" class="min-h-[calc(100vh-8rem)]">
-    <section id="main-screen" class="p-4 sm:p-8 lg:p-12">
+    <section id="main-screen" class="">
       <!-- Home Screen -->
       <div id="main-screen-container"
-        class="container max-w-7xl mx-auto mt-4 py-6 px-4 sm:px-8 lg:px-12 flex justify-center items-center min-h-[60vh]">
-        <div id="main-content" class="flex flex-col justify-center text-center mt-6 w-full">
+        class="container max-w-7xl mx-auto py-6 px-4 sm:px-8 lg:px-12 flex justify-center items-center min-h-[60vh]">
+        <div id="main-content" class="flex flex-col justify-center text-center w-full">
           <h1 class="text-(--main-text) text-3xl sm:text-5xl lg:text-7xl font-bold mb-4">Welcome to ImanQuiz</h1>
           <p class="my-4 text-base lg:text-xl px-2">ImanQuiz - is an interactive Islamic quiz app that turns learning into a focused and
             engaging experience. Navigate structured questions, test your understanding, and build knowledge step by
             step.</p>
           <div id="main-input" class="flex flex-col lg:flex-row justify-center items-stretch sm:items-center gap-2 sm:space-x-2 mt-4 px-2">
             <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name"
-              class="w-full p-3 sm:p-4 rounded-lg bg-(--main-background) font-medium text-base text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
+              class="w-full p-3 sm:p-4 rounded-lg bg-(--main-background) font-medium text-base sm:text-xl text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
             <div class="flex flex-col sm:flex-row gap-y-2 sm:gap-y-0  sm:gap-x-2">
-              <button id="start-btn" class="transition-all text-base bg-(--main-background) hover:bg-(--hover-light) dark:bg-(--main-background) p-3 sm:p-4 font-semibold rounded-md whitespace-nowrap" type="button">
+              <button id="start-btn" class="transition-all text-base sm:text-xl bg-(--main-background) hover:bg-(--hover-light) dark:bg-(--main-background) p-3 sm:p-4 font-semibold rounded-md whitespace-nowrap" type="button">
               Let's Start
             </button> 
-            <button id="categories-btn" class="transition-all text-base bg-(--main-accent) hover:text-(--main-background) dark:bg-(--main-accent) dark:hover:bg-[#3994a8] p-3 sm:p-4 font-semibold rounded-md whitespace-nowrap" type="button">
+            <button id="categories-btn" class="transition-all text-base sm:text-xl bg-(--main-accent) hover:text-(--main-background) dark:bg-(--main-accent) dark:hover:bg-[#3994a8] p-3 sm:p-4 font-semibold rounded-md whitespace-nowrap" type="button">
               Let's Go to Categories
             </button>
             </div>
@@ -128,7 +128,7 @@
       </div>
     </section>
     <!-- Quiz - Categories Showcase -->
-    <section id="categories-screen" class="hidden p-4 sm:p-8 lg:p-12">
+    <section id="categories-screen" class="hidden">
       <div id="categories-screen-container"
         class="container max-w-7xl mx-auto py-6 px-4 sm:px-8 lg:px-12 flex justify-center items-center min-h-[60vh]">
         <div id="categories-content"

@@ -5,6 +5,10 @@ import UI from "./ui.js";
 const ui = UI().UISelectors();
 gsap.registerPlugin(ScrollTrigger);
 
+function exists(selector) {
+  return document.querySelector(selector);
+}
+
 // ============================================
 // MAIN PAGE ANIMATIONS
 // ============================================
@@ -181,20 +185,22 @@ export function quizIntroAnimation() {
     defaults: { ease: "power2.out" }
   });
 
+  if(!exists("#quiz-intro")) return;  
   tl.from("#quiz-intro", {
-      opacity: 0,
-      scale: 0.95,
-      duration: 0.4
-    })
-    .from("#quiz-intro h2, #quiz-intro p", {
-      opacity: 0,
-      y: 20,
-      stagger: 0.15,
-      duration: 0.3
-    }, "-=0.2")
+    opacity: 0,
+    scale: 0.95,
+    duration: 0.4
+  })
+  .from("#quiz-intro h2, #quiz-intro p", {
+    opacity: 0,
+    y: 20,
+    stagger: 0.15,
+    duration: 0.3
+  }, "-=0.2")
 }
 
 export function quizIntroExitAnimation(callback) {
+  if(!exists("#quiz-intro")) return;  
   gsap.to("#quiz-intro", {
     opacity: 0,
     scale: 0.95,
@@ -213,7 +219,10 @@ export function quizCardEnterAnimation() {
   const tl = gsap.timeline({ 
     defaults: { ease: "power2.out" }
   });
-
+  if(!exists("#quiz-card")) return;
+  if(!exists("#quiz-category")) return;
+  if(!exists("#quiz-timer")) return;
+  if(!exists("#quiz-progress")) return;
   tl.from("#quiz-card", {
       opacity: 0,
       y: 30,
@@ -236,7 +245,8 @@ export function questionTransitionAnimation(callback) {
   const tl = gsap.timeline({
     onComplete: callback
   });
-
+if(!exists("#quiz-question")) return;
+if(!exists("#quiz-choices")) return;
   tl.to("#quiz-question, #quiz-choices", {
       opacity: 0,
       x: -20,
@@ -261,6 +271,7 @@ export function choiceHoverAnimation(element, isHover) {
 }
 
 export function progressUpdateAnimation() {
+  if(!exists("#quiz-progress")) return;
   gsap.to("#quiz-progress", {
     scaleX: 1.02,
     duration: 0.2,
@@ -271,6 +282,7 @@ export function progressUpdateAnimation() {
 }
 
 export function timerWarningAnimation() {
+  if(!exists("#quiz-timer")) return;
   gsap.killTweensOf("#quiz-timer");
   gsap.to("#quiz-timer", {
     scale: 1.1,
@@ -282,6 +294,7 @@ export function timerWarningAnimation() {
 }
 
 export function stopTimerAnimation() {
+  if(!exists("#quiz-timer")) return;
   gsap.killTweensOf("#quiz-timer");
   gsap.set("#quiz-timer", { scale: 1 });
 }
@@ -294,47 +307,56 @@ export function quizResultsEnterAnimation() {
   const tl = gsap.timeline({ 
     defaults: { ease: "power2.out" }
   });
-
+  
+  if(!exists("#quiz-results")) return;
+  if(!exists("#quiz-result-emoji")) return;
+  if(!exists("#quiz-result-message")) return;
+  if(!exists("#quiz-result-score")) return;
+  if(!exists("#quiz-highest-score")) return;
+  if(!exists("#quiz-result-percentage")) return;
+  if(!exists("#quiz-result-btn")) return;
+  if(!exists("#retake-btn")) return;
+  if(!exists("#home-btn")) return;
   tl.from("#quiz-results", {
-      opacity: 0,
-      scale: 0.9,
-      duration: 0.5
-    })
-    .from("#quiz-result-emoji", {
-      scale: 0,
-      rotation: 180,
-      duration: 0.6,
-      ease: "back.out(2)"
-    }, "-=0.3")
-    .from("#quiz-result-message", {
-      opacity: 0,
-      y: 20,
-      duration: 0.4
-    }, "-=0.3")
-    .from("#quiz-result-score, #quiz-highest-score", {
-      opacity: 0,
-      scale: 0.8,
-      stagger: 0.15,
-      duration: 0.4,
-      ease: "back.out(1.7)"
-    }, "-=0.2")
-    .from("#quiz-result-percentage", {
-      duration: 1,
-      ease: "power1.out"
-    }, "-=0.4")
+    opacity: 0,
+    scale: 0.9,
+    duration: 0.5
+  })
+  .from("#quiz-result-emoji", {
+    scale: 0,
+    rotation: 180,
+    duration: 0.6,
+    ease: "back.out(2)"
+  }, "-=0.3")
+  .from("#quiz-result-message", {
+    opacity: 0,
+    y: 20,
+    duration: 0.4
+  }, "-=0.3")
+  .from("#quiz-result-score, #quiz-highest-score", {
+    opacity: 0,
+    scale: 0.8,
+    stagger: 0.15,
+    duration: 0.4,
+    ease: "back.out(1.7)"
+  }, "-=0.2")
+  .from("#quiz-result-percentage", {
+    duration: 1,
+    ease: "power1.out"
+  }, "-=0.4")
     .from("#quiz-result-btn, #retake-quiz-btn, #home-btn", {
       opacity: 0,
       y: 20,
       stagger: 0.1,
       duration: 0.3
     }, "-=0.5");
-}
-
-export function scoreCountUpAnimation(element, finalScore) {
-  gsap.to(element, {
-    innerText: finalScore,
-    duration: 1.5,
-    snap: { innerText: 1 },
+  }
+  
+  export function scoreCountUpAnimation(element, finalScore) {
+    gsap.to(element, {
+      innerText: finalScore,
+      duration: 1.5,
+      snap: { innerText: 1 },
     ease: "power2.out"
   });
 }
@@ -360,12 +382,15 @@ export function answerBreakdownEnterAnimation() {
   const tl = gsap.timeline({ 
     defaults: { ease: "power2.out" }
   });
-
+  
+  if(!exists("#quiz-answers")) return;
+  if(!exists("#answer-category")) return;
+  if(!exists("#quiz-answer-breakdown > div")) return;
   tl.from("#quiz-answers", {
-      opacity: 1,
-      y: 30,
-      duration: 0.5
-    })
+    opacity: 1,
+    y: 30,
+    duration: 0.5
+  })
     .from("#answer-category", {
       opacity: 1,
       y: 20,
@@ -378,39 +403,39 @@ export function answerBreakdownEnterAnimation() {
       duration: 0.4,
       ease: "back.out(1.2)"
     }, "-=0.2");
-}
-
-export function correctAnswerAnimation(element) {
-  gsap.from(element, {
-    backgroundColor: "#86efac",
-    duration: 0.6,
-    ease: "power2.out"
-  });
-}
-
-export function incorrectAnswerAnimation(element) {
-  gsap.from(element, {
-    backgroundColor: "#fca5a5",
-    duration: 0.6,
-    ease: "power2.out"
-  });
-}
-
-// ============================================
-// BUTTON ANIMATIONS
-// ============================================
-
-export function buttonClickAnimation(element) {
-  gsap.fromTo(element,
-    { scale: 0.95 },
-    { 
-      scale: 1,
-      duration: 0.2,
-      ease: "back.out(3)"
-    }
-  );
-}
-
+  }
+  
+  export function correctAnswerAnimation(element) {
+    gsap.from(element, {
+      backgroundColor: "#86efac",
+      duration: 0.6,
+      ease: "power2.out"
+    });
+  }
+  
+  export function incorrectAnswerAnimation(element) {
+    gsap.from(element, {
+      backgroundColor: "#fca5a5",
+      duration: 0.6,
+      ease: "power2.out"
+    });
+  }
+  
+  // ============================================
+  // BUTTON ANIMATIONS
+  // ============================================
+  
+  export function buttonClickAnimation(element) {
+    gsap.fromTo(element,
+      { scale: 0.95 },
+      { 
+        scale: 1,
+        duration: 0.2,
+        ease: "back.out(3)"
+      }
+    );
+  }
+  
 export function buttonHoverAnimation(element, isHover) {
   gsap.to(element, {
     scale: isHover ? 1.05 : 1,
@@ -492,13 +517,13 @@ export function slideOutToLeft(element, duration = 0.5, callback) {
 
 export function themeTransitionAnimation() {
   const tl = gsap.timeline();
-  
-  tl.to("body", {
-      opacity: 0.9,
+  if(!exists("#body")) return;
+  tl.to("#body", {
+    opacity: 0.9,
       duration: 0.2,
       ease: "power1.inOut"
     })
-    .to("body", {
+    .to("#body", {
       opacity: 1,
       duration: 0.2,
       ease: "power1.inOut"

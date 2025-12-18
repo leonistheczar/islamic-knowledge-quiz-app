@@ -32,10 +32,10 @@ import {
   correctAnswerAnimation,
   incorrectAnswerAnimation,
 } from "./animations.js";
-
 import { initAPI } from "./api.js";
-const categoryEmojis = ["🕋", "🕊️", "📖", "💠", "📜", "🌿"];
 let apiData = null;
+// Category Emojis
+const categoryEmojis = ["🕋", "🕊️", "📖", "💠", "📜", "🌿"];
 // UI Import as variables
 import UI from "./ui.js";
 const ui = UI().UISelectors();
@@ -58,7 +58,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     ui.html.classList.remove("dark");
   }
   // // Check for quiz page access (Test-Case)
-  if (window.location.pathname.endsWith("quiz.html")) {
+  if ( getUser().name === "" &&
+  window.location.pathname.endsWith("quiz.html") &&
+  window.location.href.includes("quiz.html")
+) {
     // Get API DATA
     try {
       apiData = await initAPI();
@@ -68,8 +71,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("API Data:", apiData);
     const user = getUser();
     console.log("User from localStorage:", user);
-    if (user.name === "") {
-      window.location.href = "index.html";
+    
+    // Check if user exists AND has selected a category
+    if (!user || user.name === "" || !user.categories || !user.categories.selectedCategory) {
+      console.log("Redirecting: Invalid user or no category selected", user);
+      window.location.href = "index.html"; 
     }
   }
   if (
@@ -104,7 +110,13 @@ ui.toggler.addEventListener("change", (e) => {
     updateTheme("light");
   }
 });
-// index.html event listeners
+// ----------------------------
+// INDEX.HTML 
+// ----------------------------
+  // Handle category selection
+  let selectedCategory = null;
+  let categoryID = null;
+  let previousItem = null;
 if (
   window.location.pathname === "/" ||
   window.location.pathname === "/index.html" ||
@@ -132,7 +144,6 @@ if (
       return;
     }
     updateUserName(enteredName);
-
     pageExitAnimation(() => {
       ui.mainScreen.classList.add("hidden");
       ui.logUserName.textContent = enteredName;
@@ -155,7 +166,7 @@ if (
               w-full p-2 sm:px-6 sm:py-5 no-underline">
       
       <div class="flex items-center gap-4">
-        <span class="text-base sm:text-xl font-semibold">
+        <span id="category-selected"  class="text-base sm:text-xl font-semibold">
           ${categoryEmojis[index]} ${category.name}
         </span>
       </div>
@@ -205,7 +216,7 @@ if (
                 w-full p-2 sm:px-6 sm:py-5 no-underline">
         
         <div class="flex items-center gap-4">
-          <span class="text-base sm:text-xl font-semibold">
+          <span id="category-selected" class="text-base sm:text-xl font-semibold">
             ${categoryEmojis[index]} ${category.name}
           </span>
         </div>
@@ -215,18 +226,13 @@ if (
            style="color: var(--main-secondary)"></i>
       </a>
     </li>
-  `
-          )
+  `)
           .join("");
         ui.categoriesList.innerHTML = html;
         categoriesLoad();
       });
     }
   });
-  // Handle category selection
-  let selectedCategory = null;
-  let categoryID = null;
-  let previousItem = null;
   let resetUser = ui.resetUser;
   if (resetUser) {
     resetUser.addEventListener("click", () => {
@@ -243,6 +249,7 @@ if (
     e.preventDefault();
 
     const categoryItem = anchor.closest(".category-item");
+    selectedCategory = anchor.querySelector("span").textContent.trim();
     if (!categoryItem) return;
 
     const categoryIDAttr = categoryItem.getAttribute("data-category");
@@ -277,33 +284,44 @@ if (
 
     leftBorder && (leftBorder.style.backgroundColor = "var(--main-secondary)");
     categorySelectAnimation(categoryItem);
-    selectedCategory = categoryIDAttr;
+    categoryID = categoryIDAttr;
     previousItem = categoryItem;
+    console.log(selectedCategory);
   });
   ui.quizStart.addEventListener("click", (e) => {
     e.preventDefault();
 
-    if (!selectedCategory) {
+    if (!categoryID) {
       alert("Please select a category first");
       return;
     }
-
     categoriesExitAnimation(() => {
-      const categoryAPI = apiData.categories[selectedCategory].name;
-      updateCategory(categoryAPI, selectedCategory);
-      window.location.href = "quiz.html";
+      try {
+        updateCategory(selectedCategory, categoryID);
+        console.log(selectedCategory,categoryID);
+      } catch (error) {
+        console.error("Failed to updated category", error);
+        alert("Error");
+        return;
+      }
+      setTimeout(() => window.location.href = "quiz.html", 2000);
     });
   });
 }
-// --- QUIZ PAGE ---
-if (window.location.href.includes("quiz.html")) {
+// ----------------------------
+// QUIZ.HTML 
+// ----------------------------
+if (window.location.href.includes("quiz.html") || window.location.pathname.endsWith("quiz.html")) {
+  document.addEventListener("DOMContentLoaded", () => {
   const user = getUser();
   const selectedCategory = user.categories.selectedCategory;
   const selectedCategoryID = user.categories.selectedCategoryID;
 
   // Display selected category in intro
-  ui.quizNoticeCategory.textContent = `"${selectedCategory}"`;
-
+  if(ui.quizNoticeCategory){
+    console.log(selectedCategory);
+    ui.quizNoticeCategory.textContent = `"${selectedCategory}"`;
+  }
   let currentQuestionIndex = 0;
   let quizQuestions = [];
   let quizAnswers = [];
@@ -556,20 +574,22 @@ if (window.location.href.includes("quiz.html")) {
   }
 
   // Quiz Button Handler (Next / Submit)
-  ui.quizQuestionBtn.addEventListener("click", () => {
-    if (!userAnswers[currentQuestionIndex]) {
-      alert("Please select an answer first.");
-      return;
-    }
-
-    if (ui.quizQuestionBtn.id === "next-choice") {
-      currentQuestionIndex++;
-      displayQuestion(currentQuestionIndex);
-      quizProgress();
-    } else {
-      submitQuiz();
-    }
-  });
+  if (ui.quizQuestionBtn) {    
+    ui.quizQuestionBtn.addEventListener("click", () => {
+      if (!userAnswers[currentQuestionIndex]) {
+        alert("Please select an answer first.");
+        return;
+      }
+  
+      if (ui.quizQuestionBtn.id === "next-choice") {
+        currentQuestionIndex++;
+        displayQuestion(currentQuestionIndex);
+        quizProgress();
+      } else {
+        submitQuiz();
+      }
+    });
+  }
   // Buttons
   if (ui.quizBtn) {
     if (timerInterval) clearInterval(timerInterval);
@@ -620,4 +640,5 @@ if (window.location.href.includes("quiz.html")) {
     quizProgress();
     displayResults();
   }
+  });
 }

@@ -1,0 +1,31 @@
+[33m2f2ef9c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32malis-branch[m[33m, [m[1;31morigin/alis-branch[m[33m)[m HEAD@{0}: commit: Implemented Dark mode using tailwindcss class mode, and sort out potential conflicts
+[33m5f92209[m HEAD@{1}: reset: moving to 5f92209
+[33m725821c[m HEAD@{2}: reset: moving to HEAD~1
+[33m0a2428e[m HEAD@{3}: reset: moving to HEAD~1
+[33m5f92209[m HEAD@{4}: commit: Updated contact.html, added dark mode implementation (pending)
+[33m0a2428e[m HEAD@{5}: commit: Developed about.html and contact.html and updated UI for remaining pages
+[33m725821c[m HEAD@{6}: commit: Developed entire basic module of Islamic Quiz App
+[33m32e3e64[m HEAD@{7}: commit: Developed initial model for the quiz page
+[33mbdb860c[m HEAD@{8}: commit: Reconfigured main and categories section for easier handling
+[33m4c32bc2[m HEAD@{9}: commit: Finalized Categories section
+[33mf6d4ec8[m HEAD@{10}: commit: Developed User-Guide Dialog, started working on Categories selection UI
+[33ma3af78e[m HEAD@{11}: commit: Edited animations.js
+[33mb966498[m HEAD@{12}: commit: Developed main section of index.html (where user will get introduced and would be prompted to enter his / her name)
+[33m85f4955[m HEAD@{13}: commit: Developed the header & navbar with basic styling
+[33m7705c3b[m[33m ([m[1;32mmain[m[33m)[m HEAD@{14}: checkout: moving from main to alis-branch
+[33m7705c3b[m[33m ([m[1;32mmain[m[33m)[m HEAD@{15}: checkout: moving from alis_branch to main
+[33meaddc55[m HEAD@{16}: checkout: moving from alis-branch to alis_branch
+[33m7705c3b[m[33m ([m[1;32mmain[m[33m)[m HEAD@{17}: checkout: moving from main to alis-branch
+[33m7705c3b[m[33m ([m[1;32mmain[m[33m)[m HEAD@{18}: pull: Merge made by the 'ort' strategy.
+[33m39c4130[m HEAD@{19}: checkout: moving from main to main
+[33m39c4130[m HEAD@{20}: commit: Installed & Added GSAP for animations / transitions
+[33meaddc55[m HEAD@{21}: checkout: moving from alis_branch to main
+[33meaddc55[m HEAD@{22}: checkout: moving from alis_branch to alis_branch
+[33meaddc55[m HEAD@{23}: checkout: moving from main to alis_branch
+[33meaddc55[m HEAD@{24}: checkout: moving from main to main
+[33meaddc55[m HEAD@{25}: Branch: renamed refs/heads/main to refs/heads/main
+[33meaddc55[m HEAD@{27}: commit: Updated README.md
+[33ma9a4bc6[m HEAD@{28}: Branch: renamed refs/heads/main to refs/heads/main
+[33ma9a4bc6[m HEAD@{30}: commit: Added README.md
+[33mb897a4a[m HEAD@{31}: Branch: renamed refs/heads/master to refs/heads/main
+[33mb897a4a[m HEAD@{33}: commit (initial): Initialized basic setup for the project

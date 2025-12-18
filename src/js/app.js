@@ -140,10 +140,10 @@ if (
     
     <a href="#"
        class="relative z-10 flex items-center justify-between 
-              w-full px-6 py-5 no-underline">
+              w-full p-2 sm:px-6 sm:py-5 no-underline">
       
       <div class="flex items-center gap-4">
-        <span class="text-xl font-semibold">
+        <span class="text-base sm:text-xl font-semibold">
           ${categoryEmojis[index]} ${category.name}
         </span>
       </div>
@@ -190,11 +190,10 @@ ui.categoriesBtn.addEventListener("click", () => {
       
       <a href="#"
          class="relative z-10 flex items-center justify-between 
-                w-full px-6 py-5 no-underline"
-         style="color: var(--main-text)">
+                w-full p-2 sm:px-6 sm:py-5 no-underline">
         
         <div class="flex items-center gap-4">
-          <span class="text-xl font-semibold">
+          <span class="text-base sm:text-xl font-semibold">
             ${categoryEmojis[index]} ${category.name}
           </span>
         </div>
@@ -346,10 +345,10 @@ if (window.location.href.includes("quiz.html")) {
           : "";
 
         return `
-        <li class="quiz-choice-item ${selectedClass} border-[#252525] p-4 mb-3 border-2 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-md hover:scale-[1.02]"  
+        <li class="quiz-choice-item ${selectedClass} border-[#252525] bg-slate-200 p-2 sm:p-4 mb-3 border-2 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-md hover:scale-[1.02]"  
             data-choice="${i}"
             ${selectedStyle}>
-          <span class="text-lg">${choice}</span>
+          <span class="text-base lg:text-lg">${choice}</span>
         </li>
       `;
       })
@@ -467,12 +466,12 @@ if (window.location.href.includes("quiz.html")) {
         const bgColor = isCorrect ? "bg-green-50" : "bg-red-50";
 
         return `
-        <div class="mb-6 p-6 border-2 rounded-lg ${borderColor} ${bgColor} text-[#000] transition-all hover:shadow-md">
-          <div class="flex items-start justify-between mb-4">
-            <h4 class="font-bold text-xl flex-1">Question ${index + 1}</h4>
-            <span class="${statusClass} text-3xl font-bold">${statusIcon}</span>
+        <div class="mb-3 sm:mb-6 p-3 sm:p-6 border-2 rounded-lg ${borderColor} ${bgColor} text-[#000] transition-all hover:shadow-md">
+          <div class="flex items-start justify-between mb-2 sm:mb-4">
+            <h4 class="font-bold text-lg lg:text-xl flex-1">Question ${index + 1}</h4>
+            <span class="${statusClass} text-xl sm:text-3xl font-bold">${statusIcon}</span>
           </div>
-          <p class="mb-4 text-lg font-medium">${question.question}</p>
+          <p class="mb-2 sm:mb-4 text-base sm:text-lg font-medium">${question.question}</p>
           <div class="space-y-3 pl-4 border-l-4 ${
             isCorrect ? "border-green-500" : "border-red-500"
           }">

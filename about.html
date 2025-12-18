@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" id="root" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,13 +9,15 @@
   <link rel="icon" href="./assets/proposed-logo.png">
   <title>About Us | ImanQuiz</title>
 </head>
+
 <body
   class="font-ibm text-(--main-text) bg-(--main-background) dark:bg-(--main-background) dark:text-(--main-text) cursor-[url('/assets/cursor_default_dark.png'),auto]">
   <!-- Header & Navbar -->
   <nav id="main-nav"
-    class="flex justify-between items-center border-b-2 border-(--main-primary) dark:border(--main-primary)">
+    class="flex flex-col sm:flex-row py-4 px-4 sm:px-6 lg:px-8 justify-between items-center border-b-2 border-(--main-primary) dark:border(--main-primary) relative">
     <!-- Theme Toggler -->
-    <div id="toggler" class="absolute top-2 right-0 scale-[.85] cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
+    <div id="toggler"
+      class="absolute top-2 right-2 sm:right-4 scale-[.55] sm:scale-[.65] lg:scale-[.85] cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
       <label class="inline-flex items-center relative">
         <input class="peer hidden" id="toggle" type="checkbox" />
         <div
@@ -35,82 +38,99 @@
         </svg>
       </label>
     </div>
-    <div id="header-container">
+    <div id="header-container" class="mb-4 sm:mb-0">
       <h1>
         <a href="/index.html">
-          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-52" alt="KnowDeen Logo">
-          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-52" alt="KnowDeen Logo">
+          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-24 sm:h-36 lg:h-52" alt="KnowDeen Logo">
+          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-24 sm:h-36 lg:h-52"
+            alt="KnowDeen Logo">
         </a>
       </h1>
     </div>
     <!-- Navbar -->
-    <ul id="nav-links" class="px-12 flex space-x-6 font-medium">
-      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start ">
+    <ul id="nav-links" class="flex space-x-4 sm:space-x-6 font-medium px-4 sm:mt-8 sm:px-12">
+      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
         <a href="/index.html" class="pb-1">Home</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
         <a href="/about.html" class="pb-1">About</a>
-        <span class="block h-1 w-full bg-(--main-primary) transition-all duration-300"></span>
+        <span class="block h-1 w-full bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
         <a href="/contact.html" class="pb-1">Contact</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
     </ul>
   </nav>
-    <!-- About Us Page -->
-     <main id="about">
-       <div id="aboutPage" class="page active bg-(--main-primary-5)/40 text-(--main-text)">
-           <div class="max-w-4xl mx-auto px-6 py-16">
-               <div class="text-center mb-12">
-                   <h2 class="text-6xl font-bold mb-4">About ImanQuiz</h2>
-                   <p class="text-lg opacity-80">Strengthening faith through knowledge</p>
-               </div>
-               <div class="bg-white text-black rounded-2xl shadow-lg p-8 mb-8">
-                   <p class="text-lg leading-relaxed mb-6">
-                       <span class="font-bold italic">ImanQuiz</span> is an interactive web application designed to help Muslims deepen their understanding of Islam through engaging quizzes and educational content. Our mission is to make Islamic learning accessible, enjoyable, and meaningful for everyone.
-                   </p>
-                   <p class="text-lg leading-relaxed">
-                       Whether you're looking to test your knowledge of the Quran, Prophets, or Pillars of Islam, ImanQuiz provides a platform for continuous learning and spiritual growth.
-                   </p>
-               </div>
-   
-               <div class="grid md:grid-cols-3 gap-6 mb-8 text-black">
-                   <div class="bg-white rounded-xl p-6 text-center shadow-md">
-                       <div class="w-16 h-16 bg-primary-5 rounded-full flex items-center justify-center mx-auto mb-4">
-                           <span class="text-3xl">📖</span>
-                       </div>
-                       <h3 class="text-xl font-semibold mb-2 text-main">Learn</h3>
-                       <p class="opacity-70">Expand your Islamic knowledge through interactive quizzes</p>
-                   </div>
-   
-                   <div class="bg-white rounded-xl p-6 text-center shadow-md">
-                       <div class="w-16 h-16 bg-primary-5 rounded-full flex items-center justify-center mx-auto mb-4">
-                           <span class="text-3xl">💚</span>
-                       </div>
-                       <h3 class="text-xl font-semibold mb-2 text-main">Grow</h3>
-                       <p class="opacity-70">Strengthen your Iman with daily practice</p>
-                   </div>
-   
-                   <div class="bg-white rounded-xl p-6 text-center shadow-md">
-                       <div class="w-16 h-16 bg-primary-5 rounded-full flex items-center justify-center mx-auto mb-4">
-                           <span class="text-3xl">👥</span>
-                       </div>
-                       <h3 class="text-xl font-semibold mb-2 text-main">Connect</h3>
-                       <p class="opacity-70">Join a community of learners worldwide</p>
-                   </div>
-               </div>
-   
-               <div class="bg-white rounded-2xl text-black shadow-lg p-8">
-                   <h3 class="text-2xl font-bold text-main mb-4">Our Vision</h3>
-                   <p class="text-lg leading-relaxed opacity-80">
-                       To create a global platform where Muslims can enhance their Islamic knowledge in an engaging and modern way, fostering a deeper connection with their faith and building a stronger Muslim community.
-                   </p>
-               </div>
-           </div>
-       </div>
-     </main>
-    <script type="module" src="./src/js/app.js"></script>
+  <!-- About Us Page -->
+  <main id="about">
+    <div id="aboutPage" class="page active bg-(--main-primary-5)/40 text-(--main-text)">
+      <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
+        <div class="text-center mb-8 sm:mb-12">
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">About ImanQuiz</h2>
+          <p class="text-base sm:text-lg lg:text-xl opacity-80">Strengthening faith through knowledge</p>
+        </div>
+        <div class="bg-white text-black rounded-2xl shadow-lg p-6 sm:p-8 mb-6 sm:mb-8">
+          <p class="text-sm sm:text-base lg:text-lg leading-relaxed mb-4 sm:mb-6">
+            <span class="font-bold italic">ImanQuiz</span> is an interactive web application designed to help Muslims
+            deepen their understanding of Islam through engaging quizzes and educational content. Our mission is to make
+            Islamic learning accessible, enjoyable, and meaningful for everyone.
+          </p>
+          <p class="text-sm sm:text-base lg:text-lg leading-relaxed">
+            Whether you're looking to test your knowledge of the Quran, Prophets, or Pillars of Islam, ImanQuiz provides
+            a platform for continuous learning and spiritual growth.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 text-black">
+          <div
+            class="flex flex-row sm:flex-col items-center sm:items-center bg-white rounded-xl p-4 sm:p-6 text-left sm:text-center shadow-md">
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 bg-(--main-primary-10) rounded-full flex items-center justify-center mr-4 sm:mr-0 sm:mb-4 shrink-0 border-2">
+              <span class="text-2xl sm:text-3xl">📖</span>
+            </div>
+            <div class="flex flex-col justify-center sm:items-center">
+              <h3 class="text-lg sm:text-xl font-semibold mb-1 sm:mb-2 text-main">Learn</h3>
+              <p class="text-sm sm:text-base opacity-70">Expand your Islamic knowledge through quizzes</p>
+            </div>
+          </div>
+          <div
+            class="flex flex-row sm:flex-col items-center sm:items-center bg-white rounded-xl p-4 sm:p-6 text-left sm:text-center shadow-md">
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 bg-(--main-primary-10) rounded-full flex items-center justify-center mr-4 sm:mr-0 sm:mb-4 shrink-0 border-2">
+              <span class="text-2xl sm:text-3xl">💚</span>
+            </div>
+            <div class="flex flex-col justify-center sm:items-center">
+              <h3 class="text-lg sm:text-xl font-semibold mb-1 sm:mb-2 text-main">Grow</h3>
+              <p class="text-sm sm:text-base opacity-70">Strengthen your Iman with daily practice</p>
+            </div>
+          </div>
+          
+          <div
+            class="flex flex-row sm:flex-col items-center sm:items-center bg-white rounded-xl p-4 sm:p-6 text-left sm:text-center shadow-md sm:col-span-2 md:col-span-1">
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 bg-(--main-primary-10) rounded-full flex items-center justify-center mr-4 sm:mr-0 sm:mb-4 shrink-0 border-2">
+              <span class="text-2xl sm:text-3xl">👥</span>
+            </div>
+            <div class="flex flex-col justify-center sm:items-center">
+              <h3 class="text-lg sm:text-xl font-semibold mb-1 sm:mb-2 text-main">Connect</h3>
+              <p class="text-sm sm:text-base opacity-70">Join a community of learners worldwide</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl text-black shadow-lg p-6 sm:p-8">
+          <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-main mb-3 sm:mb-4">Our Vision</h3>
+          <p class="text-sm sm:text-base lg:text-lg leading-relaxed opacity-80">
+            To create a global platform where Muslims can enhance their Islamic knowledge in an engaging and modern way,
+            fostering a deeper connection with their faith and building a stronger Muslim community.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="./src/js/app.js"></script>
 </body>
+
 </html>

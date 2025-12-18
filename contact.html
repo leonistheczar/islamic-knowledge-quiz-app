@@ -11,10 +11,11 @@
 <body
   class="font-ibm text-(--main-text) bg-(--main-background) dark:bg-(--main-background) dark:text-(--main-text) cursor-[url('/assets/cursor_default_dark.png'),auto]">
   <!-- Header & Navbar -->
-  <nav id="main-nav"
-    class="flex justify-between items-center border-b-2 border-(--main-primary) dark:border(--main-primary)">
+<nav id="main-nav"
+    class="flex flex-col sm:flex-row py-4 px-4 sm:px-6 lg:px-8 justify-between items-center border-b-2 border-(--main-primary) dark:border(--main-primary) relative">
     <!-- Theme Toggler -->
-    <div id="toggler" class="absolute top-2 right-0 scale-[.85] cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
+    <div id="toggler"
+      class="absolute top-2 right-2 sm:right-4 scale-[.55] sm:scale-[.65] lg:scale-[.85] cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
       <label class="inline-flex items-center relative">
         <input class="peer hidden" id="toggle" type="checkbox" />
         <div
@@ -35,25 +36,26 @@
         </svg>
       </label>
     </div>
-    <div id="header-container">
+    <div id="header-container" class="mb-4 sm:mb-0">
       <h1>
         <a href="/index.html">
-          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-52" alt="KnowDeen Logo">
-          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-52" alt="KnowDeen Logo">
+          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-24 sm:h-36 lg:h-52" alt="KnowDeen Logo">
+          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-24 sm:h-36 lg:h-52"
+            alt="KnowDeen Logo">
         </a>
       </h1>
     </div>
     <!-- Navbar -->
-    <ul id="nav-links" class="px-12 flex space-x-6 font-medium">
-      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start ">
+    <ul id="nav-links" class="flex space-x-4 sm:space-x-6 font-medium px-4 sm:mt-8 sm:px-12">
+      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
         <a href="/index.html" class="pb-1">Home</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
         <a href="/about.html" class="pb-1">About</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wide font-medium text-xl nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
         <a href="/contact.html" class="pb-1">Contact</a>
         <span class="block h-1 w-full bg-(--main-primary) transition-all duration-300"></span>
       </li>
@@ -63,96 +65,98 @@
   <!-- Contact Us Page -->
   <main id="contact">
     <div id="contactPage" class="page bg-(--main-primary-5)/40">
-      <div class="max-w-4xl mx-auto px-6 py-16">
+      <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
 
         <!-- Page Header -->
-        <div class="text-center mb-12">
-          <h1 class="text-6xl font-bold text-main mb-4">Get In Touch</h1>
-          <p class="text-lg opacity-80">We'd love to hear from you</p>
+        <div class="text-center mb-8 sm:mb-12">
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-main mb-3 sm:mb-4">Get In Touch</h1>
+          <p class="text-base sm:text-lg lg:text-xl opacity-80">We'd love to hear from you</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 text-black">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-black">
 
           <!-- Contact Form -->
-          <div class="bg-white rounded-2xl shadow-lg p-8">
-            <h3 class="text-2xl font-semibold text-main mb-6">Send us a message</h3>
-            <form class="space-y-4">
+          <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+            <h3 class="text-xl sm:text-2xl font-semibold text-main mb-4 sm:mb-6">Send us a message</h3>
+            <form class="space-y-3 sm:space-y-4">
               <div>
                 <label class="block text-sm font-medium mb-2 text-main">Name</label>
                 <input type="text" required
-                  class="w-full px-4 py-3 rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all"
+                  class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all"
                   placeholder="Your name">
               </div>
               <div>
                 <label class="block text-sm font-medium mb-2 text-main">Email</label>
                 <input type="email" required
-                  class="w-full px-4 py-3 rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all"
+                  class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all"
                   placeholder="your@email.com">
               </div>
               <div>
                 <label class="block text-sm font-medium mb-2 text-main">Message</label>
                 <textarea required rows="4"
-                  class="w-full px-4 py-3 rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all"
+                  class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base rounded-lg border-2 border-primary-5 focus:outline-none focus:border-primary transition-all"
                   placeholder="Your message..."></textarea>
               </div>
               <button type="submit"
-                class="w-full bg-(--main-primary-5) text-(--main-text) py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
+                class="w-full bg-(--main-primary-5) text-(--main-text) py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-semibold hover:opacity-90 transition-all">
                 Send Message
               </button>
             </form>
           </div>
 
           <!-- Contact Information -->
-          <div class="space-y-6">
+          <div class="space-y-4 sm:space-y-6">
             <!-- Team GitHub Links -->
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-              <h3 class="text-2xl font-semibold text-main mb-6">Contact Information</h3>
-              <div class="space-y-4">
-                <a target="_blank" href="https://github.com/leonistheczar" class="flex text-lg items-start gap-4 group">
-                  <div class="text-4xl bg-primary-5 rounded-lg flex items-center justify-center shrink-0">
+            <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+              <h3 class="text-xl sm:text-2xl font-semibold text-main mb-4 sm:mb-6">Contact Information</h3>
+              <div class="space-y-3 sm:space-y-4">
+                <a target="_blank" href="https://github.com/leonistheczar" class="flex text-base sm:text-lg items-center gap-3 sm:gap-4 group p-2 rounded-lg hover:bg-gray-50 transition-all">
+                  <div class="text-3xl sm:text-4xl bg-primary-5 rounded-lg flex items-center justify-center shrink-0 w-10 h-10 sm:w-12 sm:h-12">
                     <i class="uil uil-github"></i>
                   </div>
                   <div>
                     <p class="font-semibold text-main">Muhammad Ali</p>
-                    <span class="opacity-70 group-hover:underline">Github</span>
+                    <span class="text-sm sm:text-base opacity-70 group-hover:underline">Github</span>
                   </div>
                 </a>
-                <a target="_blank" href="https://github.com/aysh34" class="flex text-lg items-start gap-4 group">
-                  <div class="text-4xl bg-primary-5 rounded-lg flex items-center justify-center shrink-0">
+                <div class="sm:hidden h-0.5 w-full bg-gray-400"></div>
+                <a target="_blank" href="https://github.com/aysh34" class="flex text-base sm:text-lg items-center gap-3 sm:gap-4 group p-2 rounded-lg hover:bg-gray-50 transition-all">
+                  <div class="text-3xl sm:text-4xl bg-primary-5 rounded-lg flex items-center justify-center shrink-0 w-10 h-10 sm:w-12 sm:h-12">
                     <i class="uil uil-github"></i>
                   </div>
                   <div>
                     <p class="font-semibold text-main">Ayesha Saleem</p>
-                    <span class="opacity-70 group-hover:underline">Github</span>
+                    <span class="text-sm sm:text-base opacity-70 group-hover:underline">Github</span>
                   </div>
                 </a>
-                <a target="_blank" href="https://github.com/subhangill" class="flex text-lg items-start gap-4 group">
-                  <div class="text-4xl bg-primary-5 rounded-lg flex items-center justify-center shrink-0">
+                <div class="sm:hidden h-0.5 w-full bg-gray-400"></div>
+                <a target="_blank" href="https://github.com/subhangill" class="flex text-base sm:text-lg items-center gap-3 sm:gap-4 group p-2 rounded-lg hover:bg-gray-50 transition-all">
+                  <div class="text-3xl sm:text-4xl bg-primary-5 rounded-lg flex items-center justify-center shrink-0 w-10 h-10 sm:w-12 sm:h-12">
                     <i class="uil uil-github"></i>
                   </div>
                   <div>
                     <p class="font-semibold text-main">Muhammad Subhan Safdar</p>
-                    <span class="opacity-70 group-hover:underline">Github</span>
+                    <span class="text-sm sm:text-base opacity-70 group-hover:underline">Github</span>
                   </div>
                 </a>
               </div>
             </div>
 
             <!-- Social Links -->
-            <div class="bg-white rounded-2xl flex justify-between items-center shadow-lg p-8">
-              <h3 class="text-xl font-semibold text-main">Follow Us</h3>
-              <div class="flex gap-x-6">
+            <div class="bg-white rounded-2xl flex flex-col sm:flex-row justify-between items-center shadow-lg p-6 sm:p-8 gap-4 sm:gap-0">
+              <h3 class="text-lg sm:text-xl font-semibold text-main">Follow Us</h3>
+              <div class="flex gap-4 sm:gap-6">
                 <a href="#"
-                  class="scale-150 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
-                  <i class="uil uil-facebook-f text-xl"></i>
+                  class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
+                  <i class="uil uil-facebook-f text-lg sm:text-xl"></i>
                 </a>
                 <a href="#"
-                  class="scale-150 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
-                  <i class="uil uil-twitter text-xl"></i>
+                  class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
+                  <i class="uil uil-twitter text-lg sm:text-xl"></i>
                 </a>
                 <a href="#"
-                  class="scale-150 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
-                  <i class="uil uil-linkedin text-xl"></i>
+                  class="w-10 h-10 sm:w-12 sm:h-12 bg-primary-5 rounded-lg flex items-center justify-center hover:text-black hover:-translate-y-1 transition-all">
+                  <i class="uil uil-linkedin text-lg sm:text-xl"></i>
                 </a>
               </div>
             </div>
@@ -166,4 +170,4 @@
   <script type="module" src="./src/js/app.js"></script>
 </body>
 
-</html>
+</html> 

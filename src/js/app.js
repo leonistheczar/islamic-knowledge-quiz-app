@@ -7,7 +7,7 @@ import {
   updateQuizScores,
   getTheme,
   updateTheme,
-  resetStorage
+  resetStorage,
 } from "./storage.js";
 // Animations Import
 import {
@@ -16,7 +16,23 @@ import {
   dialogOpenAnimation,
   dialogCloseAnimation,
   categoriesLoad,
+  categorySelectAnimation,
+  categoryDeselectAnimation,
+  categoriesExitAnimation,
+  quizIntroAnimation,
+  quizIntroExitAnimation,
+  quizCardEnterAnimation,
+  choiceHoverAnimation,
+  progressUpdateAnimation,
+  stopTimerAnimation,
+  quizResultsEnterAnimation,
+  timerWarningAnimation,
+  percentageRevealAnimation,
+  answerBreakdownEnterAnimation,
+  correctAnswerAnimation,
+  incorrectAnswerAnimation,
 } from "./animations.js";
+
 import { initAPI } from "./api.js";
 const categoryEmojis = ["🕋", "🕊️", "📖", "💠", "📜", "🌿"];
 let apiData = null;
@@ -31,16 +47,15 @@ initLocalStorage();
 document.addEventListener("DOMContentLoaded", async () => {
   const theme = getTheme();
   if (theme === "dark") {
-    ui.headerImgDark.classList.remove("hidden")
-    ui.headerImgLight.classList.add("hidden")
+    ui.headerImgDark.classList.remove("hidden");
+    ui.headerImgLight.classList.add("hidden");
     ui.toggler.checked = true;
-    ui.html.classList.add("dark")
-  }
-  else if(theme === "light"){
-    ui.headerImgLight.classList.remove("hidden")
-    ui.headerImgDark.classList.add("hidden")
+    ui.html.classList.add("dark");
+  } else if (theme === "light") {
+    ui.headerImgLight.classList.remove("hidden");
+    ui.headerImgDark.classList.add("hidden");
     ui.toggler.checked = false;
-    ui.html.classList.remove("dark")
+    ui.html.classList.remove("dark");
   }
   // // Check for quiz page access (Test-Case)
   if (window.location.pathname.endsWith("quiz.html")) {
@@ -77,19 +92,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // Theme toggler
 ui.toggler.addEventListener("change", (e) => {
-  if(e.target.checked){
-    ui.headerImgDark.classList.remove("hidden")
-    ui.headerImgLight.classList.add("hidden")
+  if (e.target.checked) {
+    ui.headerImgDark.classList.remove("hidden");
+    ui.headerImgLight.classList.add("hidden");
     updateTheme("dark");
-    ui.html.classList.add("dark")
-  }
-  else{
-    ui.headerImgLight.classList.remove("hidden")
-    ui.headerImgDark.classList.add("hidden")
-    ui.html.classList.remove("dark")
+    ui.html.classList.add("dark");
+  } else {
+    ui.headerImgLight.classList.remove("hidden");
+    ui.headerImgDark.classList.add("hidden");
+    ui.html.classList.remove("dark");
     updateTheme("light");
   }
-})
+});
 // index.html event listeners
 if (
   window.location.pathname === "/" ||
@@ -98,18 +112,17 @@ if (
 ) {
   const user = getUser();
   // Animation
-    if (user.name === "") {
-      console.log(user);
-      ui.introDialog.classList.remove("hidden");
-      dialogOpenAnimation();
-    }
+  if (user.name === "") {
+    console.log(user);
+    ui.introDialog.classList.remove("hidden");
+    dialogOpenAnimation();
+  }
   // Dialog Close Event Listener
   ui.closeDialogBtn.addEventListener("click", (e) => {
     e.preventDefault();
     dialogCloseAnimation();
     pageLoadAnimation();
   });
-
   // Start Button Event Listener
   ui.startBtn.addEventListener("click", () => {
     const enteredName = ui.nameInput.value.toUpperCase().trim();
@@ -122,7 +135,6 @@ if (
 
     pageExitAnimation(() => {
       ui.mainScreen.classList.add("hidden");
-      ui.categoriesScreen.classList.remove("hidden");
       ui.logUserName.textContent = enteredName;
       let apiCategories = apiData.categories;
       let html = apiCategories
@@ -140,10 +152,10 @@ if (
     
     <a href="#"
        class="relative z-10 flex items-center justify-between 
-              w-full px-6 py-5 no-underline">
+              w-full p-2 sm:px-6 sm:py-5 no-underline">
       
       <div class="flex items-center gap-4">
-        <span class="text-xl font-semibold">
+        <span class="text-base sm:text-xl font-semibold">
           ${categoryEmojis[index]} ${category.name}
         </span>
       </div>
@@ -157,13 +169,14 @@ if (
         )
         .join("");
       ui.categoriesList.innerHTML = html;
+      categoriesLoad();
     });
   });
-// Directly go to categories (if user existed)
-ui.categoriesBtn.addEventListener("click", () => {
+  // Directly go to categories (if user existed)
+  ui.categoriesBtn.addEventListener("click", () => {
     const user = getUser();
-    if(user){
-      const enteredName = user.name
+    if (user) {
+      const enteredName = user.name;
       const nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
       if (enteredName === "" || !nameRegex.test(enteredName)) {
         alert("User not exists, please enter your username, then proceed.");
@@ -172,7 +185,6 @@ ui.categoriesBtn.addEventListener("click", () => {
       }
       pageExitAnimation(() => {
         ui.mainScreen.classList.add("hidden");
-        ui.categoriesScreen.classList.remove("hidden");
         ui.logUserName.textContent = enteredName;
         let apiCategories = apiData.categories;
         let html = apiCategories
@@ -190,11 +202,10 @@ ui.categoriesBtn.addEventListener("click", () => {
       
       <a href="#"
          class="relative z-10 flex items-center justify-between 
-                w-full px-6 py-5 no-underline"
-         style="color: var(--main-text)">
+                w-full p-2 sm:px-6 sm:py-5 no-underline">
         
         <div class="flex items-center gap-4">
-          <span class="text-xl font-semibold">
+          <span class="text-base sm:text-xl font-semibold">
             ${categoryEmojis[index]} ${category.name}
           </span>
         </div>
@@ -208,203 +219,242 @@ ui.categoriesBtn.addEventListener("click", () => {
           )
           .join("");
         ui.categoriesList.innerHTML = html;
+        categoriesLoad();
       });
     }
-})
+  });
   // Handle category selection
   let selectedCategory = null;
   let categoryID = null;
   let previousItem = null;
   let resetUser = ui.resetUser;
-  if(resetUser){
+  if (resetUser) {
     resetUser.addEventListener("click", () => {
-      if(confirm("Are you sure to reset yourself as a user?")){
+      if (confirm("Are you sure to reset yourself as a user?")) {
         resetStorage();
         window.location.reload();
       }
-    })
+    });
   }
   ui.categoriesList.addEventListener("click", (e) => {
-    e.preventDefault();
     const anchor = e.target.closest("a");
-    if (anchor) {
-      const categoryItem = anchor.closest(".category-item");
-      categoryID = categoryItem.getAttribute("data-category");
+    if (!anchor) return;
 
-      if (categoryID !== null) {
-        // Remove selection from all items
-        document.querySelectorAll(".category-item").forEach((item) => {
-          const icon = item.querySelector(".uil-check-circle");
-          const leftBorder = item.querySelector("div[class*='absolute']");
+    e.preventDefault();
 
-          icon.classList.remove("opacity-100", "scale-100");
-          icon.classList.add("opacity-0", "scale-0");
+    const categoryItem = anchor.closest(".category-item");
+    if (!categoryItem) return;
 
-          item.style.borderColor = "var(--main-primary-5)";
-          item.style.background = "white";
+    const categoryIDAttr = categoryItem.getAttribute("data-category");
+    if (!categoryIDAttr) return;
 
-          if (leftBorder) {
-            leftBorder.style.backgroundColor = "var(--main-primary)";
-          }
-        });
+    // 🔹 Deselect previous item
+    if (previousItem && previousItem !== categoryItem) {
+      const prevIcon = previousItem.querySelector(".uil-check-circle");
+      const prevBorder = previousItem.querySelector("div[class*='absolute']");
 
-        // Add selection to clicked item
-        const icon = categoryItem.querySelector(".uil-check-circle");
-        const leftBorder = categoryItem.querySelector("div[class*='absolute']");
+      prevIcon?.classList.remove("opacity-100", "scale-100");
+      prevIcon?.classList.add("opacity-0", "scale-0");
 
-        icon.classList.remove("opacity-0", "scale-0");
-        icon.classList.add("opacity-100", "scale-100");
-
-        categoryItem.style.borderColor = "var(--main-primary)";
-        categoryItem.style.background =
-          "linear-gradient(135deg, var(--main-primary-5) 0%, white 100%)";
-        categoryItem.style.boxShadow = "0 4px 12px rgba(244, 162, 47, 0.2)";
-
-        if (leftBorder) {
-          leftBorder.style.backgroundColor = "var(--main-secondary)";
-          leftBorder.classList.add("scale-y-100");
-        }
-
-        selectedCategory = categoryID;
-        previousItem = categoryItem;
-      }
+      previousItem.style.borderColor = "var(--main-primary-5)";
+      previousItem.style.background = "white";
+      previousItem.style.boxShadow = "none";
+      prevBorder && (prevBorder.style.backgroundColor = "var(--main-primary)");
+      categoryDeselectAnimation(previousItem);
     }
+
+    // 🔹 Select current item
+    const icon = categoryItem.querySelector(".uil-check-circle");
+    const leftBorder = categoryItem.querySelector("div[class*='absolute']");
+
+    icon?.classList.remove("opacity-0", "scale-0");
+    icon?.classList.add("opacity-100", "scale-100");
+
+    categoryItem.style.borderColor = "var(--main-primary)";
+    categoryItem.style.background =
+      "linear-gradient(135deg, var(--main-primary-5) 0%, white 100%)";
+    categoryItem.style.boxShadow = "0 4px 12px rgba(244, 162, 47, 0.2)";
+
+    leftBorder && (leftBorder.style.backgroundColor = "var(--main-secondary)");
+    categorySelectAnimation(categoryItem);
+    selectedCategory = categoryIDAttr;
+    previousItem = categoryItem;
   });
   ui.quizStart.addEventListener("click", (e) => {
-    const categoryAPI = apiData.categories[categoryID].name;
-    updateCategory(categoryAPI, categoryID);
+    e.preventDefault();
+
+    if (!selectedCategory) {
+      alert("Please select a category first");
+      return;
+    }
+
+    categoriesExitAnimation(() => {
+      const categoryAPI = apiData.categories[selectedCategory].name;
+      updateCategory(categoryAPI, selectedCategory);
+      window.location.href = "quiz.html";
+    });
   });
 }
-
-// Quiz page
+// --- QUIZ PAGE ---
 if (window.location.href.includes("quiz.html")) {
-  // Get the selected category
-  let user = getUser();
+  const user = getUser();
   const selectedCategory = user.categories.selectedCategory;
   const selectedCategoryID = user.categories.selectedCategoryID;
-  console.log(selectedCategoryID)
-  console.log(apiData)
 
-  // Category shown in quiz-intro
-  let category = ui.quizNoticeCategory;
-  category.textContent = `"${selectedCategory}"`;
+  // Display selected category in intro
+  ui.quizNoticeCategory.textContent = `"${selectedCategory}"`;
 
-  let progressWidth = 0;
-  let currentProgress = 0;
   let currentQuestionIndex = 0;
   let quizQuestions = [];
-  let quizAnswers = []; // Quiz Answers
-  let userAnswers = []; // User Answers (Quiz and User answers both will be compared to finalize result)
-  let quizScore;
+  let quizAnswers = [];
+  let userAnswers = [];
+  let quizScore = 0;
+  let timer = 120; // 2 minutes
   let timerInterval;
+  let currentProgress = 0;
 
+  // Quiz Timer
   function quizTime() {
-    let timer = 120;
-    let timesOut;
     const quizTimer = ui.quizTimer;
+    clearInterval(timerInterval);
     timerInterval = setInterval(() => {
-      let minutes = Math.floor(timer / 60);
-      let seconds = timer % 60;
+      const minutes = Math.floor(timer / 60);
+      const seconds = timer % 60;
 
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-      timer--;
-      quizTimer.textContent = `${minutes}:${seconds}`;
+      quizTimer.textContent = `${String(minutes).padStart(2, "0")}:${String(
+        seconds
+      ).padStart(2, "0")}`;
 
       if (timer <= 20) {
         quizTimer.classList.add("scale-pulse", "text-red-500");
+        timerWarningAnimation();
       }
+
       if (timer === 0) {
-        timesOut = "00:00";
-        quizTimer.classList.remove("scale-pulse");
-        quizTimer.textContent = timesOut;
-        // Auto-submit quiz when time runs out
         clearInterval(timerInterval);
-        alert("Time's up! Your quiz will be submitted automatically.");
+        stopTimerAnimation();
+        alert("Time's up! Your quiz will be submitted.");
         submitQuiz();
       }
+      timer--;
     }, 1000);
   }
+  // Display Question
   function displayQuestion(index) {
-    const questionIndex = quizQuestions[index];
-    // Store correct answer after initialization
-    const answers = apiData.categories[selectedCategoryID].questions;
-    answers.map((index) => {
-      quizAnswers.push(index.correctAnswer);
-    });
-    // DOM Question Display
-    ui.quizQuestion.textContent = `(${index + 1}) ${questionIndex.question}`;
-
-    // Update choices
-    const choicesList = ui.quizChoiceList;
-    const choicesHTML = questionIndex.options
+    const question = quizQuestions[index];
+    ui.quizQuestion.textContent = `(${index + 1}) ${question.question}`;
+    ui.quizChoiceList.innerHTML = question.options
       .map((choice, i) => {
-        const isSelected = userAnswers[currentQuestionIndex] === choice;
-        const selectedClass = isSelected ? "selected" : "";
-        const selectedStyle = isSelected
-          ? 'style="background-color: var(--main-secondary); color: white;"'
-          : "";
-
+        const selected = userAnswers[index] === choice;
         return `
-        <li class="quiz-choice-item ${selectedClass} border-[#252525] p-4 mb-3 border-2 rounded-lg cursor-pointer transition-all duration-200 hover:shadow-md hover:scale-[1.02]"  
-            data-choice="${i}"
-            ${selectedStyle}>
-          <span class="text-lg">${choice}</span>
-        </li>
-      `;
+          <li class="quiz-choice-item border-2 text-base sm:text-xl rounded-lg p-3 mb-3 cursor-pointer ${
+            selected ? "selected" : ""
+          }"
+              data-choice="${i}"
+              style="${
+                selected ? "background:var(--main-secondary);color:#fff;" : ""
+              }">
+            ${choice}
+          </li>
+        `;
       })
       .join("");
-    choicesList.innerHTML = choicesHTML;
-
-    // Add click event listeners to all choices
+    // Add event listeners to choices
     document.querySelectorAll(".quiz-choice-item").forEach((item) => {
-      item.addEventListener("click", function () {
-        // Remove selection from all choices
-        document.querySelectorAll(".quiz-choice-item").forEach((choice) => {
-          choice.classList.remove("selected");
-          choice.style.backgroundColor = "";
-          choice.style.color = "";
+      item.addEventListener("click", () => {
+        document.querySelectorAll(".quiz-choice-item").forEach((c) => {
+          c.classList.remove("selected");
+          c.style.background = "";
+          c.style.color = "";
         });
-
-        // Mark this choice as selected
-        this.classList.add("selected");
-        this.style.backgroundColor = "var(--main-secondary)";
-        this.style.color = "white";
-
-        const choiceIndex = parseInt(this.getAttribute("data-choice"));
-        // Store the actual option text from the options array for accurate comparison
-        userAnswers[currentQuestionIndex] = questionIndex.options[choiceIndex];
+        item.classList.add("selected");
+        item.style.background = "var(--main-secondary)";
+        item.style.color = "#fff";
+        const idx = Number(item.dataset.choice);
+        userAnswers[currentQuestionIndex] = question.options[idx];
       });
+
+      item.addEventListener("mouseenter", () =>
+        choiceHoverAnimation(item, true)
+      );
+      item.addEventListener("mouseleave", () =>
+        choiceHoverAnimation(item, false)
+      );
     });
 
-    // Update next button text
-    const quizBtn = ui.quizQuestionBtn;
+    // Update Next / Submit button
+    const btn = ui.quizQuestionBtn;
     if (index === quizQuestions.length - 1) {
-      quizBtn.id = "submit-quiz";
-      quizBtn.classList.remove("bg-(--main-secondary)");
-      quizBtn.classList.add("bg-(--main-accent-10)");
-      quizBtn.innerHTML = `Submit Quiz <i class="uil uil-check-circle"></i>`;
+      btn.id = "submit-quiz";
+      btn.innerHTML = `Submit Quiz <i class="uil uil-check-circle"></i>`;
+      btn.classList.add("bg-[#30e0ff]");
     } else {
-      quizBtn.id = "next-choice";
-      quizBtn.classList.remove("bg-(--main-accent-10)");
-      quizBtn.classList.add("bg-(--main-secondary)");
-      quizBtn.innerHTML = 'Next <i class="uil uil-arrow-right"></i>';
+      btn.id = "next-choice";
+      btn.innerHTML = `Next <i class="uil uil-arrow-right"></i>`;
     }
   }
 
-  function displayResults() {
-    const user = getUser();
-    const quizCard = ui.quizCard;
-    const resultsSection = ui.quizResults;
-    const highestScore = user.highestScore;
-    quizCard.classList.add("hidden");
-    resultsSection.classList.remove("hidden");
+  // Quiz Progress
+  function quizProgress() {
+    const answeredCount = userAnswers.filter((ans) => ans !== null).length;
+    const progress = Math.round((answeredCount / quizQuestions.length) * 100);
+    ui.quizProgress.textContent = `${progress}%`;
+    ui.quizProgress.style.width = `${progress}%`;
+    ui.quizProgress.classList.remove("opacity-0");
 
-    // Calculate percentage and get result message
+    if (progress === 0) {
+      ui.quizProgress.classList.add("hidden");
+    } else {
+      ui.quizProgress.classList.remove("hidden");
+    }
+    currentProgress = progress;
+    progressUpdateAnimation();
+  }
+  // Initialize Quiz
+  function initiateQuiz() {
+    quizIntroExitAnimation();
+    window.addEventListener("beforeunload", (e) => {
+      // Only warn if quiz is active
+      if (!ui.quizCard.classList.contains("hidden")) {
+        e.preventDefault();
+      }
+    });
+
+    ui.quizIntro.classList.add("hidden");
+    ui.quizCard.classList.remove("hidden");
+    quizQuestions = apiData.categories[selectedCategoryID].questions;
+    quizAnswers = quizQuestions.map((q) => q.correctAnswer);
+    userAnswers = new Array(quizQuestions.length).fill(null);
+
+    currentQuestionIndex = 0;
+    currentProgress = 0;
+
+    displayQuestion(0);
+    quizTime();
+    console.log(timer);
+    quizCardEnterAnimation();
+  }
+  // Display Results
+  function displayResults() {
+    clearInterval(timerInterval);
+    console.log(timer);
+    // Calculate score
+    quizScore = quizAnswers.reduce(
+      (score, ans, i) => score + (userAnswers[i] === ans ? 1 : 0),
+      0
+    );
+    updateQuizScores(quizScore);
+
+    ui.quizCard.classList.add("hidden");
+    ui.quizResults.classList.remove("hidden");
+
     const percentage = Math.round((quizScore / quizQuestions.length) * 100);
     let resultMessage = "";
     let resultEmoji = "";
 
+    if (ui.progressCompleted && currentProgress >= 0) {
+      ui.progressCompleted.textContent = `Completed: ${currentProgress}%`;
+    }
     if (percentage >= 90) {
       resultMessage = "Outstanding! Excellent work! 🌟";
       resultEmoji = "🎉";
@@ -419,43 +469,32 @@ if (window.location.href.includes("quiz.html")) {
       resultEmoji = "📖";
     }
 
-    // Update results UI elements
-    if (ui.quizResultScore) {
+    if (ui.quizResultScore)
       ui.quizResultScore.textContent = `${quizScore}/${quizQuestions.length}`;
-    }
-    if (ui.quizHighestScore) {
-      ui.quizHighestScore.textContent = `${highestScore}/${quizQuestions.length}`;
-    }
-    if (ui.progressCompleted) {
-      ui.progressCompleted.textContent = `Quiz Progress: ${currentProgress}% completed`;
-    }
-    if (ui.quizResultPercentage) {
-      ui.quizResultPercentage.textContent = `${percentage}%`;
-    }
-    if (ui.quizResultMessage) {
-      ui.quizResultMessage.textContent = resultMessage;
-    }
-    if (ui.quizResultEmoji) {
-      ui.quizResultEmoji.textContent = resultEmoji;
-    }
-    if (ui.quizResultCategory) {
+    if (ui.quizHighestScore)
+      ui.quizHighestScore.textContent = `${getUser().highestScore || 0}/${
+        quizQuestions.length
+      }`;
+    if (ui.quizResultPercentage)
+      percentageRevealAnimation(ui.quizResultPercentage, percentage);
+    if (ui.quizResultMessage) ui.quizResultMessage.textContent = resultMessage;
+    if (ui.quizResultEmoji) ui.quizResultEmoji.textContent = resultEmoji;
+    if (ui.quizResultCategory)
       ui.quizResultCategory.textContent = selectedCategory;
-    }
-    if (ui.answerCategory) {
-      ui.answerCategory.textContent = `"${selectedCategory}"`;
-    }
 
-    // Scroll to results
-    resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    quizResultsEnterAnimation();
+    ui.quizResults.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-
+  // Display Answer Breakdown
   function displayAnswerBreakdown() {
-    // Show the answers section
     const answersSection = ui.quizAnswersSection;
+    const spanCategory = ui.answerCategory;
+    if (spanCategory) {
+      spanCategory.textContent = selectedCategory;
+    }
     answersSection.classList.remove("hidden");
 
     const breakdownContainer = ui.quizAnswerBreakdown;
-
     if (!breakdownContainer) return;
 
     const breakdownHTML = quizQuestions
@@ -467,157 +506,118 @@ if (window.location.href.includes("quiz.html")) {
         const bgColor = isCorrect ? "bg-green-50" : "bg-red-50";
 
         return `
-        <div class="mb-6 p-6 border-2 rounded-lg ${borderColor} ${bgColor} text-[#000] transition-all hover:shadow-md">
-          <div class="flex items-start justify-between mb-4">
-            <h4 class="font-bold text-xl flex-1">Question ${index + 1}</h4>
-            <span class="${statusClass} text-3xl font-bold">${statusIcon}</span>
-          </div>
-          <p class="mb-4 text-lg font-medium">${question.question}</p>
-          <div class="space-y-3 pl-4 border-l-4 ${
-            isCorrect ? "border-green-500" : "border-red-500"
-          }">
-            <p class="text-base">
-              <span class="font-semibold">Your Answer:</span> 
-              <span class="${
-                isCorrect
-                  ? "text-green-700 font-semibold"
-                  : "text-red-700 font-semibold"
-              }">${userAnswers[index] || "Not answered"}</span>
-            </p>
-            ${
-              !isCorrect
-                ? `
+          <div class="answer-item mb-3 sm:mb-6 p-3 sm:p-6 border-2 rounded-lg ${borderColor} ${bgColor} text-[#000] transition-all hover:shadow-md">
+            <div class="flex items-start justify-between mb-2 sm:mb-4">
+              <h4 class="font-bold text-lg lg:text-xl flex-1">Question ${
+                index + 1
+              }</h4>
+              <span class="${statusClass} text-xl sm:text-3xl font-bold">${statusIcon}</span>
+            </div>
+            <p class="mb-2 sm:mb-4 text-base sm:text-lg font-medium">${
+              question.question
+            }</p>
+            <div class="space-y-3 pl-4 border-l-4 ${
+              isCorrect ? "border-green-500" : "border-red-500"
+            }">
               <p class="text-base">
-                <span class="font-semibold">Correct Answer:</span> 
-                <span class="text-green-700 font-semibold">${
-                  quizAnswers[index] || "Not answered"
-                }</span>
+                <span class="font-semibold">Your Answer:</span>
+                <span class="${
+                  isCorrect
+                    ? "text-green-700 font-semibold"
+                    : "text-red-700 font-semibold"
+                }">
+                  ${userAnswers[index] || "Not answered"}
+                </span>
               </p>
-            `
-                : ""
-            }
+              ${
+                !isCorrect
+                  ? `<p class="text-base"><span class="font-semibold">Correct Answer:</span> <span class="text-green-700 font-semibold">${quizAnswers[index]}</span></p>`
+                  : ""
+              }
+              <p><span class="font-semibold text-slate-800">Explanation:</span> ${
+                question.explanation
+              }</p>
+            </div>
           </div>
-        </div>
-      `;
+        `;
       })
       .join("");
 
     breakdownContainer.innerHTML = breakdownHTML;
-    // Scroll to breakdown
+    answerBreakdownEnterAnimation();
+    // Animate each answer card
+    document.querySelectorAll(".answer-item").forEach((item, idx) => {
+      userAnswers[idx] === quizAnswers[idx]
+        ? correctAnswerAnimation(item)
+        : incorrectAnswerAnimation(item);
+    });
+
     answersSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  function submitQuiz() {
-    const user = getUser();
-    // Stop the timer
-    if (timerInterval) {
-      clearInterval(timerInterval);
-    }
-    quizScore = 0;
-    // Calculate score by comparing user answers with correct answers
-    quizQuestions.forEach((question, index) => {
-      if (userAnswers[index] === quizAnswers[index]) {
-        quizScore++;
-      }
-    });
-    // Updates the scores in LocalStorage as well
-    updateQuizScores(quizScore);
-    // Show results screen
-    displayResults();
-  }
-  function quizProgress() {
-    ui.quizProgress.classList.remove("opacity-0");
-    progressWidth = parseInt(ui.quizProgress.textContent) || 0;
-    progressWidth += 5;
-    // Update text and width
-    currentProgress = progressWidth;
-    ui.quizProgress.textContent = progressWidth + "%";
-    ui.quizProgress.style.width = progressWidth + "%";
-  }
-  function initiateQuiz(user, selectedCategory, index) {
-    const quizIntro = ui.quizIntro;
-    const quizCard = ui.quizCard;
-    // Quiz Card Appearance
-    quizIntro.classList.add("hidden");
-    quizCard.classList.remove("hidden");
-    // Dynamic DOM
-    let quizCategory = ui.quizCategory;
-    if (selectedCategory === "Pillars of Islam") {
-      quizCategory.textContent = `🕋 ${selectedCategory}`;
-    } else if (selectedCategory === "Prophets in Islam") {
-      quizCategory.textContent = `⭐ ${selectedCategory}`;
-    } else if (selectedCategory === "Quran Knowledge") {
-      quizCategory.textContent = `📖 ${selectedCategory}`;
-    }
-    // Get Questions
-    quizQuestions = apiData.categories[selectedCategoryID].questions;
-    // Reset arrays
-    quizAnswers = [];
-    userAnswers = new Array(quizQuestions.length).fill(null);
-    // Display first question
-    currentQuestionIndex = 0;
-    displayQuestion(currentQuestionIndex);
-    // Start timer
-    quizTime();
-  }
-  // Next button event listener
+  // Quiz Button Handler (Next / Submit)
   ui.quizQuestionBtn.addEventListener("click", () => {
-    // Check if answer is selected
-    if (
-      userAnswers[currentQuestionIndex] === null ||
-      userAnswers[currentQuestionIndex] === undefined
-    ) {
-      alert("Please select an answer before proceeding.");
+    if (!userAnswers[currentQuestionIndex]) {
+      alert("Please select an answer first.");
       return;
     }
-    console.log(
-      "Question",
-      currentQuestionIndex + 1,
-      "Answer:",
-      userAnswers[currentQuestionIndex]
-    );
+
     if (ui.quizQuestionBtn.id === "next-choice") {
-      // Move to next question
       currentQuestionIndex++;
       displayQuestion(currentQuestionIndex);
       quizProgress();
-    } else if (ui.quizQuestionBtn.id === "submit-quiz") {
-      quizProgress();
+    } else {
       submitQuiz();
     }
   });
-  // Show Result Button Event Listener
-  if (ui.quizResultBtn) {
-    ui.quizResultBtn.addEventListener("click", () => {
-      displayAnswerBreakdown();
-    });
+  // Buttons
+  if (ui.quizBtn) {
+    if (timerInterval) clearInterval(timerInterval);
+    ui.quizBtn.addEventListener("click", initiateQuiz);
   }
-  // Retake Quiz Button
+  quizResultsEnterAnimation();
+  if (ui.homeBtn)
+    ui.homeBtn.addEventListener(
+      "click",
+      () => (window.location.href = "index.html")
+    );
+  if (ui.quizResultBtn)
+    ui.quizResultBtn.addEventListener("click", displayAnswerBreakdown);
+
+  // Retake Quiz
   if (ui.retakeQuizBtn) {
     ui.retakeQuizBtn.addEventListener("click", () => {
-      // Hide results and answers, show intro
+      ui.quizTimer.classList.remove("scale-pulse", "text-red-500");
+      timer = 120;
+      clearInterval(timerInterval);
+      // Hide results & answer breakdown
       ui.quizResults.classList.add("hidden");
       ui.quizAnswersSection.classList.add("hidden");
-      ui.quizIntro.classList.remove("hidden");
 
-      // Reset quiz data
+      // Reset intro card visibility
+      ui.quizIntro.classList.remove("hidden");
+      ui.quizIntro.style.opacity = "1"; 
+      ui.quizIntro.style.transform = "none"; 
+
+      // Reset quiz state
       currentQuestionIndex = 0;
+      quizScore = 0;
       quizAnswers = [];
       userAnswers = [];
-      quizScore = 0;
+      currentProgress = 0;
 
-      // Scroll to top
+      ui.quizProgress.style.width = "0%";
+      ui.quizProgress.textContent = "0%";
+      ui.quizProgress.classList.add("opacity-0");
+
+      // Start intro animation
+      quizIntroAnimation();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
-  // Home Button
-  if (ui.homeBtn) {
-    ui.homeBtn.addEventListener("click", () => {
-      window.location.href = "index.html";
-    });
+  // Submit Quiz
+  function submitQuiz() {
+    quizProgress();
+    displayResults();
   }
-
-  ui.quizBtn.addEventListener("click", () =>
-    initiateQuiz(user, selectedCategory)
-  );
 }

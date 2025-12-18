@@ -295,7 +295,7 @@ if (
     });
   });
 }
-// quiz.html
+// --- QUIZ PAGE ---
 if (window.location.href.includes("quiz.html")) {
   const user = getUser();
   const selectedCategory = user.categories.selectedCategory;
@@ -313,18 +313,18 @@ if (window.location.href.includes("quiz.html")) {
   let timerInterval;
   let currentProgress = 0;
 
-  // ------------------------
   // Quiz Timer
-  // ------------------------
   function quizTime() {
     const quizTimer = ui.quizTimer;
     clearInterval(timerInterval);
     timerInterval = setInterval(() => {
       const minutes = Math.floor(timer / 60);
       const seconds = timer % 60;
-      
-      quizTimer.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-      
+
+      quizTimer.textContent = `${String(minutes).padStart(2, "0")}:${String(
+        seconds
+      ).padStart(2, "0")}`;
+
       if (timer <= 20) {
         quizTimer.classList.add("scale-pulse", "text-red-500");
         timerWarningAnimation();
@@ -337,29 +337,28 @@ if (window.location.href.includes("quiz.html")) {
         submitQuiz();
       }
       timer--;
-    }, 50); // use 1000ms to update per second
+    }, 1000);
   }
-
-  // ------------------------
   // Display Question
-  // ------------------------
   function displayQuestion(index) {
     const question = quizQuestions[index];
-
     ui.quizQuestion.textContent = `(${index + 1}) ${question.question}`;
     ui.quizChoiceList.innerHTML = question.options
       .map((choice, i) => {
         const selected = userAnswers[index] === choice;
         return `
-          <li class="quiz-choice-item border-2 rounded-lg p-3 mb-3 cursor-pointer ${selected ? "selected" : ""}"
+          <li class="quiz-choice-item border-2 text-base sm:text-xl rounded-lg p-3 mb-3 cursor-pointer ${
+            selected ? "selected" : ""
+          }"
               data-choice="${i}"
-              style="${selected ? "background:var(--main-secondary);color:#fff;" : ""}">
+              style="${
+                selected ? "background:var(--main-secondary);color:#fff;" : ""
+              }">
             ${choice}
           </li>
         `;
       })
       .join("");
-
     // Add event listeners to choices
     document.querySelectorAll(".quiz-choice-item").forEach((item) => {
       item.addEventListener("click", () => {
@@ -368,17 +367,19 @@ if (window.location.href.includes("quiz.html")) {
           c.style.background = "";
           c.style.color = "";
         });
-
         item.classList.add("selected");
         item.style.background = "var(--main-secondary)";
         item.style.color = "#fff";
-
         const idx = Number(item.dataset.choice);
         userAnswers[currentQuestionIndex] = question.options[idx];
       });
 
-      item.addEventListener("mouseenter", () => choiceHoverAnimation(item, true));
-      item.addEventListener("mouseleave", () => choiceHoverAnimation(item, false));
+      item.addEventListener("mouseenter", () =>
+        choiceHoverAnimation(item, true)
+      );
+      item.addEventListener("mouseleave", () =>
+        choiceHoverAnimation(item, false)
+      );
     });
 
     // Update Next / Submit button
@@ -393,62 +394,55 @@ if (window.location.href.includes("quiz.html")) {
     }
   }
 
-  // ------------------------
   // Quiz Progress
-  // ------------------------
-function quizProgress() {
-  const answeredCount = userAnswers.filter(ans => ans !== null).length;
-  const progress = Math.round((answeredCount / quizQuestions.length) * 100);
-  ui.quizProgress.textContent = `${progress}%`;
-  ui.quizProgress.style.width = `${progress}%`;
-  ui.quizProgress.classList.remove("opacity-0");
+  function quizProgress() {
+    const answeredCount = userAnswers.filter((ans) => ans !== null).length;
+    const progress = Math.round((answeredCount / quizQuestions.length) * 100);
+    ui.quizProgress.textContent = `${progress}%`;
+    ui.quizProgress.style.width = `${progress}%`;
+    ui.quizProgress.classList.remove("opacity-0");
 
-  if(progress === 0) {
-    ui.quizProgress.classList.add("hidden");
+    if (progress === 0) {
+      ui.quizProgress.classList.add("hidden");
+    } else {
+      ui.quizProgress.classList.remove("hidden");
+    }
+    currentProgress = progress;
+    progressUpdateAnimation();
   }
-  else{
-    ui.quizProgress.classList.remove("hidden");
-  }
-  currentProgress = progress;
-  progressUpdateAnimation();
-}
-
-
-  // ------------------------
   // Initialize Quiz
-  // ------------------------
   function initiateQuiz() {
     quizIntroExitAnimation();
     window.addEventListener("beforeunload", (e) => {
-  // Only warn if quiz is active
-  if (!ui.quizCard.classList.contains("hidden")) {
-    e.preventDefault();
+      // Only warn if quiz is active
+      if (!ui.quizCard.classList.contains("hidden")) {
+        e.preventDefault();
+      }
+    });
+
+    ui.quizIntro.classList.add("hidden");
+    ui.quizCard.classList.remove("hidden");
+    quizQuestions = apiData.categories[selectedCategoryID].questions;
+    quizAnswers = quizQuestions.map((q) => q.correctAnswer);
+    userAnswers = new Array(quizQuestions.length).fill(null);
+
+    currentQuestionIndex = 0;
+    currentProgress = 0;
+
+    displayQuestion(0);
+    quizTime();
+    console.log(timer);
+    quizCardEnterAnimation();
   }
-});
-
-      ui.quizIntro.classList.add("hidden");
-      ui.quizCard.classList.remove("hidden");
-      quizQuestions = apiData.categories[selectedCategoryID].questions;
-      quizAnswers = quizQuestions.map((q) => q.correctAnswer);
-      userAnswers = new Array(quizQuestions.length).fill(null);
-
-      currentQuestionIndex = 0;
-      currentProgress = 0;
-
-      displayQuestion(0);
-      quizTime();
-      console.log(timer);
-      quizCardEnterAnimation();
-  }
-
-  // ------------------------
   // Display Results
-  // ------------------------
   function displayResults() {
     clearInterval(timerInterval);
-        console.log(timer);
+    console.log(timer);
     // Calculate score
-    quizScore = quizAnswers.reduce((score, ans, i) => score + (userAnswers[i] === ans ? 1 : 0), 0);
+    quizScore = quizAnswers.reduce(
+      (score, ans, i) => score + (userAnswers[i] === ans ? 1 : 0),
+      0
+    );
     updateQuizScores(quizScore);
 
     ui.quizCard.classList.add("hidden");
@@ -458,8 +452,8 @@ function quizProgress() {
     let resultMessage = "";
     let resultEmoji = "";
 
-    if(ui.progressCompleted && currentProgress >= 0 ){
-        ui.progressCompleted.textContent = `Completed: ${currentProgress}%`;
+    if (ui.progressCompleted && currentProgress >= 0) {
+      ui.progressCompleted.textContent = `Completed: ${currentProgress}%`;
     }
     if (percentage >= 90) {
       resultMessage = "Outstanding! Excellent work! 🌟";
@@ -475,20 +469,23 @@ function quizProgress() {
       resultEmoji = "📖";
     }
 
-    if (ui.quizResultScore) ui.quizResultScore.textContent = `${quizScore}/${quizQuestions.length}`;
-    if (ui.quizHighestScore) ui.quizHighestScore.textContent = `${getUser().highestScore || 0}/${quizQuestions.length}`;
-    if (ui.quizResultPercentage) percentageRevealAnimation(ui.quizResultPercentage, percentage);
+    if (ui.quizResultScore)
+      ui.quizResultScore.textContent = `${quizScore}/${quizQuestions.length}`;
+    if (ui.quizHighestScore)
+      ui.quizHighestScore.textContent = `${getUser().highestScore || 0}/${
+        quizQuestions.length
+      }`;
+    if (ui.quizResultPercentage)
+      percentageRevealAnimation(ui.quizResultPercentage, percentage);
     if (ui.quizResultMessage) ui.quizResultMessage.textContent = resultMessage;
     if (ui.quizResultEmoji) ui.quizResultEmoji.textContent = resultEmoji;
-    if (ui.quizResultCategory) ui.quizResultCategory.textContent = selectedCategory;
+    if (ui.quizResultCategory)
+      ui.quizResultCategory.textContent = selectedCategory;
 
     quizResultsEnterAnimation();
     ui.quizResults.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-
-  // ------------------------
   // Display Answer Breakdown
-  // ------------------------
   function displayAnswerBreakdown() {
     const answersSection = ui.quizAnswersSection;
     const spanCategory = ui.answerCategory;
@@ -511,19 +508,35 @@ function quizProgress() {
         return `
           <div class="answer-item mb-3 sm:mb-6 p-3 sm:p-6 border-2 rounded-lg ${borderColor} ${bgColor} text-[#000] transition-all hover:shadow-md">
             <div class="flex items-start justify-between mb-2 sm:mb-4">
-              <h4 class="font-bold text-lg lg:text-xl flex-1">Question ${index + 1}</h4>
+              <h4 class="font-bold text-lg lg:text-xl flex-1">Question ${
+                index + 1
+              }</h4>
               <span class="${statusClass} text-xl sm:text-3xl font-bold">${statusIcon}</span>
             </div>
-            <p class="mb-2 sm:mb-4 text-base sm:text-lg font-medium">${question.question}</p>
-            <div class="space-y-3 pl-4 border-l-4 ${isCorrect ? "border-green-500" : "border-red-500"}">
+            <p class="mb-2 sm:mb-4 text-base sm:text-lg font-medium">${
+              question.question
+            }</p>
+            <div class="space-y-3 pl-4 border-l-4 ${
+              isCorrect ? "border-green-500" : "border-red-500"
+            }">
               <p class="text-base">
                 <span class="font-semibold">Your Answer:</span>
-                <span class="${isCorrect ? "text-green-700 font-semibold" : "text-red-700 font-semibold"}">
+                <span class="${
+                  isCorrect
+                    ? "text-green-700 font-semibold"
+                    : "text-red-700 font-semibold"
+                }">
                   ${userAnswers[index] || "Not answered"}
                 </span>
               </p>
-              ${!isCorrect ? `<p class="text-base"><span class="font-semibold">Correct Answer:</span> <span class="text-green-700 font-semibold">${quizAnswers[index]}</span></p>` : ""}
-              <p><span class="font-semibold text-slate-800">Explanation:</span> ${question.explanation}</p>
+              ${
+                !isCorrect
+                  ? `<p class="text-base"><span class="font-semibold">Correct Answer:</span> <span class="text-green-700 font-semibold">${quizAnswers[index]}</span></p>`
+                  : ""
+              }
+              <p><span class="font-semibold text-slate-800">Explanation:</span> ${
+                question.explanation
+              }</p>
             </div>
           </div>
         `;
@@ -531,19 +544,18 @@ function quizProgress() {
       .join("");
 
     breakdownContainer.innerHTML = breakdownHTML;
-    // answerBreakdownEnterAnimation();
-
+    answerBreakdownEnterAnimation();
     // Animate each answer card
     document.querySelectorAll(".answer-item").forEach((item, idx) => {
-      userAnswers[idx] === quizAnswers[idx] ? correctAnswerAnimation(item) : incorrectAnswerAnimation(item);
+      userAnswers[idx] === quizAnswers[idx]
+        ? correctAnswerAnimation(item)
+        : incorrectAnswerAnimation(item);
     });
 
     answersSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  // ------------------------
   // Quiz Button Handler (Next / Submit)
-  // ------------------------
   ui.quizQuestionBtn.addEventListener("click", () => {
     if (!userAnswers[currentQuestionIndex]) {
       alert("Please select an answer first.");
@@ -560,49 +572,50 @@ function quizProgress() {
   });
   // Buttons
   if (ui.quizBtn) {
-    if(timerInterval) clearInterval(timerInterval);
+    if (timerInterval) clearInterval(timerInterval);
     ui.quizBtn.addEventListener("click", initiateQuiz);
   }
-    quizResultsEnterAnimation();
-    if (ui.homeBtn) ui.homeBtn.addEventListener("click", () => (window.location.href = "index.html"));
-    if (ui.quizResultBtn) ui.quizResultBtn.addEventListener("click", displayAnswerBreakdown);
+  quizResultsEnterAnimation();
+  if (ui.homeBtn)
+    ui.homeBtn.addEventListener(
+      "click",
+      () => (window.location.href = "index.html")
+    );
+  if (ui.quizResultBtn)
+    ui.quizResultBtn.addEventListener("click", displayAnswerBreakdown);
 
-    // Retake Quiz
-if (ui.retakeQuizBtn) {
-  ui.retakeQuizBtn.addEventListener("click", () => {
-    ui.quizTimer.classList.remove("scale-pulse", "text-red-500");
-    timer = 120;
-    clearInterval(timerInterval);
-    // Hide results & answer breakdown
-    ui.quizResults.classList.add("hidden");
-    ui.quizAnswersSection.classList.add("hidden");
+  // Retake Quiz
+  if (ui.retakeQuizBtn) {
+    ui.retakeQuizBtn.addEventListener("click", () => {
+      ui.quizTimer.classList.remove("scale-pulse", "text-red-500");
+      timer = 120;
+      clearInterval(timerInterval);
+      // Hide results & answer breakdown
+      ui.quizResults.classList.add("hidden");
+      ui.quizAnswersSection.classList.add("hidden");
 
-    // Reset intro card visibility
-    ui.quizIntro.classList.remove("hidden");
-    ui.quizIntro.style.opacity = "1"; // Reset opacity
-    ui.quizIntro.style.transform = "none"; // Reset any transform applied by exit animation
+      // Reset intro card visibility
+      ui.quizIntro.classList.remove("hidden");
+      ui.quizIntro.style.opacity = "1"; 
+      ui.quizIntro.style.transform = "none"; 
 
-    // Reset quiz state
-    currentQuestionIndex = 0;
-    quizScore = 0;
-    quizAnswers = [];
-    userAnswers = [];
-    currentProgress = 0;
+      // Reset quiz state
+      currentQuestionIndex = 0;
+      quizScore = 0;
+      quizAnswers = [];
+      userAnswers = [];
+      currentProgress = 0;
 
-    ui.quizProgress.style.width = "0%";
-    ui.quizProgress.textContent = "0%";
-    ui.quizProgress.classList.add("opacity-0");
+      ui.quizProgress.style.width = "0%";
+      ui.quizProgress.textContent = "0%";
+      ui.quizProgress.classList.add("opacity-0");
 
-    // Start intro animation
-    quizIntroAnimation();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-
-
-  // ------------------------
+      // Start intro animation
+      quizIntroAnimation();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
   // Submit Quiz
-  // ------------------------
   function submitQuiz() {
     quizProgress();
     displayResults();

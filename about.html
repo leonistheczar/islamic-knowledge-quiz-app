@@ -10,18 +10,17 @@
   <title>About Us | ImanQuiz</title>
 </head>
 
-<body
+<body id="body"
   class="font-ibm text-(--main-text) bg-(--main-background) dark:bg-(--main-background) dark:text-(--main-text) cursor-[url('/assets/cursor_default_dark.png'),auto]">
   <!-- Header & Navbar -->
   <nav id="main-nav"
     class="flex flex-col sm:flex-row py-4 px-4 sm:px-6 lg:px-8 justify-between items-center border-b-2 border-(--main-primary) dark:border(--main-primary) relative">
     <!-- Theme Toggler -->
-    <div id="toggler"
-      class="absolute top-2 right-2 sm:right-4 scale-[.55] sm:scale-[.65] lg:scale-[.85] cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
+    <div id="toggler" class="absolute top-2 right-2 sm:right-4 scale-[.55] sm:scale-[.65] lg:scale-[.85] hover:cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
       <label class="inline-flex items-center relative">
         <input class="peer hidden" id="toggle" type="checkbox" />
         <div
-          class="relative w-[110px] h-[50px] bg-white peer-checked:bg-zinc-500 rounded-full after:absolute after:content-[''] after:w-[40px] after:h-[40px] after:bg-gradient-to-r from-orange-500 to-yellow-400 peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[5px] after:left-[5px] active:after:w-[50px] peer-checked:after:left-[105px] peer-checked:after:translate-x-[-100%] shadow-sm duration-300 after:duration-300 after:shadow-md">
+          class="relative w-[110px] h-[50px] bg-[#ffe1b7] peer-checked:bg-[#4e2f06] rounded-full after:absolute after:content-[''] after:w-[40px] after:h-[40px] after:bg-gradient-to-r from-orange-500 to-yellow-400 peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[5px] after:left-[5px] active:after:w-[50px] peer-checked:after:left-[105px] peer-checked:after:translate-x-[-100%] shadow-sm duration-300 after:duration-300 after:shadow-md">
         </div>
         <svg height="0" width="100" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
           xmlns="http://www.w3.org/2000/svg" class="fill-white peer-checked:opacity-60 absolute w-6 h-6 left-[13px]">
@@ -38,17 +37,16 @@
         </svg>
       </label>
     </div>
-    <div id="header-container" class="mb-4 sm:mb-0">
+    <div id="header-container" class="mb-2">
       <h1>
         <a href="/index.html">
-          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-24 sm:h-36 lg:h-52" alt="KnowDeen Logo">
-          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-24 sm:h-36 lg:h-52"
-            alt="KnowDeen Logo">
+          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-40 sm:h-36 lg:h-52" alt="KnowDeen Logo">
+          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-40 sm:h-36 lg:h-52" alt="KnowDeen Logo">
         </a>
       </h1>
     </div>
     <!-- Navbar -->
-    <ul id="nav-links" class="flex space-x-4 sm:space-x-6 font-medium px-4 sm:mt-8 sm:px-12">
+    <ul id="nav-links" class="flex space-x-8 font-medium px-4 sm:px-12">
       <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
         <a href="/index.html" class="pb-1">Home</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
@@ -68,7 +66,7 @@
     <div id="aboutPage" class="page active bg-(--main-primary-5)/40 text-(--main-text)">
       <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
         <div class="text-center mb-8 sm:mb-12">
-          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">About ImanQuiz</h2>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">About ImanQuiz</h1>
           <p class="text-base sm:text-lg lg:text-xl opacity-80">Strengthening faith through knowledge</p>
         </div>
         <div class="bg-white text-black rounded-2xl shadow-lg p-6 sm:p-8 mb-6 sm:mb-8">

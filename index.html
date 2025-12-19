@@ -1,26 +1,27 @@
 <!doctype html>
 <html lang="en" id="root" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="stylesheet" href="/src/css/main.css">
   <link rel="icon" href="./assets/proposed-logo.png">
-  <link rel="icon" href="./assets/proposed-logo-dark.png">
   <title>ImanQuiz | Your Best Islamic Quiz App</title>
 </head>
 
-<body
+<body id="body"
   class="font-ibm text-(--main-text) bg-(--main-background) dark:bg-(--main-background) dark:text-(--main-text) cursor-[url('/assets/cursor_default_dark.png'),auto]">
   <!-- Header & Navbar -->
   <nav id="main-nav"
     class="flex flex-col sm:flex-row py-4 px-4 sm:px-6 lg:px-8 justify-between items-center border-b-2 border-(--main-primary) dark:border(--main-primary) relative">
     <!-- Theme Toggler -->
-    <div id="toggler" class="absolute top-2 right-2 sm:right-4 scale-[.55] sm:scale-[.65] lg:scale-[.85] cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
+    <div id="toggler"
+      class="absolute top-2 right-2 sm:right-4 scale-[.55] sm:scale-[.65] lg:scale-[.85] hover:cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
       <label class="inline-flex items-center relative">
         <input class="peer hidden" id="toggle" type="checkbox" />
         <div
-          class="relative w-[110px] h-[50px] bg-white peer-checked:bg-zinc-500 rounded-full after:absolute after:content-[''] after:w-[40px] after:h-[40px] after:bg-gradient-to-r from-orange-500 to-yellow-400 peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[5px] after:left-[5px] active:after:w-[50px] peer-checked:after:left-[105px] peer-checked:after:translate-x-[-100%] shadow-sm duration-300 after:duration-300 after:shadow-md">
+          class="relative w-[110px] h-[50px] bg-[#ffe1b7] peer-checked:bg-[#4e2f06] rounded-full after:absolute after:content-[''] after:w-[40px] after:h-[40px] after:bg-gradient-to-r from-orange-500 to-yellow-400 peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[5px] after:left-[5px] active:after:w-[50px] peer-checked:after:left-[105px] peer-checked:after:translate-x-[-100%] shadow-sm duration-300 after:duration-300 after:shadow-md">
         </div>
         <svg height="0" width="100" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
           xmlns="http://www.w3.org/2000/svg" class="fill-white peer-checked:opacity-60 absolute w-6 h-6 left-[13px]">
@@ -37,16 +38,17 @@
         </svg>
       </label>
     </div>
-    <div id="header-container" class="mb-4 sm:mb-0">
+    <div id="header-container" class="mb-2 sm:mb-0">
       <h1>
         <a href="/index.html">
-          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-24 sm:h-36 lg:h-52" alt="KnowDeen Logo">
-          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-24 sm:h-36 lg:h-52" alt="KnowDeen Logo">
+          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-40 sm:h-36 lg:h-52" alt="KnowDeen Logo">
+          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-40 sm:h-36 lg:h-52"
+            alt="KnowDeen Logo">
         </a>
       </h1>
     </div>
     <!-- Navbar -->
-    <ul id="nav-links" class="flex space-x-4 sm:space-x-6 font-medium px-4 sm:mt-8 sm:px-12">
+    <ul id="nav-links" class="flex space-x-8 font-medium px-4 sm:px-12">
       <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
         <a href="/index.html" class="pb-1">Home</a>
         <span class="block h-1 w-full bg-(--main-primary) transition-all duration-300"></span>
@@ -65,17 +67,19 @@
   <div id="intro-guide-dialog" class="hidden">
     <div id="start-info"
       class="fixed top-0 left-0 z-50 w-full sm:h-screen flex justify-center items-center bg-black/40 p-4">
-      <div class="container max-w-4xl sm:h-fit max-h-[calc(100vh-2rem)] bg-(--main-background) p-4 sm:p-8 rounded-2xl sm:rounded-4xl overflow-y-auto sm:overflow-hidden">
-        <div id="dialog-box" class="text-base sm:text-xl relative p-2">
+      <div
+        class="container max-w-4xl sm:h-fit max-h-[calc(100vh-2.25rem)] bg-(--main-background) p-4 sm:p-8 rounded-2xl sm:rounded-4xl overflow-y-scroll md:overflow-hidden">
+        <div id="dialog-box" class="relative p-2">
           <a id="close-dialog"
-            class="absolute top-0 right-0 z-50 group text-base sm:text-3xl hover:text-red-500 border-[1px] rounded-2xl" href="#">
+            class="absolute top-0 right-0 z-50 group text-base sm:text-2xl hover:text-red-500 border-[1px] rounded-xl"
+            href="#">
             <i class="uil uil-times aspect-square"></i>
           </a>
-          <h2 class="my-2 text-lg sm:text-2xl text-center scale-110 font-semibold mt-4 sm:mt-0">📢 User Guide - ImanQuiz</h2>
-          <div class="flex flex-col gap-y-4">
+          <h2 class="my-2 text-lg sm:text-2xl lg:3xl text-center scale-110 font-semibold">📢 User Guide - ImanQuiz</h2>
+          <div class="flex flex-col gap-y-4 mt-4">
             <!-- Instructions -->
-            <div id="instructions" class="px-2 sm:px-4">
-              <ol id="list" class="list-decimal text-base sm:text-xl space-y-2">
+            <div id="instructions" class="px-2">
+              <ol id="list" class="list-decimal text-base lg:text-lg space-y-2">
                 <li class="">You will be prompted to enter your name</li>
                 <li>Once your name is submitted (saved), you will asked to choose from the following 3 categories:
                   <ol class="list-disc ml-6 mt-2">
@@ -84,14 +88,15 @@
                     <li class="">📖 Quran Knowledge</li>
                   </ol>
                 </li>
-                <li class="">After selecting your desired category, you will be given 2 minutes to complete your quiz</li>
+                <li class="">After selecting your desired category, you will be given 2 minutes to complete your quiz
+                </li>
                 <li class="">Each question carries 1 (point)</li>
                 <li class="">After completion of quiz, you will be represented with your final result</li>
               </ol>
             </div>
             <h2 class="text-center text-lg sm:text-2xl my-2">📝 Note</h2>
-            <div id="info" class="px-2 sm:px-4">
-              <ol class="list-decimal text-base sm:text-xl space-y-2">
+            <div id="info" class="px-2">
+              <ol class="list-decimal text-base lg:text-lg space-y-2">
                 <li>A user can perform quiz in all categories, one after another</li>
                 <li>Final result will include total of all points from quiz</li>
               </ol>
@@ -102,26 +107,31 @@
     </div>
   </div>
   <!-- Main  -->
-  <main id="main" class="min-h-[calc(100vh-8rem)]">
+  <main id="main" class="h-dvh flex flex-col justify-center items-center">
     <section id="main-screen" class="">
       <!-- Home Screen -->
-      <div id="main-screen-container"
-        class="container max-w-7xl mx-auto py-6 px-4 sm:px-8 lg:px-12 flex justify-center items-center min-h-[60vh]">
-        <div id="main-content" class="flex flex-col mt-6 sm:mt-0 justify-center text-center w-full">
-          <h1 class="text-(--main-text) text-3xl sm:text-5xl lg:text-7xl font-bold mb-4">Welcome to ImanQuiz</h1>
-          <p class="my-4 text-base lg:text-xl px-2">ImanQuiz - is an interactive Islamic quiz app that turns learning into a focused and
+      <div id="main-screen-container" class="container w-full mx-auto px-8">
+        <div id="main-content" class="flex flex-col text-center md:mb-12 w-full">
+          <h1 class="text-(--main-text) md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4">Welcome to ImanQuiz</h1>
+          <p class="text-justify sm:text-center lg:text-lg xl:text-xl my-4">ImanQuiz - is an interactive Islamic quiz
+            app that turns learning into a focused and
             engaging experience. Navigate structured questions, test your understanding, and build knowledge step by
             step.</p>
-          <div id="main-input" class="flex flex-col lg:flex-row justify-center items-stretch sm:items-center gap-2 sm:space-x-2 mt-4 px-2">
+          <div id="main-input"
+            class="flex flex-col lg:flex-row justify-center items-center sm:items-center gap-y-4 sm:space-x-2 mt-2 px-2">
             <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name"
-              class="w-full p-3 sm:p-4 rounded-lg bg-(--main-background) font-medium text-base sm:text-xl text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
-            <div class="flex flex-col sm:flex-row gap-y-2 sm:gap-y-0  sm:gap-x-2">
-              <button id="start-btn" class="transition-all text-base sm:text-xl bg-(--main-background) hover:bg-(--hover-light) dark:bg-(--main-background) p-3 sm:p-4 font-semibold rounded-md whitespace-nowrap" type="button">
-              Let's Start
-            </button> 
-            <button id="categories-btn" class="transition-all text-base sm:text-xl bg-(--main-accent) hover:text-(--main-background) dark:bg-(--main-accent) dark:hover:bg-[#3994a8] p-3 sm:p-4 font-semibold rounded-md whitespace-nowrap" type="button">
-              Let's Go to Categories
-            </button>
+              class="w-full p-4 rounded-lg bg-(--main-background) font-medium text-base lg:text-xl text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
+            <div class="flex flex-row gap-x-4">
+              <button id="start-btn"
+                class="transition-all text-base lg:text-lg xl:text-xl bg-(--main-background) hover:bg-(--hover-light) dark:bg-(--main-background) p-3 font-semibold rounded-md whitespace-nowrap"
+                type="button">
+                Let's Start
+              </button>
+              <button id="categories-btn"
+                class="transition-all text-base lg:text-lg xl:text-xl bg-(--main-accent) hover:text-(--main-background) dark:bg-(--main-accent) dark:hover:bg-[#3994a8] p-3 font-semibold rounded-md whitespace-nowrap"
+                type="button">
+                Let's Go to Categories
+              </button>
             </div>
           </div>
         </div>
@@ -130,22 +140,23 @@
     <!-- Quiz - Categories Showcase -->
     <section id="categories-screen" class="hidden">
       <div id="categories-screen-container"
-        class="container max-w-7xl mx-auto py-6 px-4 sm:px-8 lg:px-12 flex justify-center items-center min-h-[60vh]">
+        class="container min-w-fit px-4 min-h-screen flex flex-col justify-center items-center">
         <div id="categories-content"
-          class="dark:bg-(--main-primary-5) bg-(--main-primary-5) dark:text-[#180f02] w-full rounded-xl shadow-lg px-4 sm:px-8 lg:px-12 py-6 sm:py-8 flex flex-col justify-center text-center">
-          <h1 id="categories-tag" class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-6">Welcome, <span id="user-name"></span></h1>
+          class="xl:py-12 p-4 dark:bg-(--main-primary-5) bg-(--main-primary-5) dark:text-[#180f02] w-auto md:w-2xl lg:w-4xl rounded-xl shadow-lg flex flex-col justify-center text-center">
+          <h1 id="categories-tag" class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold ">Welcome, <span
+              id="user-name"></span></h1>
           <div id="reset-user"
-            class="bg-(--main-accent) text-[#fff] text-base sm:text-lg mx-auto rounded-xl font-semibold px-4 py-2 mb-4 transition-all hover:shadow-lg hover:scale-105 active:scale-95 cursor-pointer">
+            class="bg-(--main-accent) text-[#fff] p-1.5 my-2 text-base lg:p-2 xl:text-xl xl:my-4 mx-auto rounded-xl font-semibold transition-all hover:shadow-lg hover:scale-105 active:scale-95 cursor-pointer">
             <button type="button" class="">Reset User</button>
           </div>
-          <p class="mb-2 text-base sm:text-lg lg:text-xl text-left">Select a category to begin your journey:</p>
-          <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold mb-6">Categories</h2>
+          <p class="text-base text-left lg:text-lg">Select a category to begin your journey:</p>
+          <h2 class="mt-2 text-xl lg:text-2xl xl:text-3xl font-bold">Categories</h2>
           <ul id="categories-list"
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 dark:text-[#180f02] gap-4 mb-6 items-center">
+            class="grid grid-cols-2 dark:text-[#180f02] gap-2 mt-2 mb-4 items-center xl:font-semibold">
             <!-- Categories will be dynamically inserted here -->
           </ul>
           <a id="quiz-start-btn" href="quiz.html"
-            class="text-base sm:text-lg lg:text-xl bg-(--main-accent) dark:hover:bg-(--main-accent) text-[#fff] font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 inline-block"
+            class="text-base bg-(--main-accent) dark:hover:bg-(--main-accent) text-[#fff] font-semibold p-2 lg:p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 inline-block"
             type="button">
             Let's Start Quiz 🚀
           </a>

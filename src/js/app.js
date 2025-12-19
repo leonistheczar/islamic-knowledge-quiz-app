@@ -253,7 +253,7 @@ function initIndexPage() {
       .map(
         (category, index) => `
   <li id="category-${index}" data-category="${index}"
-      class="category-item dark:text-[#180f02] group relative w-full text-left p-1 text-sm lg:text-base xl:text-lg lg:p-4 rounded-lg overflow-hidden
+      class="category-item dark:text-[#180f02] group relative w-full text-left text-base p-1.5 lg:p-4 rounded-lg overflow-hidden
              bg-white border-2 transition-all duration-300 cursor-pointer
              hover:translate-x-1 hover:shadow-lg"
       style="border-color: var(--main-primary-5)">
@@ -272,7 +272,7 @@ function initIndexPage() {
         </span>
       </div>
       
-      <i class="uil uil-check-circle text-lg lg:text-2xl opacity-0 scale-0 
+      <i class="uil uil-check-circle text-xl opacity-0 scale-0 
                 transition-all duration-300"
          style="color: var(--main-secondary)"></i>
     </a>
@@ -338,7 +338,7 @@ function initQuizPage() {
       .map((choice, i) => {
         const selected = userAnswers[index] === choice;
         return `
-          <li class="quiz-choice-item border-2 text-base lg:text-xl rounded-lg p-3 mb-3 cursor-pointer ${
+          <li class="quiz-choice-item border-2 rounded-lg p-3 mb-3 cursor-pointer ${
             selected ? "selected" : ""
           }"
               data-choice="${i}"
@@ -512,7 +512,7 @@ function initQuizPage() {
             <div class="space-y-3 pl-4 border-l-4 mt-4 ${
               isCorrect ? "border-green-500" : "border-red-500"
             }">
-              <p class="text-base">
+              <p class="">
                 <span class="font-semibold">Your Answer:</span>
                 <span class="${
                   isCorrect
@@ -524,7 +524,7 @@ function initQuizPage() {
               </p>
               ${
                 !isCorrect
-                  ? `<p class="text-base"><span class="font-semibold">Correct Answer:</span> <span class="text-green-700 font-semibold">${quizAnswers[index]}</span></p>`
+                  ? `<p class=""><span class="font-semibold">Correct Answer:</span> <span class="text-green-700 font-semibold">${quizAnswers[index]}</span></p>`
                   : ""
               }
               <p><span class="font-semibold text-slate-800">Explanation:</span> ${

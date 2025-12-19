@@ -41,23 +41,23 @@
     <div id="header-container" class="mb-2 sm:mb-0">
       <h1>
         <a href="/index.html">
-          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-40 sm:h-36 lg:h-52" alt="KnowDeen Logo">
-          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-40 sm:h-36 lg:h-52"
+          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-28 sm:h-32 lg:h-40" alt="KnowDeen Logo">
+          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-28 sm:h-32 lg:h-40 "
             alt="KnowDeen Logo">
         </a>
       </h1>
     </div>
     <!-- Navbar -->
-    <ul id="nav-links" class="flex space-x-8 font-medium px-4 sm:px-12">
-      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
+    <ul id="nav-links" class="flex space-x-8 font-medium px-4 items-center justify-center sm:mt-8">
+      <li class="group tracking-wide font-medium text-sm nav-link flex flex-col items-start">
         <a href="/index.html" class="pb-1">Home</a>
         <span class="block h-1 w-full bg-(--main-primary) transition-all duration-300"></span>
       </li>
-      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-sm nav-link flex flex-col items-start">
         <a href="/about.html" class="pb-1">About</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-sm nav-link flex flex-col items-start">
         <a href="/contact.html" class="pb-1">Contact</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
@@ -68,14 +68,14 @@
     <div id="start-info"
       class="fixed top-0 left-0 z-50 w-full sm:h-screen flex justify-center items-center bg-black/40 p-4">
       <div
-        class="container max-w-4xl sm:h-fit max-h-[calc(100vh-2.25rem)] bg-(--main-background) p-4 sm:p-8 rounded-2xl sm:rounded-4xl overflow-y-scroll md:overflow-hidden">
+        class="container max-w-4xl sm:h-fit max-h-[calc(100vh-2.25rem)] bg-(--main-background) p-4 sm:p-8 rounded-2xl sm:rounded-4xl overflow-y-scroll">
         <div id="dialog-box" class="relative p-2">
           <a id="close-dialog"
             class="absolute top-0 right-0 z-50 group text-base sm:text-2xl hover:text-red-500 border-[1px] rounded-xl"
             href="#">
             <i class="uil uil-times aspect-square"></i>
           </a>
-          <h2 class="my-2 text-lg sm:text-2xl lg:3xl text-center scale-110 font-semibold">📢 User Guide - ImanQuiz</h2>
+          <h2 class="my-2 text-lg text-center scale-110 font-semibold">📢 User Guide - ImanQuiz</h2>
           <div class="flex flex-col gap-y-4 mt-4">
             <!-- Instructions -->
             <div id="instructions" class="px-2">
@@ -94,7 +94,7 @@
                 <li class="">After completion of quiz, you will be represented with your final result</li>
               </ol>
             </div>
-            <h2 class="text-center text-lg sm:text-2xl my-2">📝 Note</h2>
+            <h2 class="text-center font-semibold text-lg sm:text-2xl my-2">📝 Note</h2>
             <div id="info" class="px-2">
               <ol class="list-decimal text-base lg:text-lg space-y-2">
                 <li>A user can perform quiz in all categories, one after another</li>
@@ -112,7 +112,7 @@
       <!-- Home Screen -->
       <div id="main-screen-container" class="container w-full mx-auto px-8">
         <div id="main-content" class="flex flex-col text-center md:mb-12 w-full">
-          <h1 class="text-(--main-text) md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4">Welcome to ImanQuiz</h1>
+          <h1 class="text-(--main-text) text-4xl md:text-5xl font-bold mb-4">Welcome to ImanQuiz</h1>
           <p class="text-justify sm:text-center lg:text-lg xl:text-xl my-4">ImanQuiz - is an interactive Islamic quiz
             app that turns learning into a focused and
             engaging experience. Navigate structured questions, test your understanding, and build knowledge step by
@@ -120,15 +120,15 @@
           <div id="main-input"
             class="flex flex-col lg:flex-row justify-center items-center sm:items-center gap-y-4 sm:space-x-2 mt-2 px-2">
             <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name"
-              class="w-full p-4 rounded-lg bg-(--main-background) font-medium text-base lg:text-xl text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
+              class="w-full p-4 rounded-lg bg-(--main-background) font-medium text-base text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
             <div class="flex flex-row gap-x-4">
               <button id="start-btn"
-                class="transition-all text-base lg:text-lg xl:text-xl bg-(--main-background) hover:bg-(--hover-light) dark:bg-(--main-background) p-3 font-semibold rounded-md whitespace-nowrap"
+                class="transition-all text-base bg-(--main-background) hover:bg-(--hover-light) dark:bg-(--main-background) p-3 font-semibold rounded-md whitespace-nowrap"
                 type="button">
                 Let's Start
               </button>
               <button id="categories-btn"
-                class="transition-all text-base lg:text-lg xl:text-xl bg-(--main-accent) hover:text-(--main-background) dark:bg-(--main-accent) dark:hover:bg-[#3994a8] p-3 font-semibold rounded-md whitespace-nowrap"
+                class="transition-all text-base bg-(--main-accent) hover:text-(--main-background) dark:bg-(--main-accent) dark:hover:bg-[#3994a8] p-3 font-semibold rounded-md whitespace-nowrap"
                 type="button">
                 Let's Go to Categories
               </button>
@@ -143,16 +143,16 @@
         class="container min-w-fit px-4 min-h-screen flex flex-col justify-center items-center">
         <div id="categories-content"
           class="xl:py-12 p-4 dark:bg-(--main-primary-5) bg-(--main-primary-5) dark:text-[#180f02] w-auto md:w-2xl lg:w-4xl rounded-xl shadow-lg flex flex-col justify-center text-center">
-          <h1 id="categories-tag" class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold ">Welcome, <span
+          <h1 id="categories-tag" class="text-2xl font-bold ">Welcome, <span
               id="user-name"></span></h1>
           <div id="reset-user"
             class="bg-(--main-accent) text-[#fff] p-1.5 my-2 text-base lg:p-2 xl:text-xl xl:my-4 mx-auto rounded-xl font-semibold transition-all hover:shadow-lg hover:scale-105 active:scale-95 cursor-pointer">
             <button type="button" class="">Reset User</button>
           </div>
           <p class="text-base text-left lg:text-lg">Select a category to begin your journey:</p>
-          <h2 class="mt-2 text-xl lg:text-2xl xl:text-3xl font-bold">Categories</h2>
+          <h2 class="mt-2 text-lg font-bold">Categories</h2>
           <ul id="categories-list"
-            class="grid grid-cols-2 dark:text-[#180f02] gap-2 mt-2 mb-4 items-center xl:font-semibold">
+            class="grid grid-cols-2 justify-center dark:text-[#180f02] gap-2 mt-2 mb-4 items-center xl:font-semibold">
             <!-- Categories will be dynamically inserted here -->
           </ul>
           <a id="quiz-start-btn" href="quiz.html"

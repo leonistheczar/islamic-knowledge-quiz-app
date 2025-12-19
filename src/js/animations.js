@@ -108,46 +108,96 @@ export function dialogCloseAnimation() {
 // ============================================
 
 export function categoriesLoad() {
-  // 🔹 Ensure visibility BEFORE animation
+  // 🔹 Make screen visible first (Tailwind-safe)
   gsap.set("#categories-screen", {
+    display: "block",
+    opacity: 1
+  });
+
+  // 🔹 Reset transform-related props
+  gsap.set([
+    "#categories-screen-container",
+    "#categories-content",
+    "#quiz-start-btn"
+  ], {
     opacity: 1,
     y: 0,
-    display: "block"
+    scale: 1
   });
 
   const tl = gsap.timeline({
     defaults: { ease: "power2.out" }
   });
 
-  tl.from("#categories-screen", {
-      opacity: 0,
-      y: -80,
-      duration: 0.4,
-      ease: "power1.inOut"
-    })
-    .from("#categories-content h2", {
-      opacity: 0,
-      y: 20,
-      duration: 0.3
-    }, "-=0.2")
-    .from(".category-item", {
-      opacity: 1,
-      x: 0,
-      stagger: 0.1,
-      duration: 0.4,
-      ease: "back.out(1.2)"
-    }, "-=0.1");
+  // Screen entrance
+  tl.from("#categories-screen-container", {
+    opacity: 0,
+    y: 40,
+    duration: 0.4
+  })
+
+  // Main content card
+  .from("#categories-content", {
+    opacity: 0,
+    y: 30,
+    scale: 0.97,
+    duration: 0.35
+  }, "-=0.25")
+
+  // Username
+  .from("#user-name", {
+    opacity: 0,
+    y: -10,
+    duration: 0.25
+  }, "-=0.2")
+
+  // Reset user button
+  .from("#reset-user", {
+    opacity: 1,
+    scale: 0.9,
+    duration: 0.25
+  }, "-=0.15")
+
+  // Intro text + headings
+  .from("#categories-content p, #categories-content h2", {
+    opacity: 0,
+    y: 15,
+    stagger: 0.1,
+    duration: 0.25
+  }, "-=0.15")
+
+  // Category cards (dynamic)
+  .from(".category-item", {
+    opacity: 1,
+    x: 0,
+    stagger: 0.08,
+    duration: 0.35,
+    ease: "back.out(1.3)"
+  }, "-=0.1")
+
+  // Start quiz button
+  .from("#quiz-start-btn", {
+    opacity: 0,
+    y: 20,
+    scale: 0.95,
+    duration: 0.1,
+    ease: "back.out(1.4)"
+  }, "-=0.75");
 }
 export function categorySelectAnimation(element) {
-  gsap.fromTo(element,
-    { scale: 0.95 },
-    { 
+  gsap.fromTo(
+    element,
+    {
+      scale: 0.96
+    },
+    {
       scale: 1,
-      duration: 0.3,
-      ease: "back.out(1.7)"
+      duration: 0.25,
+      ease: "back.out(1.6)"
     }
   );
 }
+
 
 export function categoryDeselectAnimation(element) {
   gsap.to(element, {
@@ -159,23 +209,18 @@ export function categoryDeselectAnimation(element) {
 
 export function categoriesExitAnimation(callback) {
   const tl = gsap.timeline({
-    onComplete: callback
+    defaults: { ease: "power2.inOut" },
+    onComplete: () => {
+      if (typeof callback === "function") callback();
+    }
   });
 
-  tl.to(".category-item", {
-      opacity: 0,
-      x: 30,
-      stagger: 0.05,
-      duration: 0.3,
-      ease: "power2.in"
-    })
-    .to("#categories-content h2, #user-name", {
-      opacity: 0,
-      y: -20,
-      duration: 0.25
-    }, "-=0.2");
+  tl.to("#categories-screen-container", {
+    x: 120,
+    opacity: 0,
+    duration: 0.75
+  });
 }
-
 // ============================================
 // QUIZ INTRO ANIMATIONS
 // ============================================

@@ -43,8 +43,15 @@ window.history.scrollRestoration = "manual";
 
 // Init localStorage
 initLocalStorage();
+
+// Determine current page
+const isQuizPage = window.location.pathname.endsWith("quiz.html") || window.location.href.includes("quiz.html");
+const isIndexPage = window.location.href.includes("index.html") || 
+                    window.location.pathname === "/";
+
 // Init Event Listener
 document.addEventListener("DOMContentLoaded", async () => {
+  // Theme Setup (runs on all pages)
   const theme = getTheme();
   if (theme === "dark") {
     ui.headerImgDark.classList.remove("hidden");
@@ -57,11 +64,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     ui.toggler.checked = false;
     ui.html.classList.remove("dark");
   }
-  // // Check for quiz page access (Test-Case)
-  if ( getUser().name === "" &&
-  window.location.pathname.endsWith("quiz.html") &&
-  window.location.href.includes("quiz.html")
-) {
+
+  // Theme toggler (runs on all pages)
+  ui.toggler.addEventListener("change", (e) => {
+    if (e.target.checked) {
+      ui.headerImgDark.classList.remove("hidden");
+      ui.headerImgLight.classList.add("hidden");
+      updateTheme("dark");
+      ui.html.classList.add("dark");
+    } else {
+      ui.headerImgLight.classList.remove("hidden");
+      ui.headerImgDark.classList.add("hidden");
+      ui.html.classList.remove("dark");
+      updateTheme("light");
+    }
+  });
+
+  // ----------------------------
+  // QUIZ.HTML LOGIC
+  // ----------------------------
+  if (isQuizPage) {
     // Get API DATA
     try {
       apiData = await initAPI();
@@ -69,21 +91,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.error("Error fetching API data:", error);
     }
     console.log("API Data:", apiData);
+    
     const user = getUser();
     console.log("User from localStorage:", user);
-    
+
     // Check if user exists AND has selected a category
     if (!user || user.name === "" || !user.categories || !user.categories.selectedCategory) {
       console.log("Redirecting: Invalid user or no category selected", user);
-      window.location.href = "index.html"; 
+      window.location.href = "/index.html";
+      return; // Stop execution
     }
+   initQuizPage();
   }
-  if (
-    window.location.href.includes("index.html") ||
-    window.location.pathname === "/" ||
-    window.location.href.includes("about.html") ||
-    window.location.href.includes("contact.html")
-  ) {
+  // INDEX.HTML LOGIC
+  if (isIndexPage) {
     window.scrollTo(0, 0);
     // Get API DATA
     try {
@@ -92,52 +113,36 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.error("Error fetching API data:", error);
     }
     console.log("API Data:", apiData);
-    console.log(ui.toggler);
+    initIndexPage();
   }
 });
-
-// Theme toggler
-ui.toggler.addEventListener("change", (e) => {
-  if (e.target.checked) {
-    ui.headerImgDark.classList.remove("hidden");
-    ui.headerImgLight.classList.add("hidden");
-    updateTheme("dark");
-    ui.html.classList.add("dark");
-  } else {
-    ui.headerImgLight.classList.remove("hidden");
-    ui.headerImgDark.classList.add("hidden");
-    ui.html.classList.remove("dark");
-    updateTheme("light");
-  }
-});
-// ----------------------------
-// INDEX.HTML 
-// ----------------------------
-  // Handle category selection
+// INDEX.HTML FUNCTIONS
+function initIndexPage() {
+  // Utilities
   let selectedCategory = null;
   let categoryID = null;
   let previousItem = null;
-if (
-  window.location.pathname === "/" ||
-  window.location.pathname === "/index.html" ||
-  window.location.pathname.endsWith("/index.html")
-) {
   const user = getUser();
+  function toTitleCase(str) {
+    return str.toLowerCase().replace(/\b\w/g, char => char.toUpperCase()).trim();
+  }
   // Animation
   if (user.name === "") {
     console.log(user);
     ui.introDialog.classList.remove("hidden");
     dialogOpenAnimation();
   }
+
   // Dialog Close Event Listener
   ui.closeDialogBtn.addEventListener("click", (e) => {
     e.preventDefault();
     dialogCloseAnimation();
     pageLoadAnimation();
   });
+
   // Start Button Event Listener
   ui.startBtn.addEventListener("click", () => {
-    const enteredName = ui.nameInput.value.toUpperCase().trim();
+    const enteredName = toTitleCase(ui.nameInput.value);
     const nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
     if (enteredName === "" || !nameRegex.test(enteredName)) {
       alert("Please enter your name to start the quiz.");
@@ -147,42 +152,11 @@ if (
     pageExitAnimation(() => {
       ui.mainScreen.classList.add("hidden");
       ui.logUserName.textContent = enteredName;
-      let apiCategories = apiData.categories;
-      let html = apiCategories
-        .map(
-          (category, index) => `
-  <li id="category-${index}" data-category="${index}"
-      class="category-item dark:text-[#180f02] group relative w-full rounded-xl overflow-hidden
-             bg-white border-2 transition-all duration-300 cursor-pointer
-             hover:translate-x-1 hover:shadow-lg"
-      style="border-color: var(--main-primary-5)">
-    
-    <div class="absolute top-0 left-0 w-1 h-full transition-transform duration-300 
-                scale-y-0 group-hover:scale-y-100"
-         style="background-color: var(--main-primary)"></div>
-    
-    <a href="#"
-       class="relative z-10 flex items-center justify-between 
-              w-full p-2 sm:px-6 sm:py-5 no-underline">
-      
-      <div class="flex items-center gap-4">
-        <span id="category-selected"  class="text-base sm:text-xl font-semibold">
-          ${categoryEmojis[index]} ${category.name}
-        </span>
-      </div>
-      
-      <i class="uil uil-check-circle text-3xl opacity-0 scale-0 
-                transition-all duration-300"
-         style="color: var(--main-secondary)"></i>
-    </a>
-  </li>
-`
-        )
-        .join("");
-      ui.categoriesList.innerHTML = html;
+      renderCategories();
       categoriesLoad();
     });
   });
+
   // Directly go to categories (if user existed)
   ui.categoriesBtn.addEventListener("click", () => {
     const user = getUser();
@@ -197,42 +171,13 @@ if (
       pageExitAnimation(() => {
         ui.mainScreen.classList.add("hidden");
         ui.logUserName.textContent = enteredName;
-        let apiCategories = apiData.categories;
-        let html = apiCategories
-          .map(
-            (category, index) => `
-    <li id="category-${index}" data-category="${index}"
-        class="category-item dark:text-[#180f02] group relative w-full rounded-xl overflow-hidden
-               bg-white border-2 transition-all duration-300 cursor-pointer
-               hover:translate-x-1 hover:shadow-lg"
-        style="border-color: var(--main-primary-5)">
-      
-      <div class="absolute top-0 left-0 w-1 h-full transition-transform duration-300 
-                  scale-y-0 group-hover:scale-y-100"
-           style="background-color: var(--main-primary)"></div>
-      
-      <a href="#"
-         class="relative z-10 flex items-center justify-between 
-                w-full p-2 sm:px-6 sm:py-5 no-underline">
-        
-        <div class="flex items-center gap-4">
-          <span id="category-selected" class="text-base sm:text-xl font-semibold">
-            ${categoryEmojis[index]} ${category.name}
-          </span>
-        </div>
-        
-        <i class="uil uil-check-circle text-3xl opacity-0 scale-0 
-                  transition-all duration-300"
-           style="color: var(--main-secondary)"></i>
-      </a>
-    </li>
-  `)
-          .join("");
-        ui.categoriesList.innerHTML = html;
+        renderCategories();
         categoriesLoad();
       });
     }
   });
+
+  // Reset User
   let resetUser = ui.resetUser;
   if (resetUser) {
     resetUser.addEventListener("click", () => {
@@ -242,6 +187,8 @@ if (
       }
     });
   }
+
+  // Category Selection
   ui.categoriesList.addEventListener("click", (e) => {
     const anchor = e.target.closest("a");
     if (!anchor) return;
@@ -249,13 +196,13 @@ if (
     e.preventDefault();
 
     const categoryItem = anchor.closest(".category-item");
-    selectedCategory = anchor.querySelector("span").textContent.trim();
     if (!categoryItem) return;
+    selectedCategory = anchor.querySelector("span").textContent.trim();
 
     const categoryIDAttr = categoryItem.getAttribute("data-category");
     if (!categoryIDAttr) return;
 
-    // 🔹 Deselect previous item
+    // Deselect previous item
     if (previousItem && previousItem !== categoryItem) {
       const prevIcon = previousItem.querySelector(".uil-check-circle");
       const prevBorder = previousItem.querySelector("div[class*='absolute']");
@@ -270,7 +217,7 @@ if (
       categoryDeselectAnimation(previousItem);
     }
 
-    // 🔹 Select current item
+    // Select current item
     const icon = categoryItem.querySelector(".uil-check-circle");
     const leftBorder = categoryItem.querySelector("div[class*='absolute']");
 
@@ -286,8 +233,9 @@ if (
     categorySelectAnimation(categoryItem);
     categoryID = categoryIDAttr;
     previousItem = categoryItem;
-    console.log(selectedCategory);
   });
+
+  // Quiz Start
   ui.quizStart.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -298,30 +246,68 @@ if (
     categoriesExitAnimation(() => {
       try {
         updateCategory(selectedCategory, categoryID);
-        console.log(selectedCategory,categoryID);
+        console.log(selectedCategory, categoryID);
       } catch (error) {
         console.error("Failed to updated category", error);
         alert("Error");
         return;
       }
-      setTimeout(() => window.location.href = "quiz.html", 2000);
+      window.location.href = "/quiz.html";
     });
   });
+
+  // Helper function to render categories
+  function renderCategories() {
+    let apiCategories = apiData.categories;
+    let html = apiCategories
+      .map(
+        (category, index) => `
+  <li id="category-${index}" data-category="${index}"
+      class="category-item dark:text-[#180f02] group relative w-full text-left p-1 text-sm lg:text-base lg:p-4 rounded-lg overflow-hidden
+             bg-white border-2 transition-all duration-300 cursor-pointer
+             hover:translate-x-1 hover:shadow-lg"
+      style="border-color: var(--main-primary-5)">
+    
+    <div class="absolute top-0 left-0 w-1 h-full transition-transform duration-300 
+                scale-y-0 group-hover:scale-y-100"
+         style="background-color: var(--main-primary)"></div>
+    
+    <a href="#"
+       class="relative z-10 flex items-center justify-between 
+              w-full no-underline">
+      
+      <div class="flex items-center">
+        <span id="category-selected"  class="">
+          ${categoryEmojis[index]} ${category.name}
+        </span>
+      </div>
+      
+      <i class="uil uil-check-circle text-lg lg:text-2xl opacity-0 scale-0 
+                transition-all duration-300"
+         style="color: var(--main-secondary)"></i>
+    </a>
+  </li>
+`
+      )
+      .join("");
+    ui.categoriesList.innerHTML = html;
+  }
 }
+
 // ----------------------------
-// QUIZ.HTML 
+// QUIZ.HTML FUNCTIONS
 // ----------------------------
-if (window.location.href.includes("quiz.html") || window.location.pathname.endsWith("quiz.html")) {
-  document.addEventListener("DOMContentLoaded", () => {
+function initQuizPage() {
   const user = getUser();
   const selectedCategory = user.categories.selectedCategory;
   const selectedCategoryID = user.categories.selectedCategoryID;
 
   // Display selected category in intro
-  if(ui.quizNoticeCategory){
+  if (ui.quizNoticeCategory) {
     console.log(selectedCategory);
     ui.quizNoticeCategory.textContent = `"${selectedCategory}"`;
   }
+
   let currentQuestionIndex = 0;
   let quizQuestions = [];
   let quizAnswers = [];
@@ -355,8 +341,9 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
         submitQuiz();
       }
       timer--;
-    }, 1000);
+    }, 10);
   }
+
   // Display Question
   function displayQuestion(index) {
     const question = quizQuestions[index];
@@ -365,7 +352,7 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
       .map((choice, i) => {
         const selected = userAnswers[index] === choice;
         return `
-          <li class="quiz-choice-item border-2 text-base sm:text-xl rounded-lg p-3 mb-3 cursor-pointer ${
+          <li class="quiz-choice-item border-2 text-base lg:text-xl rounded-lg p-3 mb-3 cursor-pointer ${
             selected ? "selected" : ""
           }"
               data-choice="${i}"
@@ -377,6 +364,7 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
         `;
       })
       .join("");
+
     // Add event listeners to choices
     document.querySelectorAll(".quiz-choice-item").forEach((item) => {
       item.addEventListener("click", () => {
@@ -428,6 +416,7 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
     currentProgress = progress;
     progressUpdateAnimation();
   }
+
   // Initialize Quiz
   function initiateQuiz() {
     quizIntroExitAnimation();
@@ -452,6 +441,7 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
     console.log(timer);
     quizCardEnterAnimation();
   }
+
   // Display Results
   function displayResults() {
     clearInterval(timerInterval);
@@ -503,6 +493,7 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
     quizResultsEnterAnimation();
     ui.quizResults.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+
   // Display Answer Breakdown
   function displayAnswerBreakdown() {
     const answersSection = ui.quizAnswersSection;
@@ -524,17 +515,17 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
         const bgColor = isCorrect ? "bg-green-50" : "bg-red-50";
 
         return `
-          <div class="answer-item mb-3 sm:mb-6 p-3 sm:p-6 border-2 rounded-lg ${borderColor} ${bgColor} text-[#000] transition-all hover:shadow-md">
-            <div class="flex items-start justify-between mb-2 sm:mb-4">
-              <h4 class="font-bold text-lg lg:text-xl flex-1">Question ${
+          <div class="p-4 w-auto answer-item border-2 rounded-lg ${borderColor} ${bgColor} text-[#000] transition-all hover:shadow-md">
+            <div class="flex items-start justify-between">
+              <h4 class="font-bold flex-1">Question ${
                 index + 1
               }</h4>
-              <span class="${statusClass} text-xl sm:text-3xl font-bold">${statusIcon}</span>
+              <span class="${statusClass} scale-125 font-bold">${statusIcon}</span>
             </div>
-            <p class="mb-2 sm:mb-4 text-base sm:text-lg font-medium">${
+            <p class="my-2 font-medium">${
               question.question
             }</p>
-            <div class="space-y-3 pl-4 border-l-4 ${
+            <div class="space-y-3 pl-4 border-l-4 mt-4 ${
               isCorrect ? "border-green-500" : "border-red-500"
             }">
               <p class="text-base">
@@ -573,14 +564,20 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
     answersSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  // Submit Quiz
+  function submitQuiz() {
+    quizProgress();
+    displayResults();
+  }
+
   // Quiz Button Handler (Next / Submit)
-  if (ui.quizQuestionBtn) {    
+  if (ui.quizQuestionBtn) {
     ui.quizQuestionBtn.addEventListener("click", () => {
       if (!userAnswers[currentQuestionIndex]) {
         alert("Please select an answer first.");
         return;
       }
-  
+
       if (ui.quizQuestionBtn.id === "next-choice") {
         currentQuestionIndex++;
         displayQuestion(currentQuestionIndex);
@@ -590,17 +587,21 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
       }
     });
   }
+
   // Buttons
   if (ui.quizBtn) {
     if (timerInterval) clearInterval(timerInterval);
     ui.quizBtn.addEventListener("click", initiateQuiz);
   }
+
   quizResultsEnterAnimation();
+  
   if (ui.homeBtn)
     ui.homeBtn.addEventListener(
       "click",
-      () => (window.location.href = "index.html")
+      () => (window.location.href = "/index.html")
     );
+  
   if (ui.quizResultBtn)
     ui.quizResultBtn.addEventListener("click", displayAnswerBreakdown);
 
@@ -616,8 +617,8 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
 
       // Reset intro card visibility
       ui.quizIntro.classList.remove("hidden");
-      ui.quizIntro.style.opacity = "1"; 
-      ui.quizIntro.style.transform = "none"; 
+      ui.quizIntro.style.opacity = "1";
+      ui.quizIntro.style.transform = "none";
 
       // Reset quiz state
       currentQuestionIndex = 0;
@@ -635,10 +636,4 @@ if (window.location.href.includes("quiz.html") || window.location.pathname.endsW
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
-  // Submit Quiz
-  function submitQuiz() {
-    quizProgress();
-    displayResults();
-  }
-  });
 }

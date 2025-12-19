@@ -6,8 +6,8 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="icon" href="./assets/proposed-logo.png">
   <title>Quiz | ImanQuiz</title>
-  <script type="module" crossorigin src="/assets/app-BQzUhZ76.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/app-CGCM9umj.css">
+  <script type="module" crossorigin src="/assets/app-Dqo-rCrP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/app-KoM01RWE.css">
 </head>
 
 <body id="body"
@@ -16,7 +16,8 @@
   <nav id="main-nav"
     class="flex flex-col sm:flex-row py-4 px-4 sm:px-6 lg:px-8 justify-between items-center border-b-2 border-(--main-primary) dark:border(--main-primary) relative">
     <!-- Theme Toggler -->
-    <div id="toggler" class="absolute top-2 right-2 sm:right-4 scale-[.55] sm:scale-[.65] lg:scale-[.85] hover:cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
+    <div id="toggler"
+      class="absolute top-2 right-2 sm:right-4 scale-[.55] sm:scale-[.65] lg:scale-[.85] hover:cursor-[url('/assets/cursor_pointer_dark.png'),auto]">
       <label class="inline-flex items-center relative">
         <input class="peer hidden" id="toggle" type="checkbox" />
         <div
@@ -37,25 +38,26 @@
         </svg>
       </label>
     </div>
-    <div id="header-container" class="mb-2">
+    <div id="header-container" class="mb-2 sm:mb-0">
       <h1>
         <a href="/index.html">
-          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-40 sm:h-36 lg:h-52" alt="KnowDeen Logo">
-          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-40 sm:h-36 lg:h-52" alt="KnowDeen Logo">
+          <img id="header-img-light" src="/assets/proposed-logo.png" class="h-30 sm:h-32 lg:h-40" alt="KnowDeen Logo">
+          <img id="header-img-dark" src="/assets/proposed-logo-dark.png" class="hidden h-30 sm:h-32 lg:h-40"
+            alt="KnowDeen Logo">
         </a>
       </h1>
     </div>
     <!-- Navbar -->
-    <ul id="nav-links" class="flex space-x-8 font-medium px-4 sm:px-12">
-      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
+    <ul id="nav-links" class="flex space-x-8 font-medium px-4 items-center justify-center sm:mt-8">
+      <li class="group tracking-wide font-medium text-base nav-link flex flex-col items-start">
         <a href="/index.html" class="pb-1">Home</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-base nav-link flex flex-col items-start">
         <a href="/about.html" class="pb-1">About</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
-      <li class="group tracking-wide font-medium text-base lg:text-xl nav-link flex flex-col items-start">
+      <li class="group tracking-wide font-medium text-base nav-link flex flex-col items-start">
         <a href="/contact.html" class="pb-1">Contact</a>
         <span class="block h-1 w-0 bg-(--main-primary) transition-all duration-300 group-hover:w-full"></span>
       </li>
@@ -64,13 +66,13 @@
     <!-- Main  -->
     <main id="quiz-screen" class="min-h-fit relative bg-(--quiz-bg)">
     <div id="quiz-progress" class="opacity-0 w-full h-2 rounded-r-xl text-(--main-background) dark:text-(--main-text) py-2 bg-(--main-accent-10) flex items-center justify-center"><span class="font-bold text-sm sm:text-base lg:text-lg"></span></div>
-    <div id="quiz-container" class="container max-w-9xl flex flex-col justify-center items-center mx-auto gap-y-4 p-4 md:p-12">
+    <div id="quiz-container" class="container max-w-9xl flex flex-col justify-center items-center gap-y-4 mx-auto p-4 md:p-8">
         <!-- Quiz Intro Section -->
         <section id="quiz-intro"
             class="w-full bg-(--main-accent) dark:bg-(--main-accent-5) text-(--main-text) flex flex-col justify-center items-center text-center p-6 lg:p-8 rounded-xl space-y-4 sm:space-y-6">
-            <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold">Quiz Revamp</h1>
-            <p class="text-base sm:text-lg lg:text-xl">Before you start, review your quiz preferences</p>
-            <ul id="quiz-notes" class="flex flex-col text-sm sm:text-base lg:text-xl text-left list-decimal gap-y-2 sm:gap-y-3 lg:gap-y-4 px-4">
+            <h1 class="text-3xl lg:text-4xl font-bold xl:text-5xl">Quiz Revamp</h1>
+            <p class="text-base ">Before you start, review your quiz preferences</p>
+            <ul id="quiz-notes" class="flex flex-col text-sm lg:text-lg text-left list-decimal gap-y-2 sm:gap-y-3 lg:gap-y-4 px-4">
                 <li>You have chosen <span class="font-semibold" id="category"></span> for the quiz</li>
                 <li>You have only 2 minutes (120 seconds) to complete your quiz</li>
                 <li>Each question carries 1 point(s)</li>
@@ -78,72 +80,71 @@
             </ul>
             <h3 class="text-base sm:text-lg lg:text-xl">Best of Luck!!</h3>
             <button id="quiz-btn"
-                class="text-base lg:text-lg bg-(--main-secondary) font-semibold p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
+                class="text-sm md:text-base bg-(--main-secondary) font-semibold p-2 md:p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
                 type="button">
                 Let's Start Quiz 🚀
             </button>
         </section>
         
         <!-- Quiz Card Section (Questions) -->
-        <section id="quiz-card" class="hidden self-stretch sm:mt-4 lg:mt-12">
+        <section id="quiz-card" class="hidden self-stretch sm:mt-4 md:mt-0">
           <div id="timer" class="flex justify-center mb-2 sm:block sm:mb-0">
-                <div id="quiz-timer" class="sm:absolute sm:top-2 sm:right-4 lg:top-4 flex justify-center w-fit dark:bg-(--main-accent) bg-(--main-accent) font-semibold px-3 py-2 sm:px-4 text-2xl sm:text-xl lg:text-4xl rounded-xl transition-all z-10 shadow-lg">02:00</div>
+                <div id="quiz-timer" class="sm:absolute sm:top-2 sm:right-4 lg:top-4 flex justify-center w-fit dark:bg-(--main-accent) bg-(--main-accent) font-semibold px-3 py-2 sm:px-4 text-2xl rounded-xl transition-all z-10 shadow-lg">02:00</div>
             </div>
-            <div id="quiz" class="bg-(--quiz-session) text-[#000] rounded-xl px-4 sm:px-8 lg:px-12 py-3">
-                <h2 class="text-center py-4 text-xl sm:text-2xl lg:text-3xl font-semibold"><span id="quiz-category" class=""></span></h2>
+            <div id="quiz" class="bg-(--quiz-session) text-[#000] rounded-xl px-4 py-3 md:px-6">
+                <h2 class="text-center py-4 text-xl md:text-2xl font-bold"><span id="quiz-category" class=""></span></h2>
                 <div id="quiz-content" class="flex flex-col">
-                    <h3 class="mb-3 sm:mb-4 text-base sm:text-lg lg:text-xl"><span id="quiz-question" class=""></span></h3>
+                    <h3 class="mb-3 sm:mb-4 text-base md:text-lg "><span id="quiz-question" class=""></span></h3>
                     <ul id="quiz-choices" class="space-y-2 mb-4">
                         <!-- Choices will be dynamically inserted here -->
                     </ul>
                     <div class="flex justify-end gap-x-2">
-                        <button id="quiz-question-btn" class="self-end text-base lg:text-xl bg-(--main-secondary) font-semibold p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95" type="button">Next <i class="uil uil-arrow-right"></i></button>
+                        <button id="quiz-question-btn" class="self-end text-base md:text-lg bg-(--main-secondary) font-semibold p-2 md:p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95" type="button">Next <i class="uil uil-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- Quiz Results Section -->
-        <section id="quiz-results" class="hidden w-full mt-4 lg:mt-8">
+        <section id="quiz-results" class="hidden w-full mt-4 md:mt-0">
             <div class="bg-(--main-secondary)/60 rounded-xl p-4 lg:p-8">
                 <!-- Results Header -->
                 <div class="results-header text-center ">
-                    <h1 class="text-3xl lg:text-5xl font-bold mb-4">Quiz Completed! 🎉</h1>
-                    <p id="progress-completed" class="mb-2 text-base lg:text-lg font-semibold text-(--main-text) bg-(--main-accent-10) inline-block mx-auto px-4 py-2 sm:px-6 rounded-xl"></p>
-                    <div class="result-emoji text-5xl lg:text-7xl mb-4" id="quiz-result-emoji">🎉</div>
-                    <p class="text-lg lg:text-xl font-semibold mb-2">
+                    <h1 class="text-3xl lg:text-4xl py-2 font-bold xl:text-5xl">Quiz Completed! 🎉</h1>
+                    <p id="progress-completed" class="mb-2 text-base  font-semibold text-(--main-text) bg-(--main-accent-10) inline-block mx-auto p-1.5 sm:px-6 rounded-xl"></p>
+                    <p class=" font-semibold mb-2">
                         Category: <span id="quiz-result-category" class="text-(--main-text)"></span>
                     </p>
 
                     <div class="score-display p-4 sm:p-6 bg-(--main-primary-10) rounded-lg inline-block overflow-x-auto max-w-full">
                         <div class="flex items-center gap-4 sm:gap-6 min-w-fit">
                             <div class="text-center">
-                                <p class="text-xs sm:text-sm text-gray-500 mb-1">Your Score</p>
-                                <span class="text-4xl lg:text-6xl font-bold text-(--main-secondary)/80" id="quiz-result-score">0/0</span>
+                                <p class="text-sm sm:text-base text-gray-500 mb-1">Your Score</p>
+                                <span class=" font-bold text-3xl md:text-4xl text-(--main-secondary)/80" id="quiz-result-score">0/0</span>
                             </div>
                             <div class="hidden sm:block h-16 w-px bg-gray-300"></div>
                             <div class="text-center">
-                                <p class="text-xs sm:text-sm text-gray-500 mb-1">Percentage</p>
-                                <span class="text-4xl lg:text-5xl font-bold text-(--main-accent)" id="quiz-result-percentage">0%</span>
+                                <p class="text-sm sm:text-base text-gray-500 mb-1">Percentage</p>
+                                <span class="font-bold text-3xl md:text-4xl text-(--main-accent)" id="quiz-result-percentage">0%</span>
                             </div>
                             <div class="hidden sm:block h-16 w-px bg-gray-300"></div>
                             <div class="text-center">
-                                <p class="text-xs sm:text-sm text-gray-500 mb-1">Highest Score</p>
-                                <span class="text-4xl lg:text-6xl font-bold text-[#ff7878]" id="quiz-highest-score">0/0</span>
+                                <p class="text-sm sm:text-base text-gray-500 mb-1">Highest Score</p>
+                                <span class="font-bold text-3xl md:text-4xl text-[#ff7878]" id="quiz-highest-score">0/0</span>
                             </div>
                         </div>
                     </div>
-                    <p class="text-base lg:text-xl my-4 font-medium" id="quiz-result-message"></p>
+                    <p class="text-base lg:text-lg my-4 font-medium" id="quiz-result-message"></p>
                 </div>
                 
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8">
                     <button type="button" id="quiz-result-btn" 
-                        class="group text-base lg:text-xl bg-(--main-secondary) text-white font-semibold p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95">
+                        class="group text-base lg:text-lg bg-(--main-secondary) text-white font-semibold p-1.5 sm:p-2 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95">
                         View Detailed Results <i class="uil uil-arrow-down group-hover:translate-y-1 inline-block transition-transform"></i>
                     </button>
                     <button type="button" id="retake-quiz-btn" 
-                        class="text-base lg:text-xl bg-(--main-accent) text-white font-semibold p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95">
+                        class="text-base lg:text-lg bg-(--main-accent) text-white font-semibold p-1.5 sm:p-2 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95">
                         Retake Quiz <i class="uil uil-redo"></i>
                     </button>
                 </div>
@@ -154,14 +155,14 @@
         <section id="quiz-answers" class="hidden w-full">
             <div class="p-4 bg-(--main-accent-5) text-(--main-text) lg:p-6 w-full flex flex-col justify-center rounded-xl shadow-lg">
                 <div class="text-center">
-                    <h1 class="font-bold mt-2 mb-4">Detailed Results</h1>
+                    <h1 class="text-3xl lg:text-4xl py-2 font-bold xl:text-5xl">Detailed Results</h1>
                     <p class="">
                         Review your answers for <span id="answer-category" class="font-bold p-1 rounded-lg bg-slate-100 text-slate-900"></span> category
                     </p>
                 </div>
                 
                 <!-- Answer Breakdown Container -->
-                <div id="quiz-answer-breakdown" class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center lg:gap-6 gap-y-4 mt-2 xl:mt-4">
+                <div id="quiz-answer-breakdown" class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center lg:gap-x-4 gap-y-4 mt-2 xl:mt-4 auto-rows-fr">
                     <!-- Individual question results will be dynamically inserted here -->
                 </div>
                 

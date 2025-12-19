@@ -19,13 +19,13 @@
         </span>
       </div>
       
-      <i class="uil uil-check-circle text-xl opacity-0 scale-0 
+      <i class="uil uil-check-circle text-xl md:text-2xl opacity-0 scale-0 
                 transition-all duration-300"
          style="color: var(--main-secondary)"></i>
     </a>
   </li>
-`).join("");z.categoriesList.innerHTML=o}}function Oc(){const a=Cr(),e=a.categories.selectedCategory,r=a.categories.selectedCategoryID;z.quizNoticeCategory&&(z.quizNoticeCategory.textContent=`"${e}"`);let t=0,i=[],n=[],s=[],o=0,u=120,l,c=0;function h(){const v=z.quizTimer;clearInterval(l),l=setInterval(()=>{const S=Math.floor(u/60),y=u%60;v.textContent=`${String(S).padStart(2,"0")}:${String(y).padStart(2,"0")}`,u<=20&&(v.classList.add("scale-pulse","text-red-500"),vc()),u===0&&(clearInterval(l),xc(),alert("Time's up! Your quiz will be submitted."),T()),u--},1e3)}function _(v){const S=i[v];z.quizQuestion.textContent=`(${v+1}) ${S.question}`,z.quizChoiceList.innerHTML=S.options.map((b,$)=>{const x=s[v]===b;return`
-          <li class="quiz-choice-item border-2 rounded-lg p-3 mb-3 cursor-pointer ${x?"selected":""}"
+`).join("");z.categoriesList.innerHTML=o}}function Oc(){const a=Cr(),e=a.categories.selectedCategory,r=a.categories.selectedCategoryID;z.quizNoticeCategory&&(z.quizNoticeCategory.textContent=`"${e}"`);let t=0,i=[],n=[],s=[],o=0,u=120,l,c=0;function h(){const v=z.quizTimer;clearInterval(l),l=setInterval(()=>{const S=Math.floor(u/60),y=u%60;v.textContent=`${String(S).padStart(2,"0")}:${String(y).padStart(2,"0")}`,u<=20&&(v.classList.add("scale-pulse","text-red-500"),vc()),u===0&&(clearInterval(l),xc(),alert("Time's up! Your quiz will be submitted."),T()),u--},1e3)}function _(v){const S=i[v];z.quizCategory.textContent=e,z.quizQuestion.textContent=`(${v+1}) ${S.question}`,z.quizChoiceList.innerHTML=S.options.map((b,$)=>{const x=s[v]===b;return`
+          <li class="quiz-choice-item border-2 text-base  rounded-lg p-3 mb-3 cursor-pointer ${x?"selected":""}"
               data-choice="${$}"
               style="${x?"background:var(--main-secondary);color:#fff;":""}">
             ${b}
@@ -50,4 +50,4 @@
           </div>
         `}).join(""),bc(),document.querySelectorAll(".answer-item").forEach((b,$)=>{s[$]===n[$]?Sc(b):Tc(b)}),v.scrollIntoView({behavior:"smooth",block:"start"}))}function T(){f(),d()}z.quizQuestionBtn&&z.quizQuestionBtn.addEventListener("click",()=>{if(!s[t]){alert("Please select an answer first.");return}z.quizQuestionBtn.id==="next-choice"?(t++,_(t),f()):T()}),z.quizBtn&&(l&&clearInterval(l),z.quizBtn.addEventListener("click",p)),Jo(),z.homeBtn&&z.homeBtn.addEventListener("click",()=>window.location.href="/index.html"),z.quizResultBtn&&z.quizResultBtn.addEventListener("click",m),z.retakeQuizBtn&&z.retakeQuizBtn.addEventListener("click",()=>{z.quizTimer.classList.remove("scale-pulse","text-red-500"),u=120,clearInterval(l),z.quizResults.classList.add("hidden"),z.quizAnswersSection.classList.add("hidden"),z.quizIntro.classList.remove("hidden"),z.quizIntro.style.opacity="1",z.quizIntro.style.transform="none",t=0,o=0,n=[],s=[],c=0,z.quizProgress.style.width="0%",z.quizProgress.textContent="0%",z.quizProgress.classList.add("opacity-0"),pc(),window.scrollTo({top:0,behavior:"smooth"})})}
 
-//# sourceMappingURL=app-BQzUhZ76.js.map
+//# sourceMappingURL=app-Dqo-rCrP.js.map

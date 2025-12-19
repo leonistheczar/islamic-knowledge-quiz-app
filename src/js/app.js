@@ -51,7 +51,7 @@ const isIndexPage = window.location.href.includes("index.html") ||
 
 // Init Event Listener
 document.addEventListener("DOMContentLoaded", async () => {
-  // Theme Setup (runs on all pages)
+  // Theme Setup -- System Preference (runs on all pages)
   const theme = getTheme();
   if (theme === "dark") {
     ui.headerImgDark.classList.remove("hidden");
@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     ui.toggler.checked = false;
     ui.html.classList.remove("dark");
   }
-
   // Theme toggler (runs on all pages)
   ui.toggler.addEventListener("change", (e) => {
     if (e.target.checked) {
@@ -80,9 +79,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // ----------------------------
-  // QUIZ.HTML LOGIC
-  // ----------------------------
+  // QUIZ.HTML 
   if (isQuizPage) {
     // Get API DATA
     try {
@@ -90,20 +87,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
       console.error("Error fetching API data:", error);
     }
-    console.log("API Data:", apiData);
-    
     const user = getUser();
-    console.log("User from localStorage:", user);
-
     // Check if user exists AND has selected a category
     if (!user || user.name === "" || !user.categories || !user.categories.selectedCategory) {
-      console.log("Redirecting: Invalid user or no category selected", user);
+      alert("Redirecting: Invalid user or no category selected", user);
       window.location.href = "/index.html";
-      return; // Stop execution
+      return;
     }
    initQuizPage();
   }
-  // INDEX.HTML LOGIC
+  // INDEX.HTML 
   if (isIndexPage) {
     window.scrollTo(0, 0);
     // Get API DATA
@@ -112,11 +105,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
       console.error("Error fetching API data:", error);
     }
-    console.log("API Data:", apiData);
+    // Execute index.html execution(s)
     initIndexPage();
   }
 });
-// INDEX.HTML FUNCTIONS
+// INDEX.HTML 
 function initIndexPage() {
   // Utilities
   let selectedCategory = null;
@@ -128,7 +121,6 @@ function initIndexPage() {
   }
   // Animation
   if (user.name === "") {
-    console.log(user);
     ui.introDialog.classList.remove("hidden");
     dialogOpenAnimation();
   }
@@ -192,7 +184,6 @@ function initIndexPage() {
   ui.categoriesList.addEventListener("click", (e) => {
     const anchor = e.target.closest("a");
     if (!anchor) return;
-
     e.preventDefault();
 
     const categoryItem = anchor.closest(".category-item");
@@ -246,7 +237,6 @@ function initIndexPage() {
     categoriesExitAnimation(() => {
       try {
         updateCategory(selectedCategory, categoryID);
-        console.log(selectedCategory, categoryID);
       } catch (error) {
         console.error("Failed to updated category", error);
         alert("Error");
@@ -263,7 +253,7 @@ function initIndexPage() {
       .map(
         (category, index) => `
   <li id="category-${index}" data-category="${index}"
-      class="category-item dark:text-[#180f02] group relative w-full text-left p-1 text-sm lg:text-base lg:p-4 rounded-lg overflow-hidden
+      class="category-item dark:text-[#180f02] group relative w-full text-left p-1 text-sm lg:text-base xl:text-lg lg:p-4 rounded-lg overflow-hidden
              bg-white border-2 transition-all duration-300 cursor-pointer
              hover:translate-x-1 hover:shadow-lg"
       style="border-color: var(--main-primary-5)">
@@ -293,10 +283,7 @@ function initIndexPage() {
     ui.categoriesList.innerHTML = html;
   }
 }
-
-// ----------------------------
 // QUIZ.HTML FUNCTIONS
-// ----------------------------
 function initQuizPage() {
   const user = getUser();
   const selectedCategory = user.categories.selectedCategory;
@@ -304,7 +291,6 @@ function initQuizPage() {
 
   // Display selected category in intro
   if (ui.quizNoticeCategory) {
-    console.log(selectedCategory);
     ui.quizNoticeCategory.textContent = `"${selectedCategory}"`;
   }
 
@@ -341,7 +327,7 @@ function initQuizPage() {
         submitQuiz();
       }
       timer--;
-    }, 10);
+    }, 1000);
   }
 
   // Display Question
@@ -438,14 +424,12 @@ function initQuizPage() {
 
     displayQuestion(0);
     quizTime();
-    console.log(timer);
     quizCardEnterAnimation();
   }
 
   // Display Results
   function displayResults() {
     clearInterval(timerInterval);
-    console.log(timer);
     // Calculate score
     quizScore = quizAnswers.reduce(
       (score, ans, i) => score + (userAnswers[i] === ans ? 1 : 0),

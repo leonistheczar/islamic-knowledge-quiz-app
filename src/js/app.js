@@ -272,7 +272,7 @@ function initIndexPage() {
         </span>
       </div>
       
-      <i class="uil uil-check-circle text-xl opacity-0 scale-0 
+      <i class="uil uil-check-circle text-xl md:text-2xl opacity-0 scale-0 
                 transition-all duration-300"
          style="color: var(--main-secondary)"></i>
     </a>
@@ -327,18 +327,19 @@ function initQuizPage() {
         submitQuiz();
       }
       timer--;
-    }, 1000);
+    }, 10);
   }
 
   // Display Question
   function displayQuestion(index) {
     const question = quizQuestions[index];
+    ui.quizCategory.textContent = selectedCategory;
     ui.quizQuestion.textContent = `(${index + 1}) ${question.question}`;
     ui.quizChoiceList.innerHTML = question.options
       .map((choice, i) => {
         const selected = userAnswers[index] === choice;
         return `
-          <li class="quiz-choice-item border-2 rounded-lg p-3 mb-3 cursor-pointer ${
+          <li class="quiz-choice-item border-2 text-base  rounded-lg p-3 mb-3 cursor-pointer ${
             selected ? "selected" : ""
           }"
               data-choice="${i}"

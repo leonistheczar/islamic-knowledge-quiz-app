@@ -63,9 +63,6 @@ button:hover,
 #toggler:hover {
   cursor: url("/assets/cursor_pointer_dark.png"), pointer;
 }
-/* #header-img{
-  background: url('/assets/proposed-logo.png') no-repeat center center / cover;
-} */
 /* Background images */
 #main {
   background: url("/assets/Wave.svg") no-repeat center center / cover;

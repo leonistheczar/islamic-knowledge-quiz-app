@@ -18,12 +18,12 @@
 
 ## 📚 Academic Information
 
-**Course:** Web Technologies
-**Instructor:** Sir Zahid Aziz
-**Institution:** Emerson University Multan
-**Semester:** 5th Semester, Morning - Fall 2023
-**Program:** Bachelor of Computer Science
-**Batch:** 2023-2027
+**Course:** Web Technologies         
+**Instructor:** Sir Zahid Aziz                  
+**Institution:** Emerson University Multan                 
+**Semester:** 5th Semester, Morning - Fall 2023                      
+**Program:** Bachelor of Computer Science                
+**Batch:** 2023-2027          
 
 ### Team Members
 
@@ -573,17 +573,17 @@ This project was developed as part of the Web Technologies course at Emerson Uni
 
 ### Team Contact
 
-**Muhammad Ali**
-GitHub: [@leonistheczar](https://github.com/leonistheczar)
-Email: ali.at.grind@gmail.com
+**Muhammad Ali**                      
+GitHub: [@leonistheczar](https://github.com/leonistheczar)                           
+Email: ali.at.grind@gmail.com                    
 
-**Ayesha Saleem**
-GitHub: [@aysh34](https://github.com/aysh34)
-Email: ayeshasaleem853@gmail.com
+**Ayesha Saleem**                                            
+GitHub: [@aysh34](https://github.com/aysh34)                                     
+Email: ayeshasaleem853@gmail.com                                 
 
-**Subhan Gill**
-GitHub: [@Subhangill](https://github.com/Subhangill)
-Email: subhan.gill@gmail.com
+**Subhan Gill**                                                               
+GitHub: [@Subhangill](https://github.com/Subhangill)                                  
+Email: subhan.gill@gmail.com                                                  
 
 ### Project Links
 

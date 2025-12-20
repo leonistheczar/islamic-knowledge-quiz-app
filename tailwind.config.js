@@ -23,9 +23,6 @@ module.exports = {
         'main-accent-10': 'var(--main-accent-10)',
         'hover-light': 'var(--hover-light)',
       },
-      fontFamily: {
-        'ibm': ['IBM Plex Sans', 'sans-serif'],
-      }
     }
   },
   plugins: [],

@@ -327,9 +327,8 @@ function initQuizPage() {
         submitQuiz();
       }
       timer--;
-    }, 1000);
+    }, 10);
   }
-
   // Display Question
   function displayQuestion(index) {
     const question = quizQuestions[index];

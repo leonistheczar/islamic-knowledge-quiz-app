@@ -71,7 +71,7 @@
             class="w-full bg-(--main-accent) dark:bg-(--main-accent-5) text-(--main-text) flex flex-col justify-center items-center text-center p-6 lg:p-8 rounded-xl space-y-4 sm:space-y-6">
             <h1 class="text-3xl lg:text-4xl font-bold xl:text-5xl">Quiz Revamp</h1>
             <p class="text-base ">Before you start, review your quiz preferences</p>
-            <ul id="quiz-notes" class="flex flex-col text-sm lg:text-lg text-left list-decimal gap-y-2 sm:gap-y-3 lg:gap-y-4 px-4">
+            <ul id="quiz-notes" class="flex flex-col text-sm lg:text-lg text-left list-decimal gap-y-3 lg:gap-y-4 px-4">
                 <li>You have chosen <span class="font-semibold" id="category"></span> for the quiz</li>
                 <li>You have only 2 minutes (120 seconds) to complete your quiz</li>
                 <li>Each question carries 1 point(s)</li>
@@ -115,21 +115,21 @@
                         Category: <span id="quiz-result-category" class="text-(--main-text)"></span>
                     </p>
 
-                    <div class="score-display p-4 sm:p-6 bg-(--main-primary-10) rounded-lg inline-block overflow-x-auto max-w-full">
+                    <div class="score-display p-4 sm:p-6 bg-(--main-primary-10) rounded-lg inline-block overflow-x-hidden max-w-full">
                         <div class="flex items-center gap-4 sm:gap-6 min-w-fit">
                             <div class="text-center">
                                 <p class="text-sm sm:text-base text-gray-500 mb-1">Your Score</p>
-                                <span class=" font-bold text-3xl md:text-4xl text-(--main-secondary)/80" id="quiz-result-score">0/0</span>
+                                <span class=" font-bold text-2xl sm:text-3xl md:text-4xl text-(--main-secondary)/80" id="quiz-result-score">0/0</span>
                             </div>
                             <div class="hidden sm:block h-16 w-px bg-gray-300"></div>
                             <div class="text-center">
                                 <p class="text-sm sm:text-base text-gray-500 mb-1">Percentage</p>
-                                <span class="font-bold text-3xl md:text-4xl text-(--main-accent)" id="quiz-result-percentage">0%</span>
+                                <span class="font-bold text-2xl sm:text-3xl md:text-4xl text-(--main-accent)" id="quiz-result-percentage">0%</span>
                             </div>
                             <div class="hidden sm:block h-16 w-px bg-gray-300"></div>
-                            <div class="text-center">
+                            <div class="text-center"> 
                                 <p class="text-sm sm:text-base text-gray-500 mb-1">Highest Score</p>
-                                <span class="font-bold text-3xl md:text-4xl text-[#ff7878]" id="quiz-highest-score">0/0</span>
+                                <span class="font-bold text-2xl sm:text-3xl md:text-4xl text-[#ff7878]" id="quiz-highest-score">0/0</span>
                             </div>
                         </div>
                     </div>
@@ -156,19 +156,19 @@
                 <div class="text-center">
                     <h1 class="text-3xl lg:text-4xl py-2 font-bold xl:text-5xl">Detailed Results</h1>
                     <p class="">
-                        Review your answers for <span id="answer-category" class="font-bold p-1 rounded-lg bg-slate-100 text-slate-900"></span> category
+                        Review your answers for <span id="answer-category" class="font-semibold text-sm sm:text-lg underline underline-offset-4 decoration-2 decoration-(--main-secondary) text-(--main-text)"></span> category
                     </p>
                 </div>
                 
                 <!-- Answer Breakdown Container -->
-                <div id="quiz-answer-breakdown" class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center lg:gap-x-4 gap-y-4 mt-2 xl:mt-4 auto-rows-fr">
+                <div id="quiz-answer-breakdown" class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-y-1 lg:gap-x-4 sm:gap-y-4 sm:mt-2 xl:mt-4 auto-rows-fr">
                     <!-- Individual question results will be dynamically inserted here -->
                 </div>
                 
                 <!-- Bottom Actions -->
-                <div class="flex justify-center border-t-2 mt-12">
+                <div class="flex justify-center border-t-2 mt-6 sm:mt-12">
                     <button type="button" id="home-btn" 
-                        class="p-2 mt-4 bg-(--main-accent) md:p-4 md:text-lg font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95">
+                        class="p-2 mt-1 sm:mt-4 bg-(--main-accent) md:p-4 md:text-lg font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95">
                         <i class="uil uil-home"></i> Home
                     </button>
                 </div>

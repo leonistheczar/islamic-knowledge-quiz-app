@@ -277,10 +277,10 @@
           "id": 21,
           "question": "Who is considered the last prophet in Islam?",
           "options": [
-            "Prophet Isa (Jesus)",
-            "Prophet Musa (Moses)",
-            "Prophet Ibrahim (Abraham)",
-            "Prophet Muhammad (PBUH)"
+            "Prophet Isa (Jesus) (A.S)",
+            "Prophet Musa (Moses) (A.S)",
+            "Prophet Ibrahim (Abraham) (A.S)",
+            "Prophet Muhammad (PBUH) (A.S)"
           ],
           "correctAnswer": "Prophet Muhammad (PBUH)",
           "explanation": "Prophet Muhammad (peace be upon him) is the final prophet and messenger in Islam.",
@@ -290,143 +290,143 @@
           "id": 22,
           "question": "Which prophet is known as 'Khalilullah' (Friend of Allah)?",
           "options": [
-            "Prophet Ibrahim",
-            "Prophet Musa",
-            "Prophet Nuh",
-            "Prophet Isa"
+            "Prophet Ibrahim (A.S)",
+            "Prophet Musa (A.S)",
+            "Prophet Nuh (A.S)",
+            "Prophet Isa (A.S)"
           ],
-          "correctAnswer": "Prophet Ibrahim",
-          "explanation": "Prophet Ibrahim (Abraham) is given the title Khalilullah, meaning 'Friend of Allah'.",
+          "correctAnswer": "Prophet Ibrahim (A.S)",
+          "explanation": "Prophet Ibrahim (Abraham) (A.S) is given the title Khalilullah, meaning 'Friend of Allah'.",
           "difficulty": "medium"
         },
         {
           "id": 23,
           "question": "Which prophet was swallowed by a whale?",
           "options": [
-            "Prophet Yunus",
-            "Prophet Yusuf",
-            "Prophet Sulaiman",
-            "Prophet Dawud"
+            "Prophet Yunus (A.S)",
+            "Prophet Yusuf (A.S)",
+            "Prophet Sulaiman (A.S)",
+            "Prophet Dawud (A.S)"
           ],
-          "correctAnswer": "Prophet Yunus",
-          "explanation": "Prophet Yunus (Jonah) was swallowed by a large fish/whale and later emerged safely after repenting to Allah.",
+          "correctAnswer": "Prophet Yunus (A.S)",
+          "explanation": "Prophet Yunus (Jonah) (A.S) was swallowed by a large fish/whale and later emerged safely after repenting to Allah.",
           "difficulty": "easy"
         },
         {
           "id": 24,
           "question": "Which prophet could speak to animals and control the jinn?",
           "options": [
-            "Prophet Musa",
-            "Prophet Sulaiman",
-            "Prophet Isa",
-            "Prophet Yusuf"
+            "Prophet Musa (A.S)",
+            "Prophet Sulaiman (A.S)",
+            "Prophet Isa (A.S)",
+            "Prophet Yusuf (A.S)"
           ],
-          "correctAnswer": "Prophet Sulaiman",
-          "explanation": "Prophet Sulaiman (Solomon) was given the ability to communicate with animals and command the jinn.",
+          "correctAnswer": "Prophet Sulaiman (A.S)",
+          "explanation": "Prophet Sulaiman (Solomon) (A.S) was given the ability to communicate with animals and command the jinn.",
           "difficulty": "medium"
         },
         {
           "id": 25,
           "question": "Which prophet built the Ark to save believers from the great flood?",
           "options": [
-            "Prophet Nuh",
-            "Prophet Ibrahim",
-            "Prophet Lut",
-            "Prophet Hud"
+            "Prophet Nuh (A.S)",
+            "Prophet Ibrahim (A.S)",
+            "Prophet Lut (A.S)",
+            "Prophet Hud (A.S)"
           ],
-          "correctAnswer": "Prophet Nuh",
-          "explanation": "Prophet Nuh (Noah) built the Ark under Allah's command to save believers from the great flood.",
+          "correctAnswer": "Prophet Nuh (A.S)",
+          "explanation": "Prophet Nuh (Noah) (A.S) built the Ark under Allah's command to save believers from the great flood.",
           "difficulty": "easy"
         },
         {
           "id": 26,
           "question": "Which prophet was given the Injil (Gospel)?",
           "options": [
-            "Prophet Musa",
-            "Prophet Isa",
-            "Prophet Muhammad",
-            "Prophet Dawud"
+            "Prophet Musa (A.S)",
+            "Prophet Isa (A.S)",
+            "Prophet Muhammad (A.S)",
+            "Prophet Dawud (A.S)"
           ],
-          "correctAnswer": "Prophet Isa",
-          "explanation": "Prophet Isa (Jesus) was given the Injil (Gospel) as divine revelation.",
+          "correctAnswer": "Prophet Isa (A.S)",
+          "explanation": "Prophet Isa (Jesus) (A.S) was given the Injil (Gospel) as divine revelation.",
           "difficulty": "medium"
         },
         {
           "id": 27,
           "question": "Which prophet was thrown into a well by his brothers?",
           "options": [
-            "Prophet Yusuf",
-            "Prophet Musa",
-            "Prophet Harun",
-            "Prophet Ismail"
+            "Prophet Yusuf (A.S)",
+            "Prophet Musa (A.S)",
+            "Prophet Harun (A.S)",
+            "Prophet Ismail (A.S)"
           ],
-          "correctAnswer": "Prophet Yusuf",
-          "explanation": "Prophet Yusuf (Joseph) was thrown into a well by his jealous brothers but later became a minister in Egypt.",
+          "correctAnswer": "Prophet Yusuf (A.S)",
+          "explanation": "Prophet Yusuf (Joseph) (A.S) was thrown into a well by his jealous brothers but later became a minister in Egypt.",
           "difficulty": "easy"
         },
         {
           "id": 28,
           "question": "Which prophet spoke to Allah directly on Mount Sinai?",
           "options": [
-            "Prophet Ibrahim",
-            "Prophet Musa",
-            "Prophet Isa",
-            "Prophet Muhammad"
+            "Prophet Ibrahim (A.S)",
+            "Prophet Musa (A.S)",
+            "Prophet Isa (A.S)",
+            "Prophet Muhammad (A.S)"
           ],
-          "correctAnswer": "Prophet Musa",
-          "explanation": "Prophet Musa (Moses) spoke directly to Allah on Mount Sinai and was given the Torah.",
+          "correctAnswer": "Prophet Musa (A.S)",
+          "explanation": "Prophet Musa (Moses) (A.S) spoke directly to Allah on Mount Sinai and was given the Torah.",
           "difficulty": "medium"
         },
         {
           "id": 29,
           "question": "Who was the father of Prophet Ismail and Prophet Ishaq?",
           "options": [
-            "Prophet Nuh",
-            "Prophet Ibrahim",
-            "Prophet Yaqub",
-            "Prophet Lut"
+            "Prophet Nuh (A.S)",
+            "Prophet Ibrahim (A.S)",
+            "Prophet Yaqub (A.S)",
+            "Prophet Lut (A.S)"
           ],
-          "correctAnswer": "Prophet Ibrahim",
-          "explanation": "Prophet Ibrahim (Abraham) was the father of both Ismail and Ishaq (Isaac).",
+          "correctAnswer": "Prophet Ibrahim (A.S)",
+          "explanation": "Prophet Ibrahim (Abraham) (A.S) was the father of both Ismail and Ishaq (Isaac).",
           "difficulty": "easy"
         },
         {
           "id": 30,
           "question": "Which prophet is known for his patience during severe trials?",
           "options": [
-            "Prophet Ayyub",
-            "Prophet Yunus",
-            "Prophet Zakariya",
-            "Prophet Yahya"
+            "Prophet Ayyub (A.S)",
+            "Prophet Yunus (A.S)",
+            "Prophet Zakariya (A.S)",
+            "Prophet Yahya (A.S)"
           ],
-          "correctAnswer": "Prophet Ayyub",
-          "explanation": "Prophet Ayyub (Job) is renowned for his patience and steadfastness during severe trials and illness.",
+          "correctAnswer": "Prophet Ayyub (A.S)",
+          "explanation": "Prophet Ayyub (Job) (A.S) is renowned for his patience and steadfastness during severe trials and illness.",
           "difficulty": "medium"
         },
         {
           "id": 31,
           "question": "Which prophet was given the Zabur (Psalms)?",
           "options": [
-            "Prophet Musa",
-            "Prophet Isa",
-            "Prophet Dawud",
-            "Prophet Sulaiman"
+            "Prophet Musa (A.S)",
+            "Prophet Isa (A.S)",
+            "Prophet Dawud (A.S)",
+            "Prophet Sulaiman (A.S)"
           ],
-          "correctAnswer": "Prophet Dawud",
-          "explanation": "Prophet Dawud (David) was given the Zabur (Psalms) as divine scripture.",
+          "correctAnswer": "Prophet Dawud (A.S)",
+          "explanation": "Prophet Dawud (David) (A.S) was given the Zabur (Psalms) as divine scripture.",
           "difficulty": "medium"
         },
         {
           "id": 32,
           "question": "Who was the brother of Prophet Musa who helped him in his mission?",
           "options": [
-            "Prophet Harun",
-            "Prophet Ishaq",
-            "Prophet Ismail",
-            "Prophet Yunus"
+            "Prophet Harun (A.S)",
+            "Prophet Ishaq (A.S)",
+            "Prophet Ismail (A.S)",
+            "Prophet Yunus (A.S)"
           ],
-          "correctAnswer": "Prophet Harun",
-          "explanation": "Prophet Harun (Aaron) was the brother of Musa and assisted him in delivering Allah's message.",
+          "correctAnswer": "Prophet Harun (A.S)",
+          "explanation": "Prophet Harun (Aaron) (A.S) was the brother of Musa and assisted him in delivering Allah's message.",
           "difficulty": "easy"
         },
         {
@@ -439,58 +439,58 @@
             "Prophet Nuh's wife"
           ],
           "correctAnswer": "Prophet Muhammad's wife",
-          "explanation": "Maryam (Mary), mother of Prophet Isa, is mentioned by name, and she was from the family of Imran.",
+          "explanation": "Maryam (Mary), mother of Prophet Isa (A.S), is mentioned by name, and she was from the family of Imran.",
           "difficulty": "hard"
         },
         {
           "id": 34,
           "question": "Which prophet was born without a father?",
           "options": [
-            "Prophet Adam",
-            "Prophet Isa",
-            "Prophet Yahya",
-            "Prophet Muhammad"
+            "Prophet Adam (A.S)",
+            "Prophet Isa (A.S)",
+            "Prophet Yahya (A.S)",
+            "Prophet Muhammad (P.B.U.H)"
           ],
-          "correctAnswer": "Prophet Isa",
-          "explanation": "Prophet Isa (Jesus) was born miraculously to Maryam without a father by the will of Allah.",
+          "correctAnswer": "Prophet Isa (A.S)",
+          "explanation": "Prophet Isa (Jesus) (A.S) was born miraculously to Maryam without a father by the will of Allah.",
           "difficulty": "easy"
         },
         {
           "id": 35,
           "question": "Who was the first prophet created by Allah?",
           "options": [
-            "Prophet Nuh",
-            "Prophet Ibrahim",
-            "Prophet Adam",
-            "Prophet Idris"
+            "Prophet Nuh (A.S)",
+            "Prophet Ibrahim (A.S)",
+            "Prophet Adam (A.S)",
+            "Prophet Idris (A.S)"
           ],
-          "correctAnswer": "Prophet Adam",
-          "explanation": "Prophet Adam was the first human being and the first prophet created by Allah.",
+          "correctAnswer": "Prophet Adam (A.S)",
+          "explanation": "Prophet Adam (A.S) was the first human being and the first prophet created by Allah.",
           "difficulty": "easy"
         },
         {
           "id": 36,
           "question": "Which prophet is mentioned the most times in the Quran?",
           "options": [
-            "Prophet Muhammad",
-            "Prophet Ibrahim",
-            "Prophet Musa",
-            "Prophet Isa"
+            "Prophet Muhammad (P.B.U.H)",
+            "Prophet Ibrahim (A.S)",
+            "Prophet Musa (A.S)",
+            "Prophet Isa (A.S)"
           ],
-          "correctAnswer": "Prophet Musa",
-          "explanation": "Prophet Musa (Moses) is mentioned more than any other prophet in the Quran.",
+          "correctAnswer": "Prophet Musa (A.S)",
+          "explanation": "Prophet Musa (Moses) (A.S) is mentioned more than any other prophet in the Quran.",
           "difficulty": "medium"
         },
         {
           "id": 37,
           "question": "Which prophet's people were destroyed by a loud blast?",
           "options": [
-            "Prophet Salih",
-            "Prophet Hud",
-            "Prophet Lut",
-            "Prophet Shuaib"
+            "Prophet Salih (A.S)",
+            "Prophet Hud (A.S)",
+            "Prophet Lut (A.S)",
+            "Prophet Shuaib (A.S)"
           ],
-          "correctAnswer": "Prophet Salih",
+          "correctAnswer": "Prophet Salih (A.S)",
           "explanation": "The people of Thamud, who rejected Prophet Salih, were destroyed by a mighty blast.",
           "difficulty": "hard"
         },
@@ -498,39 +498,39 @@
           "id": 38,
           "question": "Which prophet preached to the people of Madyan?",
           "options": [
-            "Prophet Hud",
-            "Prophet Salih",
-            "Prophet Shuaib",
-            "Prophet Lut"
+            "Prophet Hud (A.S)",
+            "Prophet Salih (A.S)",
+            "Prophet Shuaib (A.S)",
+            "Prophet Lut (A.S)"
           ],
-          "correctAnswer": "Prophet Shuaib",
-          "explanation": "Prophet Shuaib was sent to the people of Madyan, warning them about dishonest business practices.",
+          "correctAnswer": "Prophet Shuaib (A.S)",
+          "explanation": "Prophet Shuaib (A.S) was sent to the people of Madyan, warning them about dishonest business practices.",
           "difficulty": "hard"
         },
         {
           "id": 39,
-          "question": "Who was the father of Prophet Yusuf?",
+          "question": "Who was the father of Prophet Yusuf (A.S)?",
           "options": [
-            "Prophet Ibrahim",
-            "Prophet Ishaq",
-            "Prophet Yaqub",
-            "Prophet Ismail"
+            "Prophet Ibrahim (A.S)",
+            "Prophet Ishaq (A.S)",
+            "Prophet Yaqub (A.S)",
+            "Prophet Ismail (A.S)"
           ],
-          "correctAnswer": "Prophet Yaqub",
-          "explanation": "Prophet Yaqub (Jacob), also known as Israel, was the father of Prophet Yusuf.",
+          "correctAnswer": "Prophet Yaqub (A.S)",
+          "explanation": "Prophet Yaqub (Jacob) (A.S), also known as Israel, was the father of Prophet Yusuf.",
           "difficulty": "medium"
         },
         {
           "id": 40,
           "question": "Which prophet was saved from the fire by Allah?",
           "options": [
-            "Prophet Musa",
-            "Prophet Ibrahim",
-            "Prophet Isa",
-            "Prophet Nuh"
+            "Prophet Musa (A.S)",
+            "Prophet Ibrahim (A.S)",
+            "Prophet Isa (A.S)",
+            "Prophet Nuh (A.S)"
           ],
-          "correctAnswer": "Prophet Ibrahim",
-          "explanation": "Prophet Ibrahim was thrown into a fire by his people, but Allah made it cool and safe for him.",
+          "correctAnswer": "Prophet Ibrahim (A.S)",
+          "explanation": "Prophet Ibrahim (A.S) was thrown into a fire by his people, but Allah made it cool and safe for him.",
           "difficulty": "medium"
         }
       ]
@@ -706,7 +706,7 @@
             "Surah Khadijah"
           ],
           "correctAnswer": "Surah Maryam",
-          "explanation": "Surah Maryam is named after Mary, the mother of Prophet Isa (Jesus).",
+          "explanation": "Surah Maryam is named after Mary, the mother of Prophet Isa (Jesus) (A.S).",
           "difficulty": "easy"
         },
         {
@@ -763,7 +763,7 @@
         },
         {
           "id": 58,
-          "question": "Which Surah tells the detailed story of Prophet Yusuf?",
+          "question": "Which Surah tells the detailed story of Prophet Yusuf (A.S)?",
           "options": [
             "Surah Yusuf",
             "Surah Maryam",

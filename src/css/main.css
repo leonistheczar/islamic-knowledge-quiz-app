@@ -1,1 +1,109 @@
-@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-family-dm: "DM Sans", sans-serif;
+  
+  /* Logo */
+  --main-logo: url('/assets/proposed-logo.png');
+  /* Light mode colors */
+  --main-text: #180f02;
+  --main-background: #f6f3ee;
+  --quiz-session: #f6f3ee;
+  --main-primary: #f4a22f;
+  --main-primary-5: #ffe1b7;
+  --main-primary-10: #fde4bb;
+  --quiz-bg: #f8bf70;
+  --main-secondary: #10da7f;
+  --main-accent: #28cbf0;
+  --main-accent-5: #9deafc;
+  --main-accent-10: #c7f5ff;
+  --hover-light: #faf0e0;
+}
+
+.dark {
+    /* Logo */
+  --main-logo: url('/assets/proposed-logo-dark.png');
+  /* Dark mode colors - override same variables */
+  --main-text: #fdf4e7;
+  --main-background: #221607;
+  --quiz-session: #c98b40;
+  --main-primary: #d07e0b;
+  --main-primary-5: #faae45;
+  --main-primary-10: #ffd191;
+  --quiz-bg: #eeb25e;
+  --main-secondary: #22ef93;
+  --main-accent: #143f49;
+  --main-accent-5: #075d70;
+  --main-accent-10: #0bbde6;
+  --hover-light: #3a2610;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-family-dm);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+/* Custom cursor styles */
+a:hover,
+button:hover,
+.nav-link:hover,
+#category-item:hover {
+  cursor: url("/assets/cursor_pointer.png"), pointer;
+}
+
+.dark a:hover,
+.dark button:hover,
+.dark .nav-link:hover,
+.dark #category-item:hover,
+#toggler:hover {
+  cursor: url("/assets/cursor_pointer_dark.png"), pointer;
+}
+/* Background images */
+#main {
+  background: url("/assets/Wave.svg") no-repeat center center / cover;
+}
+
+.dark #main {
+  background: url("/assets/Wave_dark.svg") no-repeat center center / cover;
+}
+
+/* Quiz Timer Animation */
+.scale-pulse {
+  animation: scalePulse 0.5s ease-in-out infinite;
+}
+
+@keyframes scalePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Category item gradient border */
+.category-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, var(--main-primary), var(--main-accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.category-item:hover::before,
+.category-item.active::before {
+  opacity: 1;
+}

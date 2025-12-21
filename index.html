@@ -106,64 +106,63 @@
       </div>
     </div>
   </div>
-  <!-- Main  -->
-  <main id="main" class="h-svh sm:h-dvh flex flex-col justify-center p-8 items-center overflow-x-hidden">
-    <section id="main-screen" class="">
-      <!-- Home Screen -->
-      <div id="main-screen-container" class="container w-full mx-auto px-8">
-        <div id="main-content" class="flex flex-col text-center md:mb-12 w-full">
-          <h1 class="text-(--main-text) text-4xl md:text-6xl font-bold mb-4">Welcome to ImanQuiz</h1>
-          <p class="text-justify text-lg my-4">ImanQuiz - is an interactive Islamic quiz
-            app that turns learning into a focused and
-            engaging experience. Navigate structured questions, test your understanding, and build knowledge step by
-            step.</p>
-          <div id="main-input"
-            class="flex flex-col lg:flex-row justify-center items-center sm:items-center gap-y-4 sm:space-x-2 mt-2 px-2">
-            <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name"
-              class="w-full p-4 rounded-lg bg-(--main-background) font-medium text-base text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02] focus:border-none" />
-            <div class="flex flex-row gap-x-4">
-              <button id="start-btn"
-                class="transition-all text-base bg-(--main-background) hover:bg-(--hover-light) dark:bg-(--main-background) p-3 font-semibold rounded-md whitespace-nowrap"
-                type="button">
-                Let's Start
-              </button>
-              <button id="categories-btn"
-                class="transition-all text-base bg-(--main-accent) hover:text-(--main-background) dark:bg-(--main-accent) dark:hover:bg-[#3994a8] p-3 font-semibold rounded-md whitespace-nowrap"
-                type="button">
-                Let's Go to Categories
-              </button>
-            </div>
+<main id="main" class="h-svh sm:h-dvh flex flex-col p-8 items-center overflow-x-hidden">
+
+  <!-- Home Screen -->
+  <section id="main-screen" class="flex-[3] w-full flex flex-col justify-center items-center">
+    <div id="main-screen-container" class="container w-full max-w-5xl mx-auto px-4">
+      <div id="main-content" class="flex flex-col text-center w-full md:mb-12 gap-4">
+        <h1 class="text-(--main-text) text-4xl md:text-6xl font-bold">Welcome to ImanQuiz</h1>
+        <p class="text-justify text-lg">
+          ImanQuiz is an interactive Islamic quiz app that turns learning into a focused and engaging experience. Navigate structured questions, test your understanding, and build knowledge step by step.
+        </p>
+        <div id="main-input" class="flex flex-col lg:flex-row justify-center items-center gap-4 mt-4 w-full">
+          <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name"
+            class="w-full lg:w-auto flex-1 p-4 rounded-lg bg-(--main-background) font-medium text-base text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02]" />
+          <div class="flex flex-row gap-4">
+            <button id="start-btn"
+              class="transition-all text-base bg-(--main-background) hover:bg-(--hover-light) p-3 font-semibold rounded-md whitespace-nowrap"
+              type="button">
+              Let's Start
+            </button>
+            <button id="categories-btn"
+              class="transition-all text-base bg-(--main-accent) hover:text-(--main-background) p-3 font-semibold rounded-md whitespace-nowrap"
+              type="button">
+              Let's Go to Categories
+            </button>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Quiz - Categories Showcase -->
-    <section id="categories-screen" class="hidden overflow-hidden">
-      <div id="categories-screen-container"
-        class="container min-w-fit px-4 h-full overflow-hidden flex flex-col justify-center items-center">
-        <div id="categories-content"
-          class="p-6 dark:bg-(--main-primary-5) bg-(--main-primary-5) dark:text-[#180f02] rounded-xl w-auto md:w-2xl lg:w-4xl shadow-lg flex flex-col justify-center text-center">
-          <h1 id="categories-tag" class="text-2xl sm:text-3xl font-bold ">Welcome, <span
-              id="user-name"></span></h1>
-          <div id="reset-user"
-            class="bg-(--main-accent) text-[#fff] p-1.5 my-2 text-base lg:p-2 xl:text-xl xl:my-4 mx-auto rounded-xl font-semibold transition-all hover:shadow-lg hover:scale-105 active:scale-95 cursor-pointer">
-            <button type="button" class="">Reset User</button>
-          </div>
-          <p class="text-base text-left lg:text-lg">Select a category to begin your journey:</p>
-          <h2 class="mt-2 text-lg font-bold">Categories</h2>
-          <ul id="categories-list"
-            class="grid grid-cols-2 justify-center dark:text-[#180f02] gap-2 sm:gap-y-4 mt-2 mb-4 items-center xl:font-semibold">
-            <!-- Categories will be dynamically inserted here -->
-          </ul>
-          <a id="quiz-start-btn" href="quiz.html"
-            class="text-base bg-(--main-accent) dark:hover:bg-(--main-accent) text-[#fff] font-semibold p-2 lg:p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 inline-block"
-            type="button">
-            Let's Start Quiz 🚀
-          </a>
+    </div>
+  </section>
+
+  <!-- Quiz - Categories Showcase -->
+<section id="categories-screen" class="hidden flex-[2] w-full flex flex-col justify-start items-center">
+
+    <div id="categories-screen-container" class="container w-full max-w-4xl px-4 flex flex-col justify-center items-center">
+      <div id="categories-content"
+        class="p-6 dark:bg-(--main-primary-5) bg-(--main-primary-5) dark:text-[#180f02] rounded-xl w-full shadow-lg flex flex-col justify-center text-center gap-4">
+        <h1 id="categories-tag" class="text-2xl sm:text-3xl font-bold">Welcome, <span id="user-name"></span></h1>
+        <div id="reset-user"
+          class="bg-(--main-accent) text-white p-2 my-2 text-base mx-auto rounded-xl font-semibold transition-all hover:shadow-lg hover:scale-105 active:scale-95 cursor-pointer">
+          <button type="button">Reset User</button>
         </div>
+        <p class="text-base text-left lg:text-lg">Select a category to begin your journey:</p>
+        <h2 class="mt-2 text-lg font-bold">Categories</h2>
+        <ul id="categories-list"
+          class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-y-4 mt-2 mb-4 items-center font-semibold">
+          <!-- Categories dynamically inserted here -->
+        </ul>
+        <a id="quiz-start-btn" href="quiz.html"
+          class="text-base bg-(--main-accent) dark:hover:bg-(--main-accent) text-white font-semibold p-3 lg:p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 inline-block">
+          Let's Start Quiz 🚀
+        </a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+</main>
+
   <script type="module" src="./src/js/app.js"></script>
 </body>
 

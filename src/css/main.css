@@ -63,6 +63,12 @@ button:hover,
 #toggler:hover {
   cursor: url("/assets/cursor_pointer_dark.png"), pointer;
 }
+/* Theme Hover Cursor */
+#toggler, 
+#toggler label, 
+#toggler .relative {
+  cursor: url('/assets/cursor_pointer_dark.png'), pointer;
+}
 /* Background images */
 #main {
   background: url("/assets/Wave.svg") no-repeat center center / cover;

@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <link rel="icon" href="./assets/proposed-logo.png">
   <title>ImanQuiz | Your Best Islamic Quiz App</title>
-  <script type="module" crossorigin src="/assets/app-j2QIOXa0.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/app-dCkLj83e.css">
+  <script type="module" crossorigin src="/assets/app-C1QoNsli.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/app-7QZASwbm.css">
 </head>
 
 <body id="body"
   class="font-dm overflow-x-hidden text-(--main-text) bg-(--main-background) dark:bg-(--main-background) dark:text-(--main-text) cursor-[url('/assets/cursor_default_dark.png'),auto]">
   <!-- Header & Navbar -->
-   <nav id="main-nav"
+  <nav id="main-nav"
     class="flex flex-col sm:flex-row py-4 px-4 sm:px-6 lg:px-8 justify-between items-center border-b-2 border-(--main-primary) dark:border(--main-primary) relative">
     <!-- Theme Toggler -->
     <div id="toggler"
@@ -25,7 +25,8 @@
           class="relative w-[110px] h-[50px] bg-[#ffe1b7] peer-checked:bg-[#4e2f06] rounded-full after:absolute after:content-[''] after:w-[40px] after:h-[40px] after:bg-gradient-to-r from-orange-500 to-yellow-400 peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[5px] after:left-[5px] active:after:w-[50px] peer-checked:after:left-[105px] peer-checked:after:translate-x-[-100%] shadow-sm duration-300 after:duration-300 after:shadow-md">
         </div>
         <svg height="0" width="100" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg" class="fill-yellow-400 peer-checked:opacity-60 absolute w-6 h-6 left-[13px]">
+          xmlns="http://www.w3.org/2000/svg"
+          class="fill-yellow-400 peer-checked:opacity-60 absolute w-6 h-6 left-[13px]">
           <path
             d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5ZM13,0h-2V5h2V0Zm0,19h-2v5h2v-5ZM5,11H0v2H5v-2Zm19,0h-5v2h5v-2Zm-2.81-6.78l-1.41-1.41-3.54,3.54,1.41,1.41,3.54-3.54ZM7.76,17.66l-1.41-1.41-3.54,3.54,1.41,1.41,3.54-3.54Zm0-11.31l-3.54-3.54-1.41,1.41,3.54,3.54,1.41-1.41Zm13.44,13.44l-3.54-3.54-1.41,1.41,3.54,3.54,1.41-1.41Z">
           </path>
@@ -64,7 +65,7 @@
       </li>
     </ul>
   </nav>
-    <!-- User Intro Dialog -->
+  <!-- User Intro Dialog -->
   <div id="intro-guide-dialog" class="hidden">
     <div id="start-info"
       class="fixed top-0 left-0 z-50 w-full sm:h-screen flex justify-center items-center bg-black/40 p-4">
@@ -107,62 +108,87 @@
       </div>
     </div>
   </div>
-<main id="main" class="h-svh sm:h-dvh flex flex-col p-8 items-center overflow-x-hidden">
+  <main id="main" class="min-h-svh sm:min-h-dvh flex flex-col p-8 overflow-hidden">
 
-  <!-- Home Screen -->
-  <section id="main-screen" class="flex-[3] w-full flex flex-col justify-center items-center">
-    <div id="main-screen-container" class="container w-full max-w-5xl mx-auto px-4">
-      <div id="main-content" class="flex flex-col text-center w-full md:mb-12 gap-4">
-        <h1 class="text-(--main-text) text-4xl md:text-6xl font-bold">Welcome to ImanQuiz</h1>
-        <p class="text-justify text-lg">
-          ImanQuiz is an interactive Islamic quiz app that turns learning into a focused and engaging experience. Navigate structured questions, test your understanding, and build knowledge step by step.
-        </p>
-        <div id="main-input" class="flex flex-col lg:flex-row justify-center items-center gap-4 mt-4 w-full">
-          <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name"
-            class="w-full lg:w-auto flex-1 p-4 rounded-lg bg-(--main-background) font-medium text-base text-(--main-text) outline-none transition-all duration-150 focus:ring-2 focus:ring-[#180f02]" />
-          <div class="flex flex-row gap-4">
-            <button id="start-btn"
-              class="transition-all text-base bg-(--main-background) hover:bg-(--hover-light) p-3 font-semibold rounded-md whitespace-nowrap"
-              type="button">
-              Let's Start
-            </button>
-            <button id="categories-btn"
-              class="transition-all text-base bg-(--main-accent) hover:text-(--main-background) p-3 font-semibold rounded-md whitespace-nowrap"
-              type="button">
-              Let's Go to Categories
-            </button>
+    <!-- Home Screen -->
+    <section id="main-screen" class="w-full flex-1 flex flex-col justify-center items-center">
+
+      <div id="main-screen-container" class="container w-full max-w-5xl mx-auto px-4">
+
+        <div id="main-content" class="flex flex-col text-center w-full gap-4">
+
+          <h1 class="text-(--main-text) text-4xl md:text-6xl font-bold">
+            Welcome to ImanQuiz
+          </h1>
+
+          <p class="text-justify text-lg">
+            ImanQuiz is an interactive Islamic quiz app that turns learning into a focused and engaging experience.
+            Navigate structured questions, test your understanding, and build knowledge step by step.
+          </p>
+
+          <div id="main-input" class="flex flex-col lg:flex-row justify-center items-center gap-4 mt-4 w-full">
+
+            <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name" class="w-full lg:w-auto flex-1 p-4 rounded-lg bg-(--main-background)
+                   font-medium text-base text-(--main-text)
+                   outline-none transition-all duration-150
+                   focus:ring-2 focus:ring-[#180f02]" />
+
+            <div class="flex flex-row gap-4">
+              <button id="start-btn" type="button" class="transition-all text-base bg-(--main-background)
+                     hover:bg-(--hover-light)
+                     p-3 font-semibold rounded-md whitespace-nowrap">
+                Let’s Start
+              </button>
+
+              <button id="categories-btn" type="button" class="transition-all text-base bg-(--main-accent)
+                     hover:text-(--main-background)
+                     p-3 font-semibold rounded-md whitespace-nowrap">
+                Go to Categories
+              </button>
+            </div>
           </div>
+
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Quiz - Categories Showcase -->
-<section id="categories-screen" class="hidden flex-[2] w-full flex flex-col justify-start items-center">
-
-    <div id="categories-screen-container" class="container w-full max-w-4xl px-4 flex flex-col justify-center items-center">
-      <div id="categories-content"
-        class="p-6 dark:bg-(--main-primary-5) bg-(--main-primary-5) dark:text-[#180f02] rounded-xl w-full shadow-lg flex flex-col justify-center text-center gap-4">
-        <h1 id="categories-tag" class="text-2xl sm:text-3xl font-bold">Welcome, <span id="user-name"></span></h1>
-        <div id="reset-user"
-          class="bg-(--main-accent) text-white p-2 my-2 text-base mx-auto rounded-xl font-semibold transition-all hover:shadow-lg hover:scale-105 active:scale-95 cursor-pointer">
-          <button type="button">Reset User</button>
+    </section>
+    <!-- Categories Screen -->
+    <section id="categories-screen" class="hidden w-full flex flex-col justify-center items-center">
+      <div id="categories-screen-container" class="container mx-auto w-full max-w-4xl px-4 flex flex-col items-center">
+        <div id="categories-content" class="p-6 bg-(--main-primary-5) rounded-xl w-full shadow-lg
+               flex flex-col gap-4 text-center
+               sm:max-h-[80svh]">
+          <h1 id="categories-tag" class="text-2xl sm:text-3xl font-bold">
+            Welcome, <span id="user-name"></span>
+          </h1>
+          <button id="reset-user" class="bg-(--main-accent) text-white p-2
+                 text-base mx-auto rounded-xl font-semibold
+                 transition-all hover:shadow-lg hover:scale-105
+                 active:scale-95">
+            Reset User
+          </button>
+          <p class="text-base text-left lg:text-lg">
+            Select a category to begin your journey:
+          </p>
+          <h2 class="text-lg font-bold">
+            Categories
+          </h2>
+          <ul id="categories-list" class="grid grid-cols-2 sm:grid-cols-3
+                 gap-2 sm:gap-y-4 mb-4
+                 items-center sm:font-semibold">
+            <!-- Categories injected dynamically -->
+          </ul>
+          <a id="quiz-start-btn" href="quiz.html" class="text-base bg-(--main-accent) text-white
+                 font-semibold p-3 lg:p-4 rounded-lg
+                 transition-all duration-200
+                 hover:shadow-lg hover:scale-105
+                 active:scale-95 inline-block">
+            Start Quiz 🚀
+          </a>
         </div>
-        <p class="text-base text-left lg:text-lg">Select a category to begin your journey:</p>
-        <h2 class="mt-2 text-lg font-bold">Categories</h2>
-        <ul id="categories-list"
-          class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-y-4 mt-2 mb-4 items-center font-semibold">
-          <!-- Categories dynamically inserted here -->
-        </ul>
-        <a id="quiz-start-btn" href="quiz.html"
-          class="text-base bg-(--main-accent) dark:hover:bg-(--main-accent) text-white font-semibold p-3 lg:p-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 inline-block">
-          Let's Start Quiz 🚀
-        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-</main>
+  </main>
 
 </body>
 

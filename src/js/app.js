@@ -51,7 +51,8 @@ const isIndexPage = window.location.href.includes("index.html") ||
 
 // Init Event Listener
 document.addEventListener("DOMContentLoaded", async () => {
-  // Theme Setup -- System Preference (runs on all pages)
+  console.log(apiData);
+    // Theme Setup -- System Preference (runs on all pages)
   const theme = getTheme();
   if (theme === "dark") {
     ui.headerImgDark.classList.remove("hidden");
@@ -99,9 +100,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   // INDEX.HTML 
   if (isIndexPage) {
     window.scrollTo(0, 0);
+    pageLoadAnimation();
     // Get API DATA
     try {
       apiData = await initAPI();
+      console.log(apiData);
     } catch (error) {
       console.error("Error fetching API data:", error);
     }
@@ -253,7 +256,7 @@ function initIndexPage() {
       .map(
         (category, index) => `
   <li id="category-${index}" data-category="${index}"
-      class="category-item dark:text-[#180f02] group relative w-full text-left text-base p-1.5 lg:p-4 rounded-lg overflow-hidden
+      class="category-item dark:text-[#180f02] group relative w-full text-left text-base rounded-lg overflow-hidden
              bg-white border-2 transition-all duration-300 cursor-pointer
              hover:translate-x-1 hover:shadow-lg"
       style="border-color: var(--main-primary-5)">
@@ -263,7 +266,7 @@ function initIndexPage() {
          style="background-color: var(--main-primary)"></div>
     
     <a href="#"
-       class="relative z-10 flex items-center justify-between 
+       class="relative z-10 p-1.5 lg:p-4 flex items-center justify-between 
               w-full no-underline">
       
       <div class="flex items-center">

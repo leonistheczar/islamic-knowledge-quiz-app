@@ -51,7 +51,6 @@ const isIndexPage = window.location.href.includes("index.html") ||
 
 // Init Event Listener
 document.addEventListener("DOMContentLoaded", async () => {
-  console.log(apiData);
     // Theme Setup -- System Preference (runs on all pages)
   const theme = getTheme();
   if (theme === "dark") {

@@ -103,7 +103,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Get API DATA
     try {
       apiData = await initAPI();
-      console.log(apiData);
     } catch (error) {
       console.error("Error fetching API data:", error);
     }

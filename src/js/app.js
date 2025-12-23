@@ -149,7 +149,6 @@ function initIndexPage() {
       categoriesLoad();
     });
   });
-
   // Directly go to categories (if user existed)
   ui.categoriesBtn.addEventListener("click", () => {
     const user = getUser();
